@@ -1,0 +1,37 @@
+{
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "explicit"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "files.eol": "\n",
+
+  // Tailwind CSS IntelliSense
+  "tailwindCSS.includeLanguages": {
+    "typescript": "html",
+    "typescriptreact": "html"
+  },
+  "tailwindCSS.emmetCompletions": true,
+
+  // Typescript + JS
+  "typescript.validate.enable": true,
+  "javascript.validate.enable": true,
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "typescript.tsserver.log": "off",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  // bật cảnh báo các biến, import không dùng
+  "typescript.showUnused": true,
+  "javascript.showUnused": true,
+
+  // Prettier config
+  "prettier.requireConfig": true,
+
+  // Terminal
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+
+  // Optional: Fix Tailwind lint false positives
+  "css.lint.unknownAtRules": "ignore",
+
+  "cSpell.words": ["Multichoice"]
+}
