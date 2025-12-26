@@ -1,3 +1,4 @@
+import { TittleSection } from "@/components/ui/TittleSection";
 import { vi } from "@/lib/locales/vi";
 import Image from "next/image";
 import React from "react";
@@ -42,13 +43,11 @@ export const PlatformOverview: React.FC = () => {
   };
 
   return (
-    <section className="relative bg-white py-6 lg:py-40">
-      <div className="container mx-auto px-4 flex flex-col items-center justify-center">
-        <h2 className="text-hero-mobile lg:text-hero font-bold leading-tight text-center text-navy mb-10 lg:mb-20 ">
-          {vi.platform.title}
-        </h2>
+    <section className="relative bg-white py-6 lg:pt-40">
+      <div className="container mx-auto px-4 lg:px-8 flex flex-col items-center justify-center">
+        <TittleSection title={vi.platform.title} />
         <Image
-          src="/images/icons/service_banner.svg"
+          src="/images/backgrounds/service_banner.svg"
           alt="Service Banner"
           width={260}
           height={260}

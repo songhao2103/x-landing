@@ -1,15 +1,24 @@
 'use client'
 
 import React, { useState } from 'react'
+import Link from 'next/link'
 import { Logo } from '@/components/ui/Logo'
 import { Button } from '@/components/ui/Button'
 import { vi } from '@/lib/locales/vi'
 
 export const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [productsMenuOpen, setProductsMenuOpen] = useState(false)
+  
+  const products = [
+    { label: 'XPromo', href: '/products/xpromo' },
+    { label: 'XOMI', href: '/products/xomi' },
+    { label: 'XBIZ', href: '/products/xbiz' },
+    { label: 'XTECH', href: '/products/xtech' },
+  ]
   
   const navItems = [
-    { label: vi.nav.products, href: '#products' },
+    { label: vi.nav.products, href: '/products/xpromo', hasDropdown: true },
     { label: vi.nav.solutions, href: '#solutions' },
     { label: vi.nav.industries, href: '#industries' },
     { label: vi.nav.resources, href: '#resources' },
@@ -17,7 +26,7 @@ export const Header: React.FC = () => {
   ]
   
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[#0a1628]/80 backdrop-blur-sm">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[#0a1628]/80 backdrop-blur-sm" style={{ zIndex: 1000 }}>
       <div className="absolute inset-0 bg-gradient-to-br from-[#0a1628]/50 via-[#0d1d3a]/50 to-[#162548]/50 pointer-events-none" />
       <nav className="container mx-auto px-8 lg:px-12 relative">
         <div className="flex items-center justify-between h-20">
@@ -29,13 +38,57 @@ export const Header: React.FC = () => {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-10">
             {navItems.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className="text-[15px] font-medium text-white hover:text-cyan-400 transition-colors"
-              >
-                {item.label}
-              </a>
+              item.hasDropdown ? (
+                <div
+                  key={item.label}
+                  className="relative"
+                  onMouseEnter={() => setProductsMenuOpen(true)}
+                  onMouseLeave={() => setProductsMenuOpen(false)}
+                >
+                  <Link
+                    href={item.href}
+                    className="text-[15px] font-medium text-white hover:text-cyan-400 transition-colors flex items-center gap-1 cursor-pointer"
+                  >
+                    {item.label}
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </Link>
+                  
+                  {/* Dropdown Menu */}
+                  {productsMenuOpen && (
+                    <>
+                      {/* Bridge để giữ menu mở khi di chuyển chuột */}
+                      <div className="absolute top-full left-0 w-full h-2" />
+                      <div 
+                        className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-2xl py-2 border border-gray-100"
+                        style={{ zIndex: 9999 }}
+                        onMouseEnter={() => setProductsMenuOpen(true)}
+                        onMouseLeave={() => setProductsMenuOpen(false)}
+                      >
+                        {products.map((product) => (
+                          <Link
+                            key={product.label}
+                            href={product.href}
+                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-cyan-600 transition-colors cursor-pointer"
+                            onClick={() => setProductsMenuOpen(false)}
+                          >
+                            {product.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </>
+                  )}
+                </div>
+              ) : (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  className="text-[15px] font-medium text-white hover:text-cyan-400 transition-colors"
+                >
+                  {item.label}
+                </a>
+              )
             ))}
             
             {/* Language Selector */}
@@ -51,9 +104,12 @@ export const Header: React.FC = () => {
             </button>
             
             {/* CTA Button */}
-            <button className="px-6 py-2.5 text-[15px] font-semibold text-white bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full hover:from-cyan-400 hover:to-purple-500 transition-all shadow-lg shadow-cyan-500/30">
+            <Link 
+              href="/contact"
+              className="px-6 py-2.5 text-[15px] font-semibold text-white bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full hover:from-cyan-400 hover:to-purple-500 transition-all shadow-lg shadow-cyan-500/30"
+            >
               {vi.nav.contact}
-            </button>
+            </Link>
           </div>
           
           {/* Mobile Menu Button */}
@@ -79,18 +135,46 @@ export const Header: React.FC = () => {
           <div className="lg:hidden py-4 border-t border-white/10">
             <div className="flex flex-col gap-4">
               {navItems.map((item) => (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  className="text-sm font-medium text-white hover:text-cyan-400 transition-colors py-2"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {item.label}
-                </a>
+                item.hasDropdown ? (
+                  <div key={item.label} className="flex flex-col gap-2">
+                    <Link
+                      href={item.href}
+                      className="text-sm font-medium text-white hover:text-cyan-400 transition-colors py-2"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                    <div className="pl-4 flex flex-col gap-2">
+                      {products.map((product) => (
+                        <Link
+                          key={product.label}
+                          href={product.href}
+                          className="text-sm text-white/80 hover:text-cyan-400 transition-colors py-1"
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          {product.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                ) : (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    className="text-sm font-medium text-white hover:text-cyan-400 transition-colors py-2"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {item.label}
+                  </a>
+                )
               ))}
-              <button className="px-6 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full hover:from-cyan-400 hover:to-purple-500 transition-all shadow-lg shadow-cyan-500/30 mt-2">
+              <Link 
+                href="/contact"
+                className="px-6 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full hover:from-cyan-400 hover:to-purple-500 transition-all shadow-lg shadow-cyan-500/30 mt-2 inline-block text-center"
+                onClick={() => setMobileMenuOpen(false)}
+              >
                 {vi.nav.contact}
-              </button>
+              </Link>
             </div>
           </div>
         )}

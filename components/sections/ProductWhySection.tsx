@@ -1,0 +1,51 @@
+import React from 'react'
+import { BenefitCard } from '@/components/ui/BenefitCard'
+
+export interface WhyItem {
+  title: string
+  icon?: string
+}
+
+export interface ProductWhySectionProps {
+  title?: string
+  items: WhyItem[]
+  className?: string
+}
+
+export const ProductWhySection: React.FC<ProductWhySectionProps> = ({
+  title = 'Tại sao chọn XPromo?',
+  items,
+  className = '',
+}) => {
+  return (
+    <section className={`py-16 lg:py-24 bg-white ${className}`}>
+      <div className="container mx-auto px-4 lg:px-8">
+        {/* Header */}
+        <div className="text-center mb-12 lg:mb-16">
+          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+            {title}
+          </h2>
+        </div>
+
+        {/* Benefits Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+          {items.map((item, index) => (
+            <BenefitCard
+              key={index}
+              title={item.title}
+              icon={item.icon}
+            />
+          ))}
+        </div>
+
+        {/* CTA Button */}
+        <div className="flex justify-center mt-12">
+          <button className="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-full hover:shadow-lg hover:scale-105 transition-all duration-200">
+            Liên hệ tư vấn
+          </button>
+        </div>
+      </div>
+    </section>
+  )
+}
+

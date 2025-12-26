@@ -1,7 +1,7 @@
-import React from 'react'
 import { Button } from '@/components/ui/Button'
 import { Card } from '@/components/ui/Card'
 import { vi } from '@/lib/locales/vi'
+import React from 'react'
 
 export const HeroSection: React.FC = () => {
   const features = [
@@ -24,7 +24,7 @@ export const HeroSection: React.FC = () => {
   ]
   
   return (
-    <section className="relative min-h-screen overflow-visible pb-12 lg:pb-40">
+    <section className="relative min-h-[80vh] overflow-visible pb-12 lg:pb-40">
       {/* Banner Background */}
       <div className="absolute inset-0">
         <img 

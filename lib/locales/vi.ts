@@ -55,8 +55,102 @@ export const vi = {
   products: {
     xpromo: {
       title: 'XPROMO',
+      approach: {
+        title: 'Tiếp cận hiệu quả đúng người - đúng thời điểm',
+      },
       description: 'Nền tảng kết nối giữa doanh nghiệp và các bệ sản thái: SaaS, giúp thương hiệu, quảng hồ sản phẩm trực tiếp đến đúng người dùng bạc ngày họng các kênh tương thông dạng số hộ được.',
-      cta: 'Tìm hiểu thêm',
+      cta: 'Liên hệ tư vấn',
+      hero: {
+        tag: 'PROMO',
+        title: 'In-SaaS Promotion Platform',
+        description: 'Nền tảng kết nối giữa doanh nghiệp và các hệ sinh thái SaaS, giúp thương hiệu quảng bá sản phẩm trực tiếp đến đúng người đúng lúc, ngay trong các phần mềm mà khách hàng đang sử dụng.',
+      },
+      benefits: {
+        title: 'Lợi ích mang lại',
+        subtitle: 'Kết nối nhu cầu - Gia tăng giá trị',
+        items: [
+          {
+            title: 'Tiếp cận 500k++ khách hàng chất lượng',
+            description: 'CPDeal - trả phí theo deal\nGo-live sau ~1-2 tuần',
+          },
+          {
+            title: 'Mở rộng nguồn doanh thu mới',
+            description: 'Kiểm soát hiển thị & trải nghiệm\nTích hợp dễ dàng (API/SDK)',
+          },
+          {
+            title: 'Dịch vụ uy tín, đúng nhu cầu',
+            description: 'Không làm phiền\nBảo mật & riêng tư\nTuân thủ nghị định 13',
+          },
+        ],
+      },
+      tabs: {
+        title: 'Tiếp cận hiệu quả đúng người - đúng thời điểm',
+        items: [
+          {
+            id: 'business',
+            label: 'Đối với Doanh nghiệp',
+            title: 'Đối với Doanh nghiệp',
+            description: 'Tiếp cận cộng đồng chất lượng : truyền thông đến người dùng hoạt động hằng ngày là chủ kinh doanh, nhân viên văn phòng, kinh doanh online, nhà sáng tạo nội dung...',
+            features: [
+              '+~15% Tỷ lệ duyệt: với hồ sơ đăng ký nhu cầu thật từ khách hàng đã được xác thực khi dùng trong phần mềm SaaS',
+            ],
+            highlight: 'Chi phí theo kết quả (CPDeal): Chỉ phát sinh chi phí khi đã duyệt/giải ngân khách hàng thành công. Giảm ~20% chi phí & thời gian so với các kênh Social Ads',
+          },
+          {
+            id: 'saas',
+            label: 'Đối với Đơn vị SaaS',
+            title: 'Đối với Đơn vị SaaS',
+            description: '',
+            features: [],
+          },
+          {
+            id: 'user',
+            label: 'Đối với Người dùng',
+            title: 'Đối với Người dùng',
+            description: '',
+            features: [],
+          },
+        ],
+      },
+      why: {
+        title: 'Tại sao chọn XPromo?',
+        items: [
+          { title: 'Tệp khách hàng chất lượng' },
+          { title: 'Sản phẩm tín dụng đa dạng' },
+          { title: 'Tích hợp nhanh chóng 1-2 tuần' },
+          { title: 'Theo dõi kết quả dễ dàng' },
+        ],
+      },
+      howItWorks: {
+        title: 'Phương thức hoạt động',
+        steps: [
+          {
+            step: 1,
+            title: 'Khám phá sản phẩm',
+            description: 'Click vào banner/links để xem ưu đãi và điều kiện của khoản vay/thẻ tín dụng.',
+          },
+          {
+            step: 2,
+            title: 'Khảo sát nhu cầu',
+            description: 'Cung cấp nhu cầu để kiểm tra điều kiện tham gia',
+          },
+          {
+            step: 3,
+            title: 'Tạo hồ sơ trực tuyến',
+            description: 'Điền thông tin theo form;Upload giấy tờ cá nhân; Gửi hồ sơ online',
+          },
+          {
+            step: 4,
+            title: 'eKYC và phê duyệt',
+            description: 'Xác thực danh tính bằng eKYC nhanh chóng. Hồ sơ được phê duyệt tự động hoặc trong thời gian ngắn.',
+          },
+          {
+            step: 5,
+            title: 'Giải ngân/ mở thẻ',
+            description: 'Khoản vay được giải ngân ngay sau khi duyệt, hoặc thẻ tín dụng sẽ được phát hành và gửi đến bạn.',
+          },
+        ],
+      },
     },
     xomi: {
       title: 'XOMI',
@@ -79,19 +173,19 @@ export const vi = {
     items: {
       digitization: {
         title: 'Số hoá toàn diện',
-        description: 'cho với công việc nội bộ Minh bạch thông tin',
+        description: 'Bảo vệ dữ liệu,\n Minh bạch thông tin',
       },
       automation: {
         title: 'Tự động hoá',
-        description: 'Qui trỉnh tiêt các các công việc thủ công cho quản lý',
+        description: 'Giải phóng triệt để các công việc thủ công cho quản lý',
       },
       efficiency: {
         title: 'Nâng tầm vị thế',
-        description: 'AI & CLOUD nâng mội bậc trong tợi thế cạnh tranh vượt trỗi',
+        description: 'AI & công nghệ mới mang lại lợi thế cạnh tranh vượt trội',
       },
       loyalty: {
         title: 'Hàng triệu tương tác',
-        description: 'Mỗi ngày với Dễ dàng mở rộng',
+        description: 'Đáp ứng ổn định và mở rộng',
       },
       performance: {
         title: 'Tăng hiệu suất 25%',
@@ -118,8 +212,26 @@ export const vi = {
   clients: {
     title: 'KHÁCH HÀNG & ĐỐI TÁC',
   },
+  contact: {
+    title: 'Liên hệ tư vấn',
+    description: 'Để được tư vấn tốt nhất, bạn vui lòng để lại thông tin liên hệ và nhu cầu của mình, chúng tôi sẽ liên lạc với bạn trong 24h giờ',
+    phone: '(+84) 0938338651',
+    email: 'support@xfuture.vn',
+    address: 'Sunshine Sky City, Số 4 Phú Thuận, P. Tân Mỹ (Q. 7 cũ), TP. Hồ Chí Minh',
+    form: {
+      fullName: 'Họ và Tên',
+      email: 'Email',
+      phone: 'Số điện thoại',
+      company: 'Công ty',
+      message: 'Lời nhắn của bạn',
+      submit: 'Gửi yêu cầu',
+    },
+  },
   footer: {
-    description: 'XFuture là đơn vị aivent-native doanh nghiệp của vua [Xfuture electric driive], Pháp hiên [i Tại Việt Hà nộ] được ra đời mang tầm nhìn vào tương lai.',
+    info: 'Công ty cổ phần giải pháp doanh nghiệp XFuture',
+    address: 'Địa chỉ: Sunshine Skycity, 4 Phú Thuận, P. Tân Mỹ,(Q.7 cũ) HCMC',
+    phone: 'Phone: (+84) 938338651',
+    email: 'Email: contact@xfuture.vn',
     products: {
       title: 'Sản phẩm',
       xpromo: 'XPromo - Nền tảng Marketing',
