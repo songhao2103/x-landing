@@ -65,6 +65,11 @@ export const ProductBenefitsSection: React.FC<ProductBenefitsSectionProps> = ({
             ]}
           />
         </div>
+        <div className="flex justify-start mt-12">
+          <button className="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-full hover:shadow-lg hover:scale-105 transition-all duration-200">
+            Liên hệ tư vấn
+          </button>
+        </div>
       </div>
     </section>
   )
