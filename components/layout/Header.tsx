@@ -1,43 +1,74 @@
 'use client'
 
-import React, { useState } from 'react'
-import Link from 'next/link'
 import { Logo } from '@/components/ui/Logo'
-import { Button } from '@/components/ui/Button'
+import { LANGUAGE } from '@/lib/constants/global'
+import { ROUTES } from '@/lib/constants/routes'
 import { vi } from '@/lib/locales/vi'
+import { LOCAL_STORAGE_KEY, localStorageUtil } from '@/lib/storage'
+import { languageUtils } from '@/lib/utils'
+import { useClickOutside } from '@/lib/utils/hooks'
+import Link from 'next/link'
+import React, { useEffect, useRef, useState } from 'react'
 
 export const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [languageMenuOpen, setLanguageMenuOpen] = useState(false)
   const [productsMenuOpen, setProductsMenuOpen] = useState(false)
-  
+  const languageDropdownRef = useRef<HTMLDivElement>(null)
+  const [mounted, setMounted] = useState(false)
+
+  useClickOutside(languageDropdownRef, () => {
+    setLanguageMenuOpen(false)
+  })
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
   const products = [
-    { label: 'XPromo', href: '/products/xpromo' },
+    { label: 'XPromo', href: ROUTES.PRODUCT_XPROMO },
     { label: 'XOMI', href: '/products/xomi' },
     { label: 'XBIZ', href: '/products/xbiz' },
     { label: 'XTECH', href: '/products/xtech' },
   ]
-  
+
   const navItems = [
-    { label: vi.nav.products, href: '/products/xpromo', hasDropdown: true },
+    { label: vi.nav.products, href: ROUTES.PRODUCT_XPROMO, hasDropdown: true },
     { label: vi.nav.solutions, href: '#solutions' },
     { label: vi.nav.industries, href: '#industries' },
     { label: vi.nav.resources, href: '#resources' },
     { label: vi.nav.company, href: '#company' },
   ]
-  
+
+  const languageItems = [
+    { label: vi.language.english, value: LANGUAGE.EN },
+    {
+      label: vi.language.vietnamese,
+      value: LANGUAGE.VI,
+    },
+  ]
+
+  const renderLanguageCode = () => {
+    if (!mounted) return ''
+    if (languageUtils.is(LANGUAGE.EN)) return 'EN'
+    if (languageUtils.is(LANGUAGE.VI)) return 'VI'
+    return ''
+  }
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[#0a1628]/80 backdrop-blur-sm" style={{ zIndex: 1000 }}>
+    <header
+      className="fixed top-0 left-0 right-0 z-50 bg-[#0a1628]/80 backdrop-blur-sm"
+      style={{ zIndex: 1000 }}
+    >
       <div className="absolute inset-0 bg-gradient-to-br from-[#0a1628]/50 via-[#0d1d3a]/50 to-[#162548]/50 pointer-events-none" />
-      <nav className="container mx-auto px-8 lg:px-12 relative">
+      <nav className="container mx-auto px-4 sm:px-8 relative">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="#" className="flex-shrink-0">
-            <Logo />
-          </a>
-          
+          <Logo />
+
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-10">
-            {navItems.map((item) => (
+            {navItems.map((item) =>
               item.hasDropdown ? (
                 <div
                   key={item.label}
@@ -50,17 +81,27 @@ export const Header: React.FC = () => {
                     className="text-[15px] font-medium text-white hover:text-cyan-400 transition-colors flex items-center gap-1 cursor-pointer"
                   >
                     {item.label}
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    <svg
+                      className="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 9l-7 7-7-7"
+                      />
                     </svg>
                   </Link>
-                  
+
                   {/* Dropdown Menu */}
                   {productsMenuOpen && (
                     <>
                       {/* Bridge để giữ menu mở khi di chuyển chuột */}
                       <div className="absolute top-full left-0 w-full h-2" />
-                      <div 
+                      <div
                         className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-2xl py-2 border border-gray-100"
                         style={{ zIndex: 9999 }}
                         onMouseEnter={() => setProductsMenuOpen(true)}
@@ -89,29 +130,73 @@ export const Header: React.FC = () => {
                   {item.label}
                 </a>
               )
-            ))}
-            
+            )}
+
             {/* Language Selector */}
-            <button className="flex items-center gap-1.5 text-[15px] font-medium text-white hover:text-cyan-400 transition-colors">
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="10" strokeWidth="2"/>
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+            <button
+              onClick={() => setLanguageMenuOpen(!languageMenuOpen)}
+              className="relative flex items-center gap-1.5 text-[15px] font-medium text-white hover:text-cyan-400 transition-colors"
+            >
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <circle cx="12" cy="12" r="10" strokeWidth="2" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                />
               </svg>
-              {vi.nav.language}
-              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+              {renderLanguageCode()}
+              <svg
+                className="w-3.5 h-3.5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2.5}
+                  d="M19 9l-7 7-7-7"
+                />
               </svg>
+              {languageMenuOpen && (
+                <div
+                  className="absolute flex flex-col gap-y-1 px-3 py-2 rounded-md shadow-md w-[100px] top-6 bg-white"
+                  ref={languageDropdownRef}
+                >
+                  {languageItems.map((item) => (
+                    <p
+                      key={item.value}
+                      className="text-dark-hover"
+                      onClick={() => {
+                        localStorageUtil.set(
+                          LOCAL_STORAGE_KEY.LANGUAGE,
+                          item.value
+                        )
+                      }}
+                    >
+                      {item.label}
+                    </p>
+                  ))}
+                </div>
+              )}
             </button>
-            
+
             {/* CTA Button */}
-            <Link 
-              href="/contact"
+            <Link
+              href={ROUTES.CONTACT}
               className="px-6 py-2.5 text-[15px] font-semibold text-white bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full hover:from-cyan-400 hover:to-purple-500 transition-all shadow-lg shadow-cyan-500/30"
             >
               {vi.nav.contact}
             </Link>
           </div>
-          
+
           {/* Mobile Menu Button */}
           <button
             className="lg:hidden p-2 text-white"
@@ -119,22 +204,42 @@ export const Header: React.FC = () => {
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? (
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
               </svg>
             ) : (
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
               </svg>
             )}
           </button>
         </div>
-        
+
         {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div className="lg:hidden py-4 border-t border-white/10">
             <div className="flex flex-col gap-4">
-              {navItems.map((item) => (
+              {navItems.map((item) =>
                 item.hasDropdown ? (
                   <div key={item.label} className="flex flex-col gap-2">
                     <Link
@@ -167,9 +272,9 @@ export const Header: React.FC = () => {
                     {item.label}
                   </a>
                 )
-              ))}
-              <Link 
-                href="/contact"
+              )}
+              <Link
+                href={ROUTES.CONTACT}
                 className="px-6 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full hover:from-cyan-400 hover:to-purple-500 transition-all shadow-lg shadow-cyan-500/30 mt-2 inline-block text-center"
                 onClick={() => setMobileMenuOpen(false)}
               >
@@ -182,4 +287,3 @@ export const Header: React.FC = () => {
     </header>
   )
 }
-

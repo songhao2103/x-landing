@@ -1,4 +1,6 @@
+import { ROUTES } from '@/lib/constants/routes'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 export interface LogoProps {
@@ -6,20 +8,22 @@ export interface LogoProps {
   className?: string
 }
 
-export const Logo: React.FC<LogoProps> = ({ variant = 'default', className = '' }) => {
+export const Logo: React.FC<LogoProps> = ({
+  variant = 'default',
+  className = '',
+}) => {
   const sizeClass = 'h-8 md:h-10'
-  
+
   return (
-    <div className={`flex items-center ${className}`}>
+    <Link className={`flex items-center ${className}`} href={ROUTES.HOME}>
       <Image
         src="/images/icons/logo.png"
         alt="XFUTURE Logo"
-        width={ 140}
-        height={ 40}
+        width={140}
+        height={40}
         className={`${sizeClass} w-auto object-contain`}
         priority
       />
-    </div>
+    </Link>
   )
 }
-

@@ -8,26 +8,35 @@ export const vi = {
     language: 'VI',
     contact: 'Liên hệ',
   },
+  language: {
+    vietnamese: 'Tiếng Việt',
+    english: 'Tiếng Anh',
+  },
   hero: {
     title: 'Nâng tầm trí tuệ\nKiến tạo tương lai',
-    description: 'XFuture là đơn vị ai-ven & tiên phong chuyển đổi dữ liệu trên nền tảng AI, với 80i thực chuyên gia nhặc chính động hành động doanh nghiệp bứt ra thành công số qua toàn diện thánh quả kiệt sủa và năng lực bền vững.',
+    description:
+      'XFuture là đơn vị ai-ven & tiên phong chuyển đổi dữ liệu trên nền tảng AI, với 80i thực chuyên gia nhặc chính động hành động doanh nghiệp bứt ra thành công số qua toàn diện thánh quả kiệt sủa và năng lực bền vững.',
     cta: 'Liên hệ tư vấn',
     features: {
       growth: {
         title: 'GROWTH MARKETING',
-        description: 'Tạo ra 100m+ người dùng mới mỗi tháng cho những thương hiệu hàng đầu với kênh digital automation tối ưu',
+        description:
+          'Tạo ra 100m+ người dùng mới mỗi tháng cho những thương hiệu hàng đầu với kênh digital automation tối ưu',
       },
       boost: {
         title: 'BOOST SALES',
-        description: 'Thực hiệu, tương tối ưu hóa đội nhóm AI tăng tốc hiệu quả 20% và với hổ trợ chốt deal, phân vân tích các vấn đề, mở rộng khách hàng',
+        description:
+          'Thực hiệu, tương tối ưu hóa đội nhóm AI tăng tốc hiệu quả 20% và với hổ trợ chốt deal, phân vân tích các vấn đề, mở rộng khách hàng',
       },
       enhance: {
         title: 'ENHANCE OPERATION',
-        description: 'Chủ động, dịch vụ tạo thành dịch sự nhiệt AI tối ưu hóa hách đệm số hóa doanh nghiệp với đầy đủ các bài toán vật lả thí X.',
+        description:
+          'Chủ động, dịch vụ tạo thành dịch sự nhiệt AI tối ưu hóa hách đệm số hóa doanh nghiệp với đầy đủ các bài toán vật lả thí X.',
       },
       improve: {
         title: 'IMPROVE COLLECTION',
-        description: 'Tư anh II tăng hiệu quả công việc thu hồi AI thúc thúc đấy việc thu hồi công nợ hiệu quả với công cụ chăm sóc và thu hồi công nợ giải pháp hiệu quả.',
+        description:
+          'Tư anh II tăng hiệu quả công việc thu hồi AI thúc thúc đấy việc thu hồi công nợ hiệu quả với công cụ chăm sóc và thu hồi công nợ giải pháp hiệu quả.',
       },
     },
   },
@@ -58,12 +67,14 @@ export const vi = {
       approach: {
         title: 'Tiếp cận hiệu quả đúng người - đúng thời điểm',
       },
-      description: 'Nền tảng kết nối giữa doanh nghiệp và các bệ sản thái: SaaS, giúp thương hiệu, quảng hồ sản phẩm trực tiếp đến đúng người dùng bạc ngày họng các kênh tương thông dạng số hộ được.',
+      description:
+        'Nền tảng kết nối giữa doanh nghiệp và các bệ sản thái: SaaS, giúp thương hiệu, quảng hồ sản phẩm trực tiếp đến đúng người dùng bạc ngày họng các kênh tương thông dạng số hộ được.',
       cta: 'Liên hệ tư vấn',
       hero: {
         tag: 'PROMO',
         title: 'In-SaaS Promotion Platform',
-        description: 'Nền tảng kết nối giữa doanh nghiệp và các hệ sinh thái SaaS, giúp thương hiệu quảng bá sản phẩm trực tiếp đến đúng người đúng lúc, ngay trong các phần mềm mà khách hàng đang sử dụng.',
+        description:
+          'Nền tảng kết nối giữa doanh nghiệp và các hệ sinh thái SaaS, giúp thương hiệu quảng bá sản phẩm trực tiếp đến đúng người đúng lúc, ngay trong các phần mềm mà khách hàng đang sử dụng.',
       },
       benefits: {
         title: 'Lợi ích mang lại',
@@ -75,11 +86,13 @@ export const vi = {
           },
           {
             title: 'Mở rộng nguồn doanh thu mới',
-            description: 'Kiểm soát hiển thị & trải nghiệm\nTích hợp dễ dàng (API/SDK)',
+            description:
+              'Kiểm soát hiển thị & trải nghiệm\nTích hợp dễ dàng (API/SDK)',
           },
           {
             title: 'Dịch vụ uy tín, đúng nhu cầu',
-            description: 'Không làm phiền\nBảo mật & riêng tư\nTuân thủ nghị định 13',
+            description:
+              'Không làm phiền\nBảo mật & riêng tư\nTuân thủ nghị định 13',
           },
         ],
       },
@@ -90,11 +103,13 @@ export const vi = {
             id: 'business',
             label: 'Đối với Doanh nghiệp',
             title: 'Đối với Doanh nghiệp',
-            description: 'Tiếp cận cộng đồng chất lượng : truyền thông đến người dùng hoạt động hằng ngày là chủ kinh doanh, nhân viên văn phòng, kinh doanh online, nhà sáng tạo nội dung...',
+            description:
+              'Tiếp cận cộng đồng chất lượng : truyền thông đến người dùng hoạt động hằng ngày là chủ kinh doanh, nhân viên văn phòng, kinh doanh online, nhà sáng tạo nội dung...',
             features: [
               '+~15% Tỷ lệ duyệt: với hồ sơ đăng ký nhu cầu thật từ khách hàng đã được xác thực khi dùng trong phần mềm SaaS',
             ],
-            highlight: 'Chi phí theo kết quả (CPDeal): Chỉ phát sinh chi phí khi đã duyệt/giải ngân khách hàng thành công. Giảm ~20% chi phí & thời gian so với các kênh Social Ads',
+            highlight:
+              'Chi phí theo kết quả (CPDeal): Chỉ phát sinh chi phí khi đã duyệt/giải ngân khách hàng thành công. Giảm ~20% chi phí & thời gian so với các kênh Social Ads',
           },
           {
             id: 'saas',
@@ -127,7 +142,8 @@ export const vi = {
           {
             step: 1,
             title: 'Khám phá sản phẩm',
-            description: 'Click vào banner/links để xem ưu đãi và điều kiện của khoản vay/thẻ tín dụng.',
+            description:
+              'Click vào banner/links để xem ưu đãi và điều kiện của khoản vay/thẻ tín dụng.',
           },
           {
             step: 2,
@@ -137,34 +153,40 @@ export const vi = {
           {
             step: 3,
             title: 'Tạo hồ sơ trực tuyến',
-            description: 'Điền thông tin theo form;Upload giấy tờ cá nhân; Gửi hồ sơ online',
+            description:
+              'Điền thông tin theo form;Upload giấy tờ cá nhân; Gửi hồ sơ online',
           },
           {
             step: 4,
             title: 'eKYC và phê duyệt',
-            description: 'Xác thực danh tính bằng eKYC nhanh chóng. Hồ sơ được phê duyệt tự động hoặc trong thời gian ngắn.',
+            description:
+              'Xác thực danh tính bằng eKYC nhanh chóng. Hồ sơ được phê duyệt tự động hoặc trong thời gian ngắn.',
           },
           {
             step: 5,
             title: 'Giải ngân/ mở thẻ',
-            description: 'Khoản vay được giải ngân ngay sau khi duyệt, hoặc thẻ tín dụng sẽ được phát hành và gửi đến bạn.',
+            description:
+              'Khoản vay được giải ngân ngay sau khi duyệt, hoặc thẻ tín dụng sẽ được phát hành và gửi đến bạn.',
           },
         ],
       },
     },
     xomi: {
       title: 'XOMI',
-      description: 'Nền tảng đệ kịnh hợp nhặt mội điếm chạm giữa doanh nghiệp và khách hàng bằng công nghệ AI động hoá tương tác nâng cao hiệu suất và năng tạm trải nghiệm đên toàn thành một khách hàng.',
+      description:
+        'Nền tảng đệ kịnh hợp nhặt mội điếm chạm giữa doanh nghiệp và khách hàng bằng công nghệ AI động hoá tương tác nâng cao hiệu suất và năng tạm trải nghiệm đên toàn thành một khách hàng.',
       cta: 'Tìm hiểu thêm',
     },
     xbiz: {
       title: 'XBIZ',
-      description: 'Dịch vụ tư vấn và triển khai chuyển đổi số thực chước, đồng hành cùng doanh nghiệp từ hộ hoạ mở định hành số tăng được hiệu quả và năng cao lược cạnh tranh mành.',
+      description:
+        'Dịch vụ tư vấn và triển khai chuyển đổi số thực chước, đồng hành cùng doanh nghiệp từ hộ hoạ mở định hành số tăng được hiệu quả và năng cao lược cạnh tranh mành.',
       cta: 'Tìm hiểu thêm',
     },
     xtech: {
       title: 'XTECH',
-      description: 'Dịch vụ phát triển, tạo thiết, tích hợp, thiết kết năng dựa trên nền tảng và kiến chuyển kiến trực từ thuật sản các. Giúp doanh nghiệp chuyển đổi lịnh hoạt, tạl ra cửả phác ngườm hộc và đảy tri hiệu quả vận hành cả định.',
+      description:
+        'Dịch vụ phát triển, tạo thiết, tích hợp, thiết kết năng dựa trên nền tảng và kiến chuyển kiến trực từ thuật sản các. Giúp doanh nghiệp chuyển đổi lịnh hoạt, tạl ra cửả phác ngườm hộc và đảy tri hiệu quả vận hành cả định.',
       cta: 'Tìm hiểu thêm',
     },
   },
@@ -214,10 +236,12 @@ export const vi = {
   },
   contact: {
     title: 'Liên hệ tư vấn',
-    description: 'Để được tư vấn tốt nhất, bạn vui lòng để lại thông tin liên hệ và nhu cầu của mình, chúng tôi sẽ liên lạc với bạn trong 24h giờ',
+    description:
+      'Để được tư vấn tốt nhất, bạn vui lòng để lại thông tin liên hệ và nhu cầu của mình, chúng tôi sẽ liên lạc với bạn trong 24h giờ',
     phone: '(+84) 0938338651',
     email: 'support@xfuture.vn',
-    address: 'Sunshine Sky City, Số 4 Phú Thuận, P. Tân Mỹ (Q. 7 cũ), TP. Hồ Chí Minh',
+    address:
+      'Sunshine Sky City, Số 4 Phú Thuận, P. Tân Mỹ (Q. 7 cũ), TP. Hồ Chí Minh',
     form: {
       fullName: 'Họ và Tên',
       email: 'Email',
@@ -270,4 +294,3 @@ export const vi = {
 } as const
 
 export type LocaleType = typeof vi
-

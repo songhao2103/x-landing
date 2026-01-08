@@ -1,54 +1,57 @@
-import { TittleSection } from "@/components/ui/TittleSection";
-import { vi } from "@/lib/locales/vi";
-import Image from "next/image";
-import React from "react";
+import ImageLang from '@/components/ui/ImageLang'
+import { TittleSection } from '@/components/ui/TittleSection'
+import { vi } from '@/lib/locales/vi'
+import Image from 'next/image'
+import React from 'react'
 
 export const PlatformOverview: React.FC = () => {
   const services = [
     {
       tag: vi.platform.services.xpromo.tag,
       title: vi.platform.services.xpromo.title,
-      position: "top-left",
-      logo: "/images/icons/xpromo_white.png",
+      position: 'top-left',
+      logo: '/images/icons/xpromo_white.png',
     },
     {
       tag: vi.platform.services.xai.tag,
       title: vi.platform.services.xai.title,
-      position: "top-right",
-      logo: "/images/icons/xomi_white.png",
+      position: 'top-right',
+      logo: '/images/icons/xomi_white.png',
     },
     {
       tag: vi.platform.services.xbiz.tag,
       title: vi.platform.services.xbiz.title,
-      position: "bottom-left",
-      logo: "/images/icons/xbiz_white.png",
+      position: 'bottom-left',
+      logo: '/images/icons/xbiz_white.png',
     },
     {
       tag: vi.platform.services.xtech.tag,
       title: vi.platform.services.xtech.title,
-      position: "bottom-right",
-      logo: "/images/icons/xtech_white.png",
+      position: 'bottom-right',
+      logo: '/images/icons/xtech_white.png',
     },
-  ];
+  ]
 
   const roundedClasses = {
-    "top-left":
-      "rounded-tr-[25px] rounded-bl-[25px] lg:rounded-tr-[50px] lg:rounded-bl-[50px]",
-    "top-right":
-      "rounded-tl-[25px] rounded-br-[25px] lg:rounded-tl-[50px] lg:rounded-br-[50px]",
-    "bottom-left":
-      "rounded-tl-[25px] rounded-br-[25px] lg:rounded-tl-[50px] lg:rounded-br-[50px]",
-    "bottom-right":
-      "rounded-tr-[25px] rounded-bl-[25px] lg:rounded-tr-[50px] lg:rounded-bl-[50px]",
-  };
+    'top-left':
+      'rounded-tr-[25px] rounded-bl-[25px] lg:rounded-tr-[50px] lg:rounded-bl-[50px]',
+    'top-right':
+      'rounded-tl-[25px] rounded-br-[25px] lg:rounded-tl-[50px] lg:rounded-br-[50px]',
+    'bottom-left':
+      'rounded-tl-[25px] rounded-br-[25px] lg:rounded-tl-[50px] lg:rounded-br-[50px]',
+    'bottom-right':
+      'rounded-tr-[25px] rounded-bl-[25px] lg:rounded-tr-[50px] lg:rounded-bl-[50px]',
+  }
 
   return (
     <section className="relative bg-white py-6 lg:pt-40">
       <div className="container mx-auto px-4 lg:px-8 flex flex-col items-center justify-center">
         <TittleSection title={vi.platform.title} />
-        <Image
-          src="/images/backgrounds/service_banner.svg"
-          alt="Service Banner"
+
+        <ImageLang
+          enSrc="/images/contents/homes/service_banner_en.svg"
+          viSrc="/images/contents/homes/service_banner_vi.svg"
+          enAlt="Service Banner"
           width={260}
           height={260}
           className="w-[90%] h-full object-contain"
@@ -56,7 +59,7 @@ export const PlatformOverview: React.FC = () => {
         />
       </div>
     </section>
-  );
+  )
 
   return (
     <section className="relative bg-white pt-6 lg:pt-40">
@@ -83,30 +86,30 @@ export const PlatformOverview: React.FC = () => {
           <div className="absolute inset-0">
             {services.map((service) => {
               const positionStyles = {
-                "top-left": {
-                  top: "15%",
-                  left: "15%",
-                  transform: "translate(-10%, 10%)",
+                'top-left': {
+                  top: '15%',
+                  left: '15%',
+                  transform: 'translate(-10%, 10%)',
                 },
-                "top-right": {
-                  top: "15%",
-                  right: "15%",
-                  transform: "translate(10%, 10%)",
+                'top-right': {
+                  top: '15%',
+                  right: '15%',
+                  transform: 'translate(10%, 10%)',
                 },
-                "bottom-left": {
-                  bottom: "15%",
-                  left: "15%",
-                  transform: "translate(-10%, -10%)",
+                'bottom-left': {
+                  bottom: '15%',
+                  left: '15%',
+                  transform: 'translate(-10%, -10%)',
                 },
-                "bottom-right": {
-                  bottom: "15%",
-                  right: "15%",
-                  transform: "translate(10%, -10%)",
+                'bottom-right': {
+                  bottom: '15%',
+                  right: '15%',
+                  transform: 'translate(10%, -10%)',
                 },
-              };
+              }
 
               const style =
-                positionStyles[service.position as keyof typeof positionStyles];
+                positionStyles[service.position as keyof typeof positionStyles]
 
               return (
                 <div
@@ -142,11 +145,11 @@ export const PlatformOverview: React.FC = () => {
                     {service.title}
                   </p>
                 </div>
-              );
+              )
             })}
           </div>
         </div>
       </div>
     </section>
-  );
-};
+  )
+}

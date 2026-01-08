@@ -1,5 +1,3 @@
-import { Footer } from '@/components/layout/Footer'
-import { Header } from '@/components/layout/Header'
 import { AchievementsSection } from '@/components/sections/AchievementsSection'
 import { ClientsSection } from '@/components/sections/ClientsSection'
 import { HeroSection } from '@/components/sections/HeroSection'
@@ -10,15 +8,14 @@ import { ProductDetails } from '@/components/sections/ProductDetails'
 export default function Home() {
   return (
     <main className="min-h-screen">
-      <Header />
+      {/* <Header /> */}
       <HeroSection />
       <PlatformOverview />
       <ProductDetails />
       <AchievementsSection />
       <IndustriesSection />
       <ClientsSection />
-      <Footer />
+      {/* <Footer /> */}
     </main>
   )
 }
-
