@@ -2,6 +2,7 @@
 
 import { LANGUAGE } from '@/lib/constants/global'
 import { LOCAL_STORAGE_KEY, localStorageUtil } from '@/lib/storage'
+import { usePathname, useRouter } from 'next/navigation'
 import {
   createContext,
   ReactNode,
@@ -18,21 +19,27 @@ interface MainContextValue {
 const LanguageContext = createContext<MainContextValue | null>(null)
 
 const MainProvider = ({ children }: { children: ReactNode }) => {
-  const [lang, setLangState] = useState<LANGUAGE>(LANGUAGE.VI)
-  const [mounted, setMounted] = useState(false)
+  const router = useRouter()
+  const pathname = usePathname()
+
+  const [lang, setLangState] = useState<LANGUAGE>(() => {
+    if (typeof window === 'undefined') return LANGUAGE.VI
+    return (
+      localStorageUtil.get<LANGUAGE>(LOCAL_STORAGE_KEY.LANGUAGE) ?? LANGUAGE.VI
+    )
+  })
 
   useEffect(() => {
-    setMounted(true)
-    const stored = localStorageUtil.get<LANGUAGE>(LOCAL_STORAGE_KEY.LANGUAGE)
-    if (stored) setLangState(stored)
-  }, [])
+    const urlLang = pathname.startsWith('/en') ? LANGUAGE.EN : LANGUAGE.VI
+
+    setLangState(urlLang)
+    localStorageUtil.set(LOCAL_STORAGE_KEY.LANGUAGE, urlLang)
+  }, [pathname])
 
   const setLang = (next: LANGUAGE) => {
-    setLangState(next)
-    localStorageUtil.set(LOCAL_STORAGE_KEY.LANGUAGE, next)
+    const nextPath = `/${next}${pathname.replace(/^\/(vi|en)/, '')}`
+    router.replace(nextPath, { scroll: false })
   }
-
-  if (!mounted) return null
 
   return (
     <LanguageContext.Provider value={{ lang, setLang }}>

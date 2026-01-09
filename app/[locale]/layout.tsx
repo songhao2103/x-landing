@@ -2,6 +2,8 @@ import MainProvider from '@/app/[locale]/MainProvider'
 import { Footer } from '@/components/layout/Footer'
 import { Header } from '@/components/layout/Header'
 import type { Metadata } from 'next'
+import { NextIntlClientProvider } from 'next-intl'
+import { getMessages } from 'next-intl/server'
 import { Inter } from 'next/font/google'
 import './globals.css'
 
@@ -34,18 +36,23 @@ export const metadata: Metadata = {
   },
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
+  params: { locale },
 }: {
   children: React.ReactNode
+  params: { locale: string }
 }) {
+  const messages = await getMessages()
   return (
-    <html lang="vi" className="scroll-smooth">
+    <html lang={locale} className="scroll-smooth">
       <body className={inter.className}>
         <MainProvider>
           <>
             <Header />
-            {children}
+            <NextIntlClientProvider messages={messages}>
+              {children}
+            </NextIntlClientProvider>
             <Footer />
           </>
         </MainProvider>

@@ -1,0 +1,282 @@
+{
+  "nav": {
+    "products": "Sản phẩm",
+    "solutions": "Giải pháp",
+    "industries": "Lĩnh vực",
+    "resources": "Tài nguyên",
+    "company": "Công ty",
+    "language": "VI",
+    "contact": "Liên hệ"
+  },
+  "language": {
+    "vietnamese": "Tiếng Việt",
+    "english": "Tiếng Anh"
+  },
+  "hero": {
+    "title": "Nâng tầm trí tuệ\nKiến tạo tương lai",
+    "description": "XFuture là đơn vị ai-ven & tiên phong chuyển đổi dữ liệu trên nền tảng AI, với 80i thực chuyên gia nhặc chính động hành động doanh nghiệp bứt ra thành công số qua toàn diện thánh quả kiệt sủa và năng lực bền vững.",
+    "cta": "Liên hệ tư vấn",
+    "features": {
+      "growth": {
+        "title": "GROWTH MARKETING",
+        "description": "Tạo ra 100m+ người dùng mới mỗi tháng cho những thương hiệu hàng đầu với kênh digital automation tối ưu"
+      },
+      "boost": {
+        "title": "BOOST SALES",
+        "description": "Thực hiệu, tương tối ưu hóa đội nhóm AI tăng tốc hiệu quả 20% và với hổ trợ chốt deal, phân vân tích các vấn đề, mở rộng khách hàng"
+      },
+      "enhance": {
+        "title": "ENHANCE OPERATION",
+        "description": "Chủ động, dịch vụ tạo thành dịch sự nhiệt AI tối ưu hóa hách đệm số hóa doanh nghiệp với đầy đủ các bài toán vật lả thí X."
+      },
+      "improve": {
+        "title": "IMPROVE COLLECTION",
+        "description": "Tư anh II tăng hiệu quả công việc thu hồi AI thúc thúc đấy việc thu hồi công nợ hiệu quả với công cụ chăm sóc và thu hồi công nợ giải pháp hiệu quả."
+      }
+    }
+  },
+  "platform": {
+    "title": "NỀN TẢNG & DỊCH VỤ",
+    "services": {
+      "xpromo": {
+        "title": "In SaaS Promotion Platform",
+        "tag": "XPROMO"
+      },
+      "xai": {
+        "title": "AI-Driven Customer-interaction Platform",
+        "tag": "XAI"
+      },
+      "xbiz": {
+        "title": "Digital Transformation Consulting Service",
+        "tag": "XBIZ"
+      },
+      "xtech": {
+        "title": "Tailored Integration & Development Service",
+        "tag": "XTECH"
+      }
+    }
+  },
+  "products": {
+    "xpromo": {
+      "title": "XPROMO",
+      "approach": {
+        "title": "Tiếp cận hiệu quả đúng người - đúng thời điểm"
+      },
+      "description": "Nền tảng kết nối giữa doanh nghiệp và các bệ sản thái: SaaS, giúp thương hiệu, quảng hồ sản phẩm trực tiếp đến đúng người dùng bạc ngày họng các kênh tương thông dạng số hộ được.",
+      "cta": "Liên hệ tư vấn",
+      "hero": {
+        "tag": "PROMO",
+        "title": "In-SaaS Promotion Platform",
+        "description": "Nền tảng kết nối giữa doanh nghiệp và các hệ sinh thái SaaS, giúp thương hiệu quảng bá sản phẩm trực tiếp đến đúng người đúng lúc, ngay trong các phần mềm mà khách hàng đang sử dụng."
+      },
+      "benefits": {
+        "title": "Lợi ích mang lại",
+        "subtitle": "Kết nối nhu cầu - Gia tăng giá trị",
+        "items": [
+          {
+            "title": "Tiếp cận 500k++ khách hàng chất lượng",
+            "description": "CPDeal - trả phí theo deal\nGo-live sau ~1-2 tuần"
+          },
+          {
+            "title": "Mở rộng nguồn doanh thu mới",
+            "description": "Kiểm soát hiển thị & trải nghiệm\nTích hợp dễ dàng (API/SDK)"
+          },
+          {
+            "title": "Dịch vụ uy tín, đúng nhu cầu",
+            "description": "Không làm phiền\nBảo mật & riêng tư\nTuân thủ nghị định 13"
+          }
+        ]
+      },
+      "tabs": {
+        "title": "Tiếp cận hiệu quả đúng người - đúng thời điểm",
+        "items": [
+          {
+            "id": "business",
+            "label": "Đối với Doanh nghiệp",
+            "title": "Đối với Doanh nghiệp",
+            "description": "Tiếp cận cộng đồng chất lượng : truyền thông đến người dùng hoạt động hằng ngày là chủ kinh doanh, nhân viên văn phòng, kinh doanh online, nhà sáng tạo nội dung...",
+            "features": [
+              "+~15% Tỷ lệ duyệt: với hồ sơ đăng ký nhu cầu thật từ khách hàng đã được xác thực khi dùng trong phần mềm SaaS"
+            ],
+            "highlight": "Chi phí theo kết quả (CPDeal): Chỉ phát sinh chi phí khi đã duyệt/giải ngân khách hàng thành công. Giảm ~20% chi phí & thời gian so với các kênh Social Ads"
+          },
+          {
+            "id": "saas",
+            "label": "Đối với Đơn vị SaaS",
+            "title": "Đối với Đơn vị SaaS",
+            "description": "",
+            "features": []
+          },
+          {
+            "id": "user",
+            "label": "Đối với Người dùng",
+            "title": "Đối với Người dùng",
+            "description": "",
+            "features": []
+          }
+        ]
+      },
+      "why": {
+        "title": "Tại sao chọn XPromo?",
+        "items": [
+          {
+            "title": "Tệp khách hàng chất lượng"
+          },
+          {
+            "title": "Sản phẩm tín dụng đa dạng"
+          },
+          {
+            "title": "Tích hợp nhanh chóng 1-2 tuần"
+          },
+          {
+            "title": "Theo dõi kết quả dễ dàng"
+          }
+        ]
+      },
+      "howItWorks": {
+        "title": "Phương thức hoạt động",
+        "steps": [
+          {
+            "step": 1,
+            "title": "Khám phá sản phẩm",
+            "description": "Click vào banner/links để xem ưu đãi và điều kiện của khoản vay/thẻ tín dụng."
+          },
+          {
+            "step": 2,
+            "title": "Khảo sát nhu cầu",
+            "description": "Cung cấp nhu cầu để kiểm tra điều kiện tham gia"
+          },
+          {
+            "step": 3,
+            "title": "Tạo hồ sơ trực tuyến",
+            "description": "Điền thông tin theo form;Upload giấy tờ cá nhân; Gửi hồ sơ online"
+          },
+          {
+            "step": 4,
+            "title": "eKYC và phê duyệt",
+            "description": "Xác thực danh tính bằng eKYC nhanh chóng. Hồ sơ được phê duyệt tự động hoặc trong thời gian ngắn."
+          },
+          {
+            "step": 5,
+            "title": "Giải ngân/ mở thẻ",
+            "description": "Khoản vay được giải ngân ngay sau khi duyệt, hoặc thẻ tín dụng sẽ được phát hành và gửi đến bạn."
+          }
+        ]
+      }
+    },
+    "xomi": {
+      "title": "XOMI",
+      "description": "Nền tảng đệ kịnh hợp nhặt mội điếm chạm giữa doanh nghiệp và khách hàng bằng công nghệ AI động hoá tương tác nâng cao hiệu suất và năng tạm trải nghiệm đên toàn thành một khách hàng.",
+      "cta": "Tìm hiểu thêm"
+    },
+    "xbiz": {
+      "title": "XBIZ",
+      "description": "Dịch vụ tư vấn và triển khai chuyển đổi số thực chước, đồng hành cùng doanh nghiệp từ hộ hoạ mở định hành số tăng được hiệu quả và năng cao lược cạnh tranh mành.",
+      "cta": "Tìm hiểu thêm"
+    },
+    "xtech": {
+      "title": "XTECH",
+      "description": "Dịch vụ phát triển, tạo thiết, tích hợp, thiết kết năng dựa trên nền tảng và kiến chuyển kiến trực từ thuật sản các. Giúp doanh nghiệp chuyển đổi lịnh hoạt, tạl ra cửả phác ngườm hộc và đảy tri hiệu quả vận hành cả định.",
+      "cta": "Tìm hiểu thêm"
+    }
+  },
+  "achievements": {
+    "title": "THÀNH QUẢ ĐẠT ĐƯỢC",
+    "items": {
+      "digitization": {
+        "title": "Số hoá toàn diện",
+        "description": "Bảo vệ dữ liệu,\n Minh bạch thông tin"
+      },
+      "automation": {
+        "title": "Tự động hoá",
+        "description": "Giải phóng triệt để các công việc thủ công cho quản lý"
+      },
+      "efficiency": {
+        "title": "Nâng tầm vị thế",
+        "description": "AI & công nghệ mới mang lại lợi thế cạnh tranh vượt trội"
+      },
+      "loyalty": {
+        "title": "Hàng triệu tương tác",
+        "description": "Đáp ứng ổn định và mở rộng"
+      },
+      "performance": {
+        "title": "Tăng hiệu suất 25%",
+        "description": "Năng lực hoạt động nhân viên"
+      },
+      "cost": {
+        "title": "Giảm 15% chi phí",
+        "description": "Hoạt động vận hành"
+      }
+    }
+  },
+  "industries": {
+    "title": "LĨNH VỰC ĐIỂN HÌNH",
+    "items": {
+      "finance": "Tài chính &\nNgân hàng",
+      "ecommerce": "TMDT &\nBán lẻ",
+      "insurance": "Bảo khởi &\nBảo hiểm",
+      "realestate": "BĐS &\nNghỉ dưỡng",
+      "telecom": "Truyền thông\n& Su kiện",
+      "education": "Giáo dục &\nĐào tạo",
+      "healthcare": "Nhà hàng &\nKhách sạn"
+    }
+  },
+  "clients": {
+    "title": "KHÁCH HÀNG & ĐỐI TÁC"
+  },
+  "contact": {
+    "title": "Liên hệ tư vấn",
+    "description": "Để được tư vấn tốt nhất, bạn vui lòng để lại thông tin liên hệ và nhu cầu của mình, chúng tôi sẽ liên lạc với bạn trong 24h giờ",
+    "phone": "(+84) 0938338651",
+    "email": "support@xfuture.vn",
+    "address": "Sunshine Sky City, Số 4 Phú Thuận, P. Tân Mỹ (Q. 7 cũ), TP. Hồ Chí Minh",
+    "form": {
+      "fullName": "Họ và Tên",
+      "email": "Email",
+      "phone": "Số điện thoại",
+      "company": "Công ty",
+      "message": "Lời nhắn của bạn",
+      "submit": "Gửi yêu cầu"
+    }
+  },
+  "footer": {
+    "info": "Công ty cổ phần giải pháp doanh nghiệp XFuture",
+    "address": "Địa chỉ: Sunshine Skycity, 4 Phú Thuận, P. Tân Mỹ,(Q.7 cũ) HCMC",
+    "phone": "Phone: (+84) 938338651",
+    "email": "Email: contact@xfuture.vn",
+    "products": {
+      "title": "Sản phẩm",
+      "xpromo": "XPromo - Nền tảng Marketing",
+      "xai": "XAI",
+      "xomi": "XOMI",
+      "xbiz": "XBiz",
+      "xtech": "XTech",
+      "automation": "Giải pháp Automation"
+    },
+    "solutions": {
+      "title": "Giải pháp",
+      "growth": "Growth Marketing",
+      "sales": "Boost Sales",
+      "operation": "Enhance Operation",
+      "collection": "Improve Collection"
+    },
+    "industries": {
+      "title": "Lĩnh vực",
+      "finance": "Tài chính & Ngân hàng",
+      "ecommerce": "TMĐT & Bán lẻ",
+      "insurance": "Bảo hiểm",
+      "education": "Giáo dục",
+      "realestate": "Bất động sản"
+    },
+    "company": {
+      "title": "Công ty",
+      "about": "Về chúng tôi",
+      "careers": "Tuyển dụng",
+      "news": "Tin tức & Sự kiện",
+      "contact": "Liên hệ",
+      "partner": "Trở thành đối tác",
+      "privacy": "Chính sách bảo mật",
+      "terms": "Điều khoản & Điều kiện"
+    }
+  }
+}
