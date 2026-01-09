@@ -1,5 +1,5 @@
-import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
+import { Header } from '@/components/layout/Header'
 import { ContactSection } from '@/components/sections/ContactSection'
 
 export default function ContactPage() {
@@ -11,4 +11,3 @@ export default function ContactPage() {
     </main>
   )
 }
-

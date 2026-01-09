@@ -1,3 +1,4 @@
+import MainProvider from '@/app/[locale]/MainProvider'
 import { Footer } from '@/components/layout/Footer'
 import { Header } from '@/components/layout/Header'
 import type { Metadata } from 'next'
@@ -41,9 +42,13 @@ export default function RootLayout({
   return (
     <html lang="vi" className="scroll-smooth">
       <body className={inter.className}>
-        <Header />
-        {children}
-        <Footer />
+        <MainProvider>
+          <>
+            <Header />
+            {children}
+            <Footer />
+          </>
+        </MainProvider>
       </body>
     </html>
   )

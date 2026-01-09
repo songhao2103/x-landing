@@ -1,4 +1,4 @@
-export const LANGUAGE = {
-  VI: 'vi',
-  EN: 'en',
+export enum LANGUAGE {
+  VI = 'vi',
+  EN = 'en',
 }

@@ -1,11 +1,10 @@
 'use client'
 
+import { useMainContext } from '@/app/[locale]/MainProvider'
 import { Logo } from '@/components/ui/Logo'
 import { LANGUAGE } from '@/lib/constants/global'
 import { ROUTES } from '@/lib/constants/routes'
 import { vi } from '@/lib/locales/vi'
-import { LOCAL_STORAGE_KEY, localStorageUtil } from '@/lib/storage'
-import { languageUtils } from '@/lib/utils'
 import { useClickOutside } from '@/lib/utils/hooks'
 import Link from 'next/link'
 import React, { useEffect, useRef, useState } from 'react'
@@ -16,6 +15,7 @@ export const Header: React.FC = () => {
   const [productsMenuOpen, setProductsMenuOpen] = useState(false)
   const languageDropdownRef = useRef<HTMLDivElement>(null)
   const [mounted, setMounted] = useState(false)
+  const { lang, setLang } = useMainContext()
 
   useClickOutside(languageDropdownRef, () => {
     setLanguageMenuOpen(false)
@@ -50,8 +50,8 @@ export const Header: React.FC = () => {
 
   const renderLanguageCode = () => {
     if (!mounted) return ''
-    if (languageUtils.is(LANGUAGE.EN)) return 'EN'
-    if (languageUtils.is(LANGUAGE.VI)) return 'VI'
+    if (lang === LANGUAGE.EN) return 'EN'
+    if (lang === LANGUAGE.VI) return 'VI'
     return ''
   }
 
@@ -175,10 +175,7 @@ export const Header: React.FC = () => {
                       key={item.value}
                       className="text-dark-hover"
                       onClick={() => {
-                        localStorageUtil.set(
-                          LOCAL_STORAGE_KEY.LANGUAGE,
-                          item.value
-                        )
+                        setLang(item.value)
                       }}
                     >
                       {item.label}
