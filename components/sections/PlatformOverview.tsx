@@ -1,32 +1,34 @@
 import ImageLang from '@/components/ui/ImageLang'
 import { TittleSection } from '@/components/ui/TittleSection'
 import { vi } from '@/lib/locales/vi'
+import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import React from 'react'
 
 export const PlatformOverview: React.FC = () => {
+  const t = useTranslations('platform')
   const services = [
     {
-      tag: vi.platform.services.xpromo.tag,
-      title: vi.platform.services.xpromo.title,
+      tag: t('services.xpromo.tag'),
+      title: t('services.xpromo.title'),
       position: 'top-left',
       logo: '/images/icons/xpromo_white.png',
     },
     {
-      tag: vi.platform.services.xai.tag,
-      title: vi.platform.services.xai.title,
+      tag: t('services.xai.tag'),
+      title: t('services.xai.title'),
       position: 'top-right',
       logo: '/images/icons/xomi_white.png',
     },
     {
-      tag: vi.platform.services.xbiz.tag,
-      title: vi.platform.services.xbiz.title,
+      tag: t('services.xbiz.tag'),
+      title: t('services.xbiz.title'),
       position: 'bottom-left',
       logo: '/images/icons/xbiz_white.png',
     },
     {
-      tag: vi.platform.services.xtech.tag,
-      title: vi.platform.services.xtech.title,
+      tag: t('services.xtech.tag'),
+      title: t('services.xtech.title'),
       position: 'bottom-right',
       logo: '/images/icons/xtech_white.png',
     },
@@ -46,7 +48,7 @@ export const PlatformOverview: React.FC = () => {
   return (
     <section className="relative bg-white py-6 lg:pt-40">
       <div className="container mx-auto px-4 lg:px-8 flex flex-col items-center justify-center">
-        <TittleSection title={vi.platform.title} />
+        <TittleSection title={t('title')} />
 
         <ImageLang
           enSrc="/images/contents/homes/service_banner_en.svg"

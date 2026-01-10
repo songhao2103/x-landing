@@ -1,27 +1,27 @@
 import { Button } from '@/components/ui/Button'
 import { Card } from '@/components/ui/Card'
-import { vi } from '@/lib/locales/vi'
 import { useTranslations } from 'next-intl'
 import React from 'react'
 
 export const HeroSection: React.FC = () => {
   const t = useTranslations('hero')
+
   const features = [
     {
       title: t('features.growth.title'),
       description: t('features.growth.description'),
     },
     {
-      title: vi.hero.features.boost.title,
-      description: vi.hero.features.boost.description,
+      title: t('features.boost.title'),
+      description: t('features.boost.description'),
     },
     {
-      title: vi.hero.features.enhance.title,
-      description: vi.hero.features.enhance.description,
+      title: t('features.enhance.title'),
+      description: t('features.enhance.description'),
     },
     {
-      title: vi.hero.features.improve.title,
-      description: vi.hero.features.improve.description,
+      title: t('features.improve.title'),
+      description: t('features.improve.description'),
     },
   ]
 
@@ -44,21 +44,23 @@ export const HeroSection: React.FC = () => {
           {/* Left Content */}
           <div className="text-white space-y-6 lg:space-y-8">
             <h1 className="text-hero-mobile lg:text-hero font-bold leading-tight">
-              {vi.hero.title.split('\n').map((line, index) => (
-                <React.Fragment key={index}>
-                  {line}
-                  {index === 0 && <br />}
-                </React.Fragment>
-              ))}
+              {t('title')
+                .split('\n')
+                .map((line, index) => (
+                  <React.Fragment key={index}>
+                    {line}
+                    {index === 0 && <br />}
+                  </React.Fragment>
+                ))}
             </h1>
 
             <p className="text-base lg:text-lg text-gray-300 leading-relaxed max-w-2xl">
-              {vi.hero.description}
+              {t('description')}
             </p>
 
             <div className="pt-4">
               <Button variant="primary" size="lg">
-                {vi.hero.cta}
+                {t('cta')}
               </Button>
             </div>
           </div>

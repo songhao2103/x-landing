@@ -1,4 +1,3 @@
-import { HeroProductSectionProps } from '@/app/type'
 import { ApproachSection } from '@/components/sections/ApproachSection'
 import { HeroProductSection } from '@/components/sections/HeroProductSection'
 import { ProductBenefitsSection } from '@/components/sections/ProductBenefitsSection'
@@ -7,25 +6,13 @@ import { vi } from '@/lib/locales/vi'
 export default function XPromoPage() {
   const product = vi.products.xpromo
 
-  const dataIntro: HeroProductSectionProps = {
-    logo: '/images/icons/xpromo_logo.svg',
-    banner: '/images/backgrounds/xpromo/intro_banner.png',
-    image: '/images/icons/xpromo/logo_saas.svg',
-    title: 'In-SaaS Promotion Platform',
-    description: vi.products.xpromo.description,
-    cta: vi.products.xpromo.cta,
-  }
-
   return (
     <main className="min-h-screen">
       {/* <Header /> */}
 
       {/* Hero Section */}
-      <HeroProductSection {...dataIntro} />
-      <ApproachSection
-        title={vi.products.xpromo.approach.title}
-        image={'/images/icons/xpromo/promo_flow.svg'}
-      />
+      <HeroProductSection />
+      <ApproachSection />
       {/* Benefits Section */}
       <ProductBenefitsSection
         title={product.benefits.title}

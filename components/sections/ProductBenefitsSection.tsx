@@ -2,6 +2,7 @@
 
 import TabsSection from '@/components/ui/TabSection'
 import { TittleSection } from '@/components/ui/TittleSection'
+import { useTranslations } from 'next-intl'
 import { useRouter } from 'next/navigation'
 import React from 'react'
 
@@ -24,6 +25,7 @@ export const ProductBenefitsSection: React.FC<ProductBenefitsSectionProps> = ({
   benefits,
   className = '',
 }) => {
+  const t = useTranslations('products.xpromo')
   const router = useRouter()
 
   return (
@@ -38,8 +40,12 @@ export const ProductBenefitsSection: React.FC<ProductBenefitsSectionProps> = ({
     >
       <div className="container mx-auto px-8 lg:px-12">
         <div className="text-center mb-12 lg:mb-16">
-          <TittleSection title={title} color="white" noMargin={true} />
-          <p className="text-lg text-white/80 mt-4">{subtitle}</p>
+          <TittleSection
+            title={t('benefits.title')}
+            color="white"
+            noMargin={true}
+          />
+          <p className="text-lg text-white/80 mt-4">{t('benefits.subtitle')}</p>
         </div>
         <div>
           <TabsSection

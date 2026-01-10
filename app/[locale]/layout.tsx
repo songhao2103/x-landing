@@ -1,4 +1,3 @@
-import MainProvider from '@/app/[locale]/MainProvider'
 import { Footer } from '@/components/layout/Footer'
 import { Header } from '@/components/layout/Header'
 import type { Metadata } from 'next'
@@ -47,15 +46,11 @@ export default async function RootLayout({
   return (
     <html lang={locale} className="scroll-smooth">
       <body className={inter.className}>
-        <MainProvider>
-          <>
-            <Header />
-            <NextIntlClientProvider messages={messages}>
-              {children}
-            </NextIntlClientProvider>
-            <Footer />
-          </>
-        </MainProvider>
+        <NextIntlClientProvider messages={messages}>
+          <Header />
+          {children}
+          <Footer />
+        </NextIntlClientProvider>
       </body>
     </html>
   )

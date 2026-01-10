@@ -1,25 +1,282 @@
 {
+  "nav": {
+    "products": "Products",
+    "solutions": "Solutions",
+    "industries": "Industries",
+    "resources": "Resources",
+    "company": "Company",
+    "language": "EN",
+    "contact": "Contact"
+  },
+  "language": {
+    "vietnamese": "Vietnamese",
+    "english": "English"
+  },
   "hero": {
-    "title": "Nâng tầm trí tuệ\nKiến tạo tương lai",
-    "description": "XFuture là đơn vị ai-ven & tiên phong chuyển đổi dữ liệu trên nền tảng AI, với 80i thực chuyên gia nhặc chính động hành động doanh nghiệp bứt ra thành công số qua toàn diện thánh quả kiệt sủa và năng lực bền vững.",
-    "cta": "Liên hệ tư vấn",
+    "title": "Empowering Intelligence\nShaping the Future",
+    "description": "XFuture is an AI-driven and data transformation pioneer, powered by a team of 80+ experienced experts, accompanying enterprises on their journey to comprehensive digital success with breakthrough performance and sustainable capabilities.",
+    "cta": "Get Consultation",
     "features": {
       "growth": {
-        "title": "GROWTH MARKETING tiếng anhádasdasádasdasdasdd",
-        "description": "Tạo ra 100m+ người dùng mới mỗi tháng cho những thương hiệu hàng đầu với kênh digital automation tối ưu tiếng anh"
+        "title": "GROWTH MARKETING",
+        "description": "Generate 100M+ new users monthly for leading brands through optimized digital automation channels"
       },
       "boost": {
         "title": "BOOST SALES",
-        "description": "Thực hiệu, tương tối ưu hóa đội nhóm AI tăng tốc hiệu quả 20% và với hổ trợ chốt deal, phân vân tích các vấn đề, mở rộng khách hàng"
+        "description": "AI-powered team optimization to accelerate performance by 20%, supporting deal closing, insight analysis, and customer expansion"
       },
       "enhance": {
         "title": "ENHANCE OPERATION",
-        "description": "Chủ động, dịch vụ tạo thành dịch sự nhiệt AI tối ưu hóa hách đệm số hóa doanh nghiệp với đầy đủ các bài toán vật lả thí X."
+        "description": "Proactive AI-driven services that digitize and optimize enterprise operations across complex business scenarios"
       },
       "improve": {
         "title": "IMPROVE COLLECTION",
-        "description": "Tư anh II tăng hiệu quả công việc thu hồi AI thúc thúc đấy việc thu hồi công nợ hiệu quả với công cụ chăm sóc và thu hồi công nợ giải pháp hiệu quả."
+        "description": "AI-assisted collection workflows that boost debt recovery efficiency with smart customer care and collection tools"
       }
+    }
+  },
+  "platform": {
+    "title": "PLATFORMS & SERVICES",
+    "services": {
+      "xpromo": {
+        "title": "In-SaaS Promotion Platform",
+        "tag": "XPROMO"
+      },
+      "xai": {
+        "title": "AI-Driven Customer Interaction Platform",
+        "tag": "XAI"
+      },
+      "xbiz": {
+        "title": "Digital Transformation Consulting Service",
+        "tag": "XBIZ"
+      },
+      "xtech": {
+        "title": "Tailored Integration & Development Service",
+        "tag": "XTECH"
+      }
+    }
+  },
+  "products": {
+    "xpromo": {
+      "title": "XPROMO",
+      "approach": {
+        "title": "Reach the Right Users at the Right Time"
+      },
+      "description": "A platform connecting enterprises with SaaS ecosystems, enabling brands to promote products directly to the right users at the exact moment within digital touchpoints.",
+      "cta": "Get Consultation",
+      "hero": {
+        "tag": "PROMO",
+        "title": "In-SaaS Promotion Platform",
+        "description": "A platform connecting enterprises with SaaS ecosystems, allowing brands to deliver promotions directly to users inside the software they actively use."
+      },
+      "benefits": {
+        "title": "Key Benefits",
+        "subtitle": "Connecting Demand – Unlocking Value",
+        "items": [
+          {
+            "title": "Access 500k++ high-quality users",
+            "description": "CPDeal – pay per successful deal\nGo-live within ~1–2 weeks"
+          },
+          {
+            "title": "Unlock new revenue streams",
+            "description": "Full control of display & experience\nEasy integration (API/SDK)"
+          },
+          {
+            "title": "Trusted and relevant services",
+            "description": "Non-intrusive\nPrivacy & data security\nCompliant with Decree 13"
+          }
+        ]
+      },
+      "tabs": {
+        "title": "Reach the Right Users at the Right Time",
+        "items": [
+          {
+            "id": "business",
+            "label": "For Enterprises",
+            "title": "For Enterprises",
+            "description": "Reach high-quality communities including business owners, office professionals, online sellers, and content creators who are active daily on SaaS platforms.",
+            "features": [
+              "+~15% approval rate with verified real-demand applications from authenticated SaaS users"
+            ],
+            "highlight": "Performance-based cost (CPDeal): Pay only when applications are approved or disbursed. Save ~20% cost and time compared to Social Ads"
+          },
+          {
+            "id": "saas",
+            "label": "For SaaS Providers",
+            "title": "For SaaS Providers",
+            "description": "",
+            "features": []
+          },
+          {
+            "id": "user",
+            "label": "For Users",
+            "title": "For Users",
+            "description": "",
+            "features": []
+          }
+        ]
+      },
+      "why": {
+        "title": "Why Choose XPromo?",
+        "items": [
+          {
+            "title": "High-quality customer segments"
+          },
+          {
+            "title": "Diverse financial products"
+          },
+          {
+            "title": "Fast integration in 1–2 weeks"
+          },
+          {
+            "title": "Transparent performance tracking"
+          }
+        ]
+      },
+      "howItWorks": {
+        "title": "How It Works",
+        "steps": [
+          {
+            "step": 1,
+            "title": "Explore offers",
+            "description": "Click banners or links to view promotions and credit terms."
+          },
+          {
+            "step": 2,
+            "title": "Needs assessment",
+            "description": "Submit requirements to check eligibility"
+          },
+          {
+            "step": 3,
+            "title": "Online application",
+            "description": "Fill in the form; upload documents; submit online"
+          },
+          {
+            "step": 4,
+            "title": "eKYC & approval",
+            "description": "Fast identity verification via eKYC. Applications are approved automatically or within a short time."
+          },
+          {
+            "step": 5,
+            "title": "Disbursement / card issuance",
+            "description": "Loans are disbursed immediately after approval, or credit cards are issued and delivered."
+          }
+        ]
+      }
+    },
+    "xomi": {
+      "title": "XOMI",
+      "description": "An AI-powered platform that unifies all enterprise–customer touchpoints, automating interactions to boost productivity and deliver a seamless end-to-end customer experience.",
+      "cta": "Learn more"
+    },
+    "xbiz": {
+      "title": "XBIZ",
+      "description": "Practical digital transformation consulting services that accompany enterprises from strategy to execution, driving efficiency and competitive advantage.",
+      "cta": "Learn more"
+    },
+    "xtech": {
+      "title": "XTECH",
+      "description": "Custom development, system integration, and technology architecture services that enable flexible transformation and operational excellence.",
+      "cta": "Learn more"
+    }
+  },
+  "achievements": {
+    "title": "ACHIEVEMENTS",
+    "items": {
+      "digitization": {
+        "title": "End-to-end digitization",
+        "description": "Data security\nInformation transparency"
+      },
+      "automation": {
+        "title": "Automation",
+        "description": "Eliminate manual workloads for management"
+      },
+      "efficiency": {
+        "title": "Competitive edge",
+        "description": "AI and emerging technologies deliver superior advantages"
+      },
+      "loyalty": {
+        "title": "Millions of interactions",
+        "description": "Stable and scalable performance"
+      },
+      "performance": {
+        "title": "25% productivity increase",
+        "description": "Employee performance"
+      },
+      "cost": {
+        "title": "15% cost reduction",
+        "description": "Operational expenses"
+      }
+    }
+  },
+  "industries": {
+    "title": "KEY INDUSTRIES",
+    "items": {
+      "finance": "Finance &\nBanking",
+      "ecommerce": "E-commerce &\nRetail",
+      "insurance": "Fintech &\nInsurance",
+      "realestate": "Real Estate &\nHospitality",
+      "telecom": "Media\n& Events",
+      "education": "Education &\nTraining",
+      "healthcare": "F&B &\nHospitality"
+    }
+  },
+  "clients": {
+    "title": "CLIENTS & PARTNERS"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "description": "For the best consultation, please leave your contact information and requirements. Our team will reach out within 24 hours.",
+    "phone": "(+84) 0938338651",
+    "email": "support@xfuture.vn",
+    "address": "Sunshine Sky City, No. 4 Phu Thuan, Tan My Ward (former District 7), Ho Chi Minh City",
+    "form": {
+      "fullName": "Full Name",
+      "email": "Email",
+      "phone": "Phone Number",
+      "company": "Company",
+      "message": "Your Message",
+      "submit": "Submit"
+    }
+  },
+  "footer": {
+    "info": "XFuture Enterprise Solutions Joint Stock Company",
+    "address": "Address: Sunshine Skycity, 4 Phu Thuan, Tan My Ward (former District 7), HCMC",
+    "phone": "Phone: (+84) 938338651",
+    "email": "Email: contact@xfuture.vn",
+    "products": {
+      "title": "Products",
+      "xpromo": "XPromo – Marketing Platform",
+      "xai": "XAI",
+      "xomi": "XOMI",
+      "xbiz": "XBiz",
+      "xtech": "XTech",
+      "automation": "Automation Solutions"
+    },
+    "solutions": {
+      "title": "Solutions",
+      "growth": "Growth Marketing",
+      "sales": "Boost Sales",
+      "operation": "Enhance Operation",
+      "collection": "Improve Collection"
+    },
+    "industries": {
+      "title": "Industries",
+      "finance": "Finance & Banking",
+      "ecommerce": "E-commerce & Retail",
+      "insurance": "Insurance",
+      "education": "Education",
+      "realestate": "Real Estate"
+    },
+    "company": {
+      "title": "Company",
+      "about": "About Us",
+      "careers": "Careers",
+      "news": "News & Events",
+      "contact": "Contact",
+      "partner": "Become a Partner",
+      "privacy": "Privacy Policy",
+      "terms": "Terms & Conditions"
     }
   }
 }

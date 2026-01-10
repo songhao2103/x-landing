@@ -1,7 +1,7 @@
 'use client'
 
-import { useMainContext } from '@/app/[locale]/MainProvider'
 import { LANGUAGE } from '@/lib/constants/global'
+import { useLocale } from 'next-intl'
 import Image, { ImageProps as NextImageProps } from 'next/image'
 
 interface ImageLangProps extends Omit<NextImageProps, 'src' | 'alt'> {
@@ -18,8 +18,8 @@ const ImageLang = ({
   viAlt = '',
   ...rest
 }: ImageLangProps) => {
-  const { lang } = useMainContext()
-  const isEN = lang === LANGUAGE.EN
+  const locale = useLocale()
+  const isEN = locale === LANGUAGE.EN
 
   return (
     <Image src={isEN ? enSrc : viSrc} alt={isEN ? enAlt : viAlt} {...rest} />

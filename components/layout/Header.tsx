@@ -1,12 +1,12 @@
 'use client'
 
-import { useMainContext } from '@/app/[locale]/MainProvider'
 import { Logo } from '@/components/ui/Logo'
 import { LANGUAGE } from '@/lib/constants/global'
 import { ROUTES } from '@/lib/constants/routes'
-import { vi } from '@/lib/locales/vi'
 import { useClickOutside } from '@/lib/utils/hooks'
+import { useLocale, useTranslations } from 'next-intl'
 import Link from 'next/link'
+import { usePathname, useRouter } from 'next/navigation'
 import React, { useEffect, useRef, useState } from 'react'
 
 export const Header: React.FC = () => {
@@ -15,8 +15,10 @@ export const Header: React.FC = () => {
   const [productsMenuOpen, setProductsMenuOpen] = useState(false)
   const languageDropdownRef = useRef<HTMLDivElement>(null)
   const [mounted, setMounted] = useState(false)
-  const { lang, setLang } = useMainContext()
-
+  const pathname = usePathname()
+  const locale = useLocale()
+  const router = useRouter()
+  const t = useTranslations()
   useClickOutside(languageDropdownRef, () => {
     setLanguageMenuOpen(false)
   })
@@ -33,26 +35,35 @@ export const Header: React.FC = () => {
   ]
 
   const navItems = [
-    { label: vi.nav.products, href: ROUTES.PRODUCT_XPROMO, hasDropdown: true },
-    { label: vi.nav.solutions, href: '#solutions' },
-    { label: vi.nav.industries, href: '#industries' },
-    { label: vi.nav.resources, href: '#resources' },
-    { label: vi.nav.company, href: '#company' },
+    {
+      label: t('nav.products'),
+      href: ROUTES.PRODUCT_XPROMO,
+      hasDropdown: true,
+    },
+    { label: t('nav.solutions'), href: '#solutions' },
+    { label: t('nav.industries'), href: '#industries' },
+    { label: t('nav.resources'), href: '#resources' },
+    { label: t('nav.company'), href: '#company' },
   ]
 
   const languageItems = [
-    { label: vi.language.english, value: LANGUAGE.EN },
+    { label: t('language.english'), value: LANGUAGE.EN },
     {
-      label: vi.language.vietnamese,
+      label: t('language.vietnamese'),
       value: LANGUAGE.VI,
     },
   ]
 
   const renderLanguageCode = () => {
     if (!mounted) return ''
-    if (lang === LANGUAGE.EN) return 'EN'
-    if (lang === LANGUAGE.VI) return 'VI'
+    if (locale === LANGUAGE.EN) return 'EN'
+    if (locale === LANGUAGE.VI) return 'VI'
     return ''
+  }
+
+  const handleToogleLocale = (locale: LANGUAGE) => {
+    const nextPath = `/${locale}${pathname.replace(/^\/(vi|en)/, '')}`
+    router.replace(nextPath, { scroll: false })
   }
 
   return (
@@ -167,7 +178,7 @@ export const Header: React.FC = () => {
               </svg>
               {languageMenuOpen && (
                 <div
-                  className="absolute flex flex-col gap-y-1 px-3 py-2 rounded-md shadow-md w-[100px] top-6 bg-white"
+                  className="absolute flex flex-col items-start gap-y-1 px-3 py-2 rounded-md shadow-md w-[100px] top-6 bg-white"
                   ref={languageDropdownRef}
                 >
                   {languageItems.map((item) => (
@@ -175,7 +186,7 @@ export const Header: React.FC = () => {
                       key={item.value}
                       className="text-dark-hover"
                       onClick={() => {
-                        setLang(item.value)
+                        handleToogleLocale(item.value)
                       }}
                     >
                       {item.label}
@@ -190,7 +201,7 @@ export const Header: React.FC = () => {
               href={ROUTES.CONTACT}
               className="px-6 py-2.5 text-[15px] font-semibold text-white bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full hover:from-cyan-400 hover:to-purple-500 transition-all shadow-lg shadow-cyan-500/30"
             >
-              {vi.nav.contact}
+              {t('nav.contact')}
             </Link>
           </div>
 
@@ -275,7 +286,7 @@ export const Header: React.FC = () => {
                 className="px-6 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full hover:from-cyan-400 hover:to-purple-500 transition-all shadow-lg shadow-cyan-500/30 mt-2 inline-block text-center"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                {vi.nav.contact}
+                {t('nav.contact')}
               </Link>
             </div>
           </div>

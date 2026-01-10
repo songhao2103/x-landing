@@ -1,53 +1,55 @@
 import { Logo } from '@/components/ui/Logo'
-import { vi } from '@/lib/locales/vi'
+import { useTranslations } from 'next-intl'
 import React from 'react'
 
 export const Footer: React.FC = () => {
+  const t = useTranslations('footer')
+
   const footerSections = [
     {
-      title: vi.footer.products.title,
+      title: t('products.title'),
       links: [
-        vi.footer.products.xpromo,
-        vi.footer.products.xai,
-        vi.footer.products.xomi,
-        vi.footer.products.xbiz,
-        vi.footer.products.xtech,
-        vi.footer.products.automation,
+        t('products.xpromo'),
+        t('products.xai'),
+        t('products.xomi'),
+        t('products.xbiz'),
+        t('products.xtech'),
+        t('products.automation'),
       ],
     },
     {
-      title: vi.footer.solutions.title,
+      title: t('solutions.title'),
       links: [
-        vi.footer.solutions.growth,
-        vi.footer.solutions.sales,
-        vi.footer.solutions.operation,
-        vi.footer.solutions.collection,
+        t('solutions.growth'),
+        t('solutions.sales'),
+        t('solutions.operation'),
+        t('solutions.collection'),
       ],
     },
     {
-      title: vi.footer.industries.title,
+      title: t('industries.title'),
       links: [
-        vi.footer.industries.finance,
-        vi.footer.industries.ecommerce,
-        vi.footer.industries.insurance,
-        vi.footer.industries.education,
-        vi.footer.industries.realestate,
+        t('industries.finance'),
+        t('industries.ecommerce'),
+        t('industries.insurance'),
+        t('industries.education'),
+        t('industries.realestate'),
       ],
     },
     {
-      title: vi.footer.company.title,
+      title: t('company.title'),
       links: [
-        vi.footer.company.about,
-        vi.footer.company.careers,
-        vi.footer.company.news,
-        vi.footer.company.contact,
-        vi.footer.company.partner,
-        vi.footer.company.privacy,
-        vi.footer.company.terms,
+        t('company.about'),
+        t('company.careers'),
+        t('company.news'),
+        t('company.contact'),
+        t('company.partner'),
+        t('company.privacy'),
+        t('company.terms'),
       ],
     },
   ]
-  
+
   return (
     <footer className="bg-navy text-white">
       <div className="container mx-auto px-4 lg:px-8 py-12 lg:py-16">
@@ -56,19 +58,19 @@ export const Footer: React.FC = () => {
           <div className="lg:col-span-2">
             <Logo variant="footer" className="mb-4" />
             <p className="text-sm text-gray-400 leading-relaxed mt-6">
-              {vi.footer.info}
+              {t('info')}
             </p>
             <p className="text-sm text-gray-400 leading-relaxed mt-4">
-              {vi.footer.address}
+              {t('address')}
             </p>
             <p className="text-sm text-gray-400 leading-relaxed mt-4">
-              {vi.footer.email}
+              {t('email')}
             </p>
             <p className="text-sm text-gray-400 leading-relaxed mt-4">
-              {vi.footer.phone}
+              {t('phone')}
             </p>
           </div>
-          
+
           {/* Footer Links */}
           {footerSections.map((section) => (
             <div key={section.title} className="lg:col-span-1">
@@ -88,7 +90,7 @@ export const Footer: React.FC = () => {
             </div>
           ))}
         </div>
-        
+
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
@@ -118,4 +120,3 @@ export const Footer: React.FC = () => {
     </footer>
   )
 }
-
