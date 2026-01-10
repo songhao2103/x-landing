@@ -72,43 +72,23 @@
       "benefits": {
         "title": "Lợi ích mang lại",
         "subtitle": "Kết nối nhu cầu - Gia tăng giá trị",
-        "items": [
-          {
-            "title": "Tiếp cận 500k++ khách hàng chất lượng",
-            "description": "CPDeal - trả phí theo deal\nGo-live sau ~1-2 tuần"
-          },
-          {
-            "title": "Mở rộng nguồn doanh thu mới",
-            "description": "Kiểm soát hiển thị & trải nghiệm\nTích hợp dễ dàng (API/SDK)"
-          },
-          {
-            "title": "Dịch vụ uy tín, đúng nhu cầu",
-            "description": "Không làm phiền\nBảo mật & riêng tư\nTuân thủ nghị định 13"
-          }
-        ]
-      },
-      "tabs": {
-        "title": "Lợi ích mang lại",
-        "subtitle": "Kết nối nhu cầu - Gia tăng giá trị",
-        "items": {
-          "business": {
-            "title": "Dành cho Doanh nghiệp",
-            "features_1": "Tiếp cận cộng đồng chất lượng: truyền thông đến người dùng hoạt động hằng ngày gồm chủ kinh doanh, nhân viên văn phòng, người bán online và nhà sáng tạo nội dung.",
-            "features_2": "Tăng ~15% tỷ lệ duyệt: hồ sơ nhu cầu thật từ khách hàng đã được xác thực trực tiếp trong các nền tảng SaaS.",
-            "features_3": "Chi phí theo kết quả (CPDeal): chỉ phát sinh chi phí khi khách hàng được duyệt hoặc giải ngân thành công. Tiết kiệm ~20% chi phí và thời gian so với Social Ads."
-          },
-          "saas": {
-            "title": "Dành cho Nền tảng SaaS",
-            "features_1": "Tăng doanh thu trên mỗi người dùng: nhận hoa hồng chia sẻ từ Xpromo khi người dùng được duyệt và giải ngân thành công.",
-            "features_2": "Gia tăng khả năng chi trả dịch vụ: người dùng được hỗ trợ tài chính có xu hướng nâng cấp hoặc duy trì sử dụng dịch vụ SaaS lâu hơn.",
-            "features_3": "Kéo dài vòng đời người dùng (LTV): ngân sách bổ sung giúp người dùng mua thêm dịch vụ, thúc đẩy lợi nhuận dài hạn cho SaaS."
-          },
-          "user": {
-            "title": "Dành cho Người dùng",
-            "features_1": "Tiếp cận nguồn vốn dễ dàng: bổ sung vốn lưu động, mở thẻ tín dụng hoặc quỹ tiền mặt đúng thời điểm phát sinh nhu cầu.",
-            "features_2": "Lãi suất và điều kiện tốt hơn: sản phẩm đến từ các ngân hàng và tổ chức tài chính uy tín, ưu đãi hơn so với việc tự tìm nguồn vốn bên ngoài.",
-            "features_3": "Xử lý nhanh, hoàn toàn số hóa: nộp hồ sơ, thẩm định và phê duyệt 100% online."
-          }
+        "business": {
+          "title": "Dành cho Doanh nghiệp",
+          "features_1": "Tiếp cận cộng đồng chất lượng: truyền thông đến người dùng hoạt động hằng ngày gồm chủ kinh doanh, nhân viên văn phòng, người bán online và nhà sáng tạo nội dung.",
+          "features_2": "Tăng ~15% tỷ lệ duyệt: hồ sơ nhu cầu thật từ khách hàng đã được xác thực trực tiếp trong các nền tảng SaaS.",
+          "features_3": "Chi phí theo kết quả (CPDeal): chỉ phát sinh chi phí khi khách hàng được duyệt hoặc giải ngân thành công. Tiết kiệm ~20% chi phí và thời gian so với Social Ads."
+        },
+        "saas": {
+          "title": "Dành cho Nền tảng SaaS",
+          "features_1": "Tăng doanh thu trên mỗi người dùng: nhận hoa hồng chia sẻ từ Xpromo khi người dùng được duyệt và giải ngân thành công.",
+          "features_2": "Gia tăng khả năng chi trả dịch vụ: người dùng được hỗ trợ tài chính có xu hướng nâng cấp hoặc duy trì sử dụng dịch vụ SaaS lâu hơn.",
+          "features_3": "Kéo dài vòng đời người dùng (LTV): ngân sách bổ sung giúp người dùng mua thêm dịch vụ, thúc đẩy lợi nhuận dài hạn cho SaaS."
+        },
+        "user": {
+          "title": "Dành cho Người dùng",
+          "features_1": "Tiếp cận nguồn vốn dễ dàng: bổ sung vốn lưu động, mở thẻ tín dụng hoặc quỹ tiền mặt đúng thời điểm phát sinh nhu cầu.",
+          "features_2": "Lãi suất và điều kiện tốt hơn: sản phẩm đến từ các ngân hàng và tổ chức tài chính uy tín, ưu đãi hơn so với việc tự tìm nguồn vốn bên ngoài.",
+          "features_3": "Xử lý nhanh, hoàn toàn số hóa: nộp hồ sơ, thẩm định và phê duyệt 100% online."
         }
       },
       "why": {
@@ -143,14 +123,108 @@
       }
     },
     "xomi": {
-      "title": "XOMI",
+      "title": "AI-Driven Customer Interaction Platform",
       "description": "Nền tảng đệ kịnh hợp nhặt mội điếm chạm giữa doanh nghiệp và khách hàng bằng công nghệ AI động hoá tương tác nâng cao hiệu suất và năng tạm trải nghiệm đên toàn thành một khách hàng.",
-      "cta": "Tìm hiểu thêm"
+      "overview": {
+        "title": "Tổng quan XOmi",
+        "description": "Tương tác hợp nhất – Quản trị đồng bộ – Nâng tầm hiệu suất",
+        "features_1": {
+          "title": "Customer Centric",
+          "description": "CRM quản lý thông tin khách hàng 360 độ & cá nhân hoá"
+        },
+        "features_2": {
+          "title": "Manages Portfolio",
+          "description": "Phân loại danh mục, sản phẩm, khách hàng theo phân khúc"
+        },
+        "features_3": {
+          "title": "Omnichannel",
+          "description": "Tích hợp tổng đài & tương tác đa kênh trên một nền tảng duy nhất"
+        },
+        "features_4": {
+          "title": "Customer Journey",
+          "description": "Số hoá & tự động hoá hành trình, chiến lược tác động khách hàng"
+        },
+        "features_5": {
+          "title": "AI Algorithm",
+          "description": "Thuật toán & AI nâng tầm hiệu suất hoạt động"
+        }
+      },
+      "benerfits": {
+        "title": "Tính năng nổi bật",
+        "subtitle": "Các cụm chức năng được thiết kế tháo lắp, tích hợp linh hoạt theo nhu cầu",
+        "dynamic_crm": {
+          "title": "Dynamic CRM",
+          "features_1": "Thông tin khách hàng 360 độ tuỳ biến theo nhu cầu",
+          "features_2": "Phân quyền theo tổ chức",
+          "features_3": "Phân bổ hợp đồng/khách hàng/cơ hội linh hoạt",
+          "features_4": "Phiếu ghi báo cáo kết quả tác động",
+          "features_5": "Thiết kế hành trình tương tác khách hàng tự động",
+          "features_6": "Giám sát & tổng hợp hoạt động vận hành"
+        },
+        "switchboard": {
+          "title": "Tổng đài thông minh",
+          "features_1": "Softphone tích hợp ngay trong CRM",
+          "features_2": "Manual call/click to call",
+          "features_3": "Quay số tự động AutoDialer",
+          "features_4": "Thiết lập kịch bản lời thoại Inbound",
+          "features_5": "Nhận diện hotline block & tự động thay số",
+          "features_6": "Nhận diện cuộc gọi Voicemail",
+          "features_7": "Phân phối cuộc gọi thông minh cho nhân viên",
+          "features_8": "Giám sát cuộc gọi nghe lén, cướp cuộc gọi, đàm thoại 3 bên",
+          "features_9": "Chấm điểm cuộc gọi"
+        },
+        "channel": {
+          "title": "Tương tác đa kênh",
+          "features_1": "Tích hợp chat đa kênh Facebook, Zalo OA, Telegram..",
+          "features_2": "Tích hợp chat Zalo Cá nhân có kiểm soát",
+          "features_3": "Đồng bộ dữ liệu lịch sử tương tác với CRM",
+          "features_4": "Tích hợp gửi tin nhắn đa kênh SMS, ZNS, Email, Messenger"
+        },
+        "mobile-app": {
+          "title": "Field Mobile App",
+          "features_1": "Thông tin khách hàng 360 độ",
+          "features_2": "Lên kế hoạch công việc dễ dàng",
+          "features_3": "Báo cáo kết quả công việc chi tiết",
+          "features_4": "Nhắn tin đa kênh cho khách hàng",
+          "features_5": "Softphone nghe gọi ngay trên ứng dụng"
+        },
+        "ai": {
+          "title": "Ứng dụng AI",
+          "features_1": "XAI Call Agent tương tác khách hàng 2 chiều bằng giọng nói",
+          "features_2": "XAI Chat Agent tự động tương tác chat đa kênh theo kịch bản",
+          "features_3": "XAI Assistant trợ lý ảo hỗ trợ tóm tắt nội dung tương tác",
+          "features_4": "XAI Supervisor QC hỗ trợ phân tích, chấm điểm cuộc gọi/chat,\nđo lường chất lượng và hỗ trợ đánh giá hành vi",
+          "features_5": "XAI Automation số hoá hành trình tương tác khách hàng"
+        }
+      }
     },
-    "xbiz": {
+    "xai": {
       "title": "XBIZ",
       "description": "Dịch vụ tư vấn và triển khai chuyển đổi số thực chước, đồng hành cùng doanh nghiệp từ hộ hoạ mở định hành số tăng được hiệu quả và năng cao lược cạnh tranh mành.",
-      "cta": "Tìm hiểu thêm"
+      "overview": {
+        "title": "Tổng quan XAI Call Agent",
+        "description": "Giao tiếp thông minh - hiệu quả vượt trội",
+        "features_1": {
+          "title": "Tương tác",
+          "description": "Tương tác bằng giọng nói hai chiều"
+        },
+        "features_2": {
+          "title": "Đào tạo",
+          "description": "Đào tạo chuyên sâu cho từng nghiệp vụ"
+        },
+        "features_3": {
+          "title": "Thông minh",
+          "description": "Tối ưu liên tục, thông minh hơn trong quá trình sử dụng"
+        },
+        "features_4": {
+          "title": "Phối hợp",
+          "description": "Phối hợp nhịp nhàng giữa AI và nhân viên"
+        },
+        "features_5": {
+          "title": "Tích hợp",
+          "description": "Dễ dàng tích hợp vào các hệ thống sẵn có"
+        }
+      }
     },
     "xtech": {
       "title": "XTECH",

@@ -72,24 +72,6 @@
       "benefits": {
         "title": "Key Benefits",
         "subtitle": "Connecting Demand – Unlocking Value",
-        "items": [
-          {
-            "title": "Access 500k++ high-quality users",
-            "description": "CPDeal – pay per successful deal\nGo-live within ~1–2 weeks"
-          },
-          {
-            "title": "Unlock new revenue streams",
-            "description": "Full control of display & experience\nEasy integration (API/SDK)"
-          },
-          {
-            "title": "Trusted and relevant services",
-            "description": "Non-intrusive\nPrivacy & data security\nCompliant with Decree 13"
-          }
-        ]
-      },
-      "tabs": {
-        "title": "Key Benefits",
-        "subtitle": "Connecting Demand – Unlocking Value",
         "items": {
           "business": {
             "title": "For Businesses",
@@ -111,6 +93,7 @@
           }
         }
       },
+
       "why": {
         "title": "Why Choose XPromo?",
         "title_1": "High-quality customer segments",
@@ -144,19 +127,64 @@
       }
     },
     "xomi": {
-      "title": "XOMI",
+      "title": "AI-Driven Customer Interaction Platform",
       "description": "An AI-powered platform that unifies all enterprise–customer touchpoints, automating interactions to boost productivity and deliver a seamless end-to-end customer experience.",
-      "cta": "Learn more"
+      "overview": {
+        "title": "XOmi Overview",
+        "description": "Unified Interaction – Centralized Management – Elevated Performance",
+        "features_1": {
+          "title": "Customer-Centric",
+          "description": "360-degree customer data management with personalized CRM capabilities"
+        },
+        "features_2": {
+          "title": "Portfolio Management",
+          "description": "Segmented management of products, services, and customers by target groups"
+        },
+        "features_3": {
+          "title": "Omnichannel",
+          "description": "Unified call center and multi-channel interactions on a single platform"
+        },
+        "features_4": {
+          "title": "Customer Journey",
+          "description": "Digitized and automated customer journeys with intelligent engagement strategies"
+        },
+        "features_5": {
+          "title": "AI Algorithms",
+          "description": "Continuously optimized AI algorithms to maximize operational efficiency"
+        }
+      }
     },
-    "xbiz": {
+    "xai": {
       "title": "XBIZ",
       "description": "Practical digital transformation consulting services that accompany enterprises from strategy to execution, driving efficiency and competitive advantage.",
-      "cta": "Learn more"
+      "overview": {
+        "title": "XAI Call Agent Overview",
+        "description": "Intelligent Communication – Superior Efficiency",
+        "features_1": {
+          "title": "Interaction",
+          "description": "Two-way voice interaction in real time"
+        },
+        "features_2": {
+          "title": "Training",
+          "description": "In-depth training tailored to each business workflow"
+        },
+        "features_3": {
+          "title": "Intelligence",
+          "description": "Continuously optimized and smarter with every interaction"
+        },
+        "features_4": {
+          "title": "Collaboration",
+          "description": "Seamless collaboration between AI and human agents"
+        },
+        "features_5": {
+          "title": "Integration",
+          "description": "Easy integration with existing systems"
+        }
+      }
     },
     "xtech": {
       "title": "XTECH",
-      "description": "Custom development, system integration, and technology architecture services that enable flexible transformation and operational excellence.",
-      "cta": "Learn more"
+      "description": "Custom development, system integration, and technology architecture services that enable flexible transformation and operational excellence."
     }
   },
   "achievements": {

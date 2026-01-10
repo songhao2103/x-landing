@@ -29,7 +29,7 @@ export const Header: React.FC = () => {
 
   const products = [
     { label: 'XPromo', href: ROUTES.PRODUCT_XPROMO },
-    { label: 'XOMI', href: '/products/xomi' },
+    { label: 'XOMI', href: ROUTES.PRODUCT_XOMI },
     { label: 'XBIZ', href: '/products/xbiz' },
     { label: 'XTECH', href: '/products/xtech' },
   ]

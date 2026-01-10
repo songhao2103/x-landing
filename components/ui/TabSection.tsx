@@ -100,9 +100,11 @@ const TabContent = ({ features }: { features: string[] }) => {
     <ul className="space-y-3">
       {features.map((f) => {
         const [des, subdes] = f.split(':')
+
         return (
-          <li>
-            • <span>{des}</span> <span>{subdes}</span>
+          <li key={f}>
+            • {subdes && <span className="font-bold text-white">{des}:</span>}{' '}
+            <span className="font-light">{subdes || des}</span>
           </li>
         )
       })}
