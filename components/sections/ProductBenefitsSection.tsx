@@ -3,8 +3,6 @@
 import TabsSection from '@/components/ui/TabSection'
 import { TittleSection } from '@/components/ui/TittleSection'
 import { useTranslations } from 'next-intl'
-import { useRouter } from 'next/navigation'
-import React from 'react'
 
 export interface Benefit {
   title: string
@@ -12,21 +10,42 @@ export interface Benefit {
   icon?: string
 }
 
-export interface ProductBenefitsSectionProps {
-  title?: string
-  subtitle?: string
-  benefits: Benefit[]
-  className?: string
-}
+export const ProductBenefitsSection = () => {
+  const prifixLocale = 'products.xpromo.tabs'
+  const t = useTranslations('')
 
-export const ProductBenefitsSection: React.FC<ProductBenefitsSectionProps> = ({
-  title = 'Lợi ích mang lại',
-  subtitle = 'Kết nối nhu cầu - Gia tăng giá trị',
-  benefits,
-  className = '',
-}) => {
-  const t = useTranslations('products.xpromo')
-  const router = useRouter()
+  const tabsContent = [
+    {
+      key: 'business',
+      label: t(`${prifixLocale}.items.business.title`),
+      features: [
+        t(`${prifixLocale}.items.business.features_1`),
+        t(`${prifixLocale}.items.business.features_2`),
+        t(`${prifixLocale}.items.business.features_3`),
+      ],
+      image: '/images/icons/xpromo/image_doanhnghiep.svg',
+    },
+    {
+      key: 'saas',
+      label: t(`${prifixLocale}.items.saas.title`),
+      features: [
+        t(`${prifixLocale}.items.saas.features_1`),
+        t(`${prifixLocale}.items.saas.features_2`),
+        t(`${prifixLocale}.items.saas.features_3`),
+      ],
+      image: '/images/icons/xpromo/image_saas.svg',
+    },
+    {
+      key: 'user',
+      label: t(`${prifixLocale}.items.user.title`),
+      features: [
+        t(`${prifixLocale}.items.user.features_1`),
+        t(`${prifixLocale}.items.user.features_2`),
+        t(`${prifixLocale}.items.user.features_3`),
+      ],
+      image: '/images/icons/xpromo/image_credit.svg',
+    },
+  ]
 
   return (
     <section
@@ -36,77 +55,28 @@ export const ProductBenefitsSection: React.FC<ProductBenefitsSectionProps> = ({
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
-      className={`py-16 lg:py-24 relative overflow-hidden ${className}`}
+      className={`py-16 lg:py-24 relative overflow-hidden`}
     >
       <div className="container mx-auto px-8 lg:px-12">
         <div className="text-center mb-12 lg:mb-16">
           <TittleSection
-            title={t('benefits.title')}
+            title={t(`${prifixLocale}.title`)}
             color="white"
             noMargin={true}
           />
-          <p className="text-lg text-white/80 mt-4">{t('benefits.subtitle')}</p>
+          <p className="text-lg text-white/80 mt-4">
+            {t(`${prifixLocale}.subtitle`)}
+          </p>
         </div>
         <div>
-          <TabsSection
-            tabs={[
-              {
-                key: 'business',
-                label: 'Đối với Doanh nghiệp',
-                content: <BusinessContent />,
-                image: '/images/icons/xpromo/image_doanhnghiep.svg',
-              },
-              {
-                key: 'saas',
-                label: 'Đối với Đơn vị SaaS',
-                content: <SaasContent />,
-                image: '/images/icons/xpromo/image_saas.svg',
-              },
-              {
-                key: 'user',
-                label: 'Đối với Người dùng',
-                content: <UserContent />,
-                image: '/images/icons/xpromo/image_credit.svg',
-              },
-            ]}
-          />
+          <TabsSection tabs={tabsContent} />
         </div>
         <div className="flex justify-start mt-12">
           <button className="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-full hover:shadow-lg hover:scale-105 transition-all duration-200">
-            Liên hệ tư vấn
+            {t('contact.title')}
           </button>
         </div>
       </div>
     </section>
-  )
-}
-
-export function BusinessContent() {
-  return (
-    <ul className="space-y-3">
-      <li>• Tiếp cận cộng đồng người dùng chất lượng</li>
-      <li>• +~15% tỷ lệ duyệt hồ sơ</li>
-      <li>• Chi phí theo kết quả (CPDeal)</li>
-    </ul>
-  )
-}
-
-export function SaasContent() {
-  return (
-    <ul className="space-y-3">
-      <li>• Kết nối hệ sinh thái SaaS</li>
-      <li>• Tích hợp API nhanh</li>
-      <li>• Gia tăng conversion</li>
-    </ul>
-  )
-}
-
-export function UserContent() {
-  return (
-    <ul className="space-y-3">
-      <li>• Trải nghiệm minh bạch</li>
-      <li>• Không spam</li>
-      <li>• Dữ liệu được xác thực</li>
-    </ul>
   )
 }

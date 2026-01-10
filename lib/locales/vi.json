@@ -88,80 +88,58 @@
         ]
       },
       "tabs": {
-        "title": "Tiếp cận hiệu quả đúng người - đúng thời điểm",
-        "items": [
-          {
-            "id": "business",
-            "label": "Đối với Doanh nghiệp",
-            "title": "Đối với Doanh nghiệp",
-            "description": "Tiếp cận cộng đồng chất lượng : truyền thông đến người dùng hoạt động hằng ngày là chủ kinh doanh, nhân viên văn phòng, kinh doanh online, nhà sáng tạo nội dung...",
-            "features": [
-              "+~15% Tỷ lệ duyệt: với hồ sơ đăng ký nhu cầu thật từ khách hàng đã được xác thực khi dùng trong phần mềm SaaS"
-            ],
-            "highlight": "Chi phí theo kết quả (CPDeal): Chỉ phát sinh chi phí khi đã duyệt/giải ngân khách hàng thành công. Giảm ~20% chi phí & thời gian so với các kênh Social Ads"
+        "title": "Lợi ích mang lại",
+        "subtitle": "Kết nối nhu cầu - Gia tăng giá trị",
+        "items": {
+          "business": {
+            "title": "Dành cho Doanh nghiệp",
+            "features_1": "Tiếp cận cộng đồng chất lượng: truyền thông đến người dùng hoạt động hằng ngày gồm chủ kinh doanh, nhân viên văn phòng, người bán online và nhà sáng tạo nội dung.",
+            "features_2": "Tăng ~15% tỷ lệ duyệt: hồ sơ nhu cầu thật từ khách hàng đã được xác thực trực tiếp trong các nền tảng SaaS.",
+            "features_3": "Chi phí theo kết quả (CPDeal): chỉ phát sinh chi phí khi khách hàng được duyệt hoặc giải ngân thành công. Tiết kiệm ~20% chi phí và thời gian so với Social Ads."
           },
-          {
-            "id": "saas",
-            "label": "Đối với Đơn vị SaaS",
-            "title": "Đối với Đơn vị SaaS",
-            "description": "",
-            "features": []
+          "saas": {
+            "title": "Dành cho Nền tảng SaaS",
+            "features_1": "Tăng doanh thu trên mỗi người dùng: nhận hoa hồng chia sẻ từ Xpromo khi người dùng được duyệt và giải ngân thành công.",
+            "features_2": "Gia tăng khả năng chi trả dịch vụ: người dùng được hỗ trợ tài chính có xu hướng nâng cấp hoặc duy trì sử dụng dịch vụ SaaS lâu hơn.",
+            "features_3": "Kéo dài vòng đời người dùng (LTV): ngân sách bổ sung giúp người dùng mua thêm dịch vụ, thúc đẩy lợi nhuận dài hạn cho SaaS."
           },
-          {
-            "id": "user",
-            "label": "Đối với Người dùng",
-            "title": "Đối với Người dùng",
-            "description": "",
-            "features": []
+          "user": {
+            "title": "Dành cho Người dùng",
+            "features_1": "Tiếp cận nguồn vốn dễ dàng: bổ sung vốn lưu động, mở thẻ tín dụng hoặc quỹ tiền mặt đúng thời điểm phát sinh nhu cầu.",
+            "features_2": "Lãi suất và điều kiện tốt hơn: sản phẩm đến từ các ngân hàng và tổ chức tài chính uy tín, ưu đãi hơn so với việc tự tìm nguồn vốn bên ngoài.",
+            "features_3": "Xử lý nhanh, hoàn toàn số hóa: nộp hồ sơ, thẩm định và phê duyệt 100% online."
           }
-        ]
+        }
       },
       "why": {
         "title": "Tại sao chọn XPromo?",
-        "items": [
-          {
-            "title": "Tệp khách hàng chất lượng"
-          },
-          {
-            "title": "Sản phẩm tín dụng đa dạng"
-          },
-          {
-            "title": "Tích hợp nhanh chóng 1-2 tuần"
-          },
-          {
-            "title": "Theo dõi kết quả dễ dàng"
-          }
-        ]
+        "title_1": "Tệp khách hàng chất lượng",
+        "title_2": "Sản phẩm tín dụng đa dạng",
+        "title_": "Tích hợp nhanh chóng 1-2 tuần",
+        "title_4": "Theo dõi kết quả dễ dàng"
       },
       "howItWorks": {
         "title": "Phương thức hoạt động",
-        "steps": [
-          {
-            "step": 1,
-            "title": "Khám phá sản phẩm",
-            "description": "Click vào banner/links để xem ưu đãi và điều kiện của khoản vay/thẻ tín dụng."
-          },
-          {
-            "step": 2,
-            "title": "Khảo sát nhu cầu",
-            "description": "Cung cấp nhu cầu để kiểm tra điều kiện tham gia"
-          },
-          {
-            "step": 3,
-            "title": "Tạo hồ sơ trực tuyến",
-            "description": "Điền thông tin theo form;Upload giấy tờ cá nhân; Gửi hồ sơ online"
-          },
-          {
-            "step": 4,
-            "title": "eKYC và phê duyệt",
-            "description": "Xác thực danh tính bằng eKYC nhanh chóng. Hồ sơ được phê duyệt tự động hoặc trong thời gian ngắn."
-          },
-          {
-            "step": 5,
-            "title": "Giải ngân/ mở thẻ",
-            "description": "Khoản vay được giải ngân ngay sau khi duyệt, hoặc thẻ tín dụng sẽ được phát hành và gửi đến bạn."
-          }
-        ]
+        "step_1": {
+          "title": "Khám phá sản phẩm",
+          "description": "Click vào banner hoặc liên kết để xem ưu đãi và điều kiện của khoản vay hoặc thẻ tín dụng."
+        },
+        "step_2": {
+          "title": "Khảo sát nhu cầu",
+          "description": "Cung cấp thông tin nhu cầu để hệ thống kiểm tra điều kiện tham gia phù hợp."
+        },
+        "step_3": {
+          "title": "Tạo hồ sơ trực tuyến",
+          "description": "Điền thông tin theo biểu mẫu, tải lên giấy tờ cá nhân và gửi hồ sơ hoàn toàn online."
+        },
+        "step_4": {
+          "title": "eKYC và phê duyệt",
+          "description": "Xác thực danh tính bằng eKYC nhanh chóng. Hồ sơ được phê duyệt tự động hoặc trong thời gian ngắn."
+        },
+        "step_5": {
+          "title": "Giải ngân hoặc mở thẻ",
+          "description": "Khoản vay được giải ngân ngay sau khi duyệt, hoặc thẻ tín dụng được phát hành và gửi đến bạn."
+        }
       }
     },
     "xomi": {

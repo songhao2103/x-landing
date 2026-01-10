@@ -1,13 +1,13 @@
 'use client'
 
 import Image from 'next/image'
-import { ReactNode, useState } from 'react'
+import { useState } from 'react'
 import TextGradient from './TextGradient'
 
 type TabItem = {
   key: string
   label: string
-  content: ReactNode
+  features: string[]
   image?: string
 }
 
@@ -60,7 +60,9 @@ export default function TabsSection({ tabs, defaultActive }: Props) {
 
                   <div className="pointer-events-none absolute inset-0" />
 
-                  <div className="relative">{tab.content}</div>
+                  <div className="relative">
+                    <TabContent features={tab.features} />
+                  </div>
                 </div>
               )}
 
@@ -90,5 +92,20 @@ export default function TabsSection({ tabs, defaultActive }: Props) {
         />
       </div>
     </div>
+  )
+}
+
+const TabContent = ({ features }: { features: string[] }) => {
+  return (
+    <ul className="space-y-3">
+      {features.map((f) => {
+        const [des, subdes] = f.split(':')
+        return (
+          <li>
+            • <span>{des}</span> <span>{subdes}</span>
+          </li>
+        )
+      })}
+    </ul>
   )
 }

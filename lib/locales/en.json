@@ -88,80 +88,59 @@
         ]
       },
       "tabs": {
-        "title": "Reach the Right Users at the Right Time",
-        "items": [
-          {
-            "id": "business",
-            "label": "For Enterprises",
-            "title": "For Enterprises",
-            "description": "Reach high-quality communities including business owners, office professionals, online sellers, and content creators who are active daily on SaaS platforms.",
-            "features": [
-              "+~15% approval rate with verified real-demand applications from authenticated SaaS users"
-            ],
-            "highlight": "Performance-based cost (CPDeal): Pay only when applications are approved or disbursed. Save ~20% cost and time compared to Social Ads"
+        "title": "Key Benefits",
+        "subtitle": "Connecting Demand – Unlocking Value",
+        "items": {
+          "business": {
+            "title": "For Businesses",
+            "features_1": "Access high-quality audiences: reach daily active users including business owners, office workers, online sellers, and content creators.",
+            "features_2": "+~15% approval rate: real demand profiles from verified customers generated directly inside SaaS platforms.",
+            "features_3": "Pay per result (CPDeal): costs only occur when customers are approved or successfully disbursed. Save ~20% in cost and time compared to traditional social ads."
           },
-          {
-            "id": "saas",
-            "label": "For SaaS Providers",
-            "title": "For SaaS Providers",
-            "description": "",
-            "features": []
+          "saas": {
+            "title": "For SaaS Platforms",
+            "features_1": "Increase revenue per user: earn revenue-sharing commissions from Xpromo when users are approved and successfully funded.",
+            "features_2": "Improve users’ ability to pay: financially supported users are more willing and able to upgrade or continue paying for your SaaS services.",
+            "features_3": "Extend user lifetime value (LTV): additional budget enables users to purchase more services, driving long-term SaaS profitability."
           },
-          {
-            "id": "user",
-            "label": "For Users",
-            "title": "For Users",
-            "description": "",
-            "features": []
+          "user": {
+            "title": "For End Users",
+            "features_1": "Easy access to funding: working capital, credit cards, or cash funds available exactly when needed.",
+            "features_2": "Better interest rates: products provided by trusted financial institutions and banks with more favorable rates than informal or high-risk funding sources.",
+            "features_3": "Fast digital processing: fully online experience from application to verification and approval."
           }
-        ]
+        }
       },
       "why": {
         "title": "Why Choose XPromo?",
-        "items": [
-          {
-            "title": "High-quality customer segments"
-          },
-          {
-            "title": "Diverse financial products"
-          },
-          {
-            "title": "Fast integration in 1–2 weeks"
-          },
-          {
-            "title": "Transparent performance tracking"
-          }
-        ]
+        "title_1": "High-quality customer segments",
+        "title_2": "Diverse financial products",
+        "title_3": "Fast integration in 1–2 weeks",
+        "title_4": "Transparent performance tracking"
       },
+
       "howItWorks": {
         "title": "How It Works",
-        "steps": [
-          {
-            "step": 1,
-            "title": "Explore offers",
-            "description": "Click banners or links to view promotions and credit terms."
-          },
-          {
-            "step": 2,
-            "title": "Needs assessment",
-            "description": "Submit requirements to check eligibility"
-          },
-          {
-            "step": 3,
-            "title": "Online application",
-            "description": "Fill in the form; upload documents; submit online"
-          },
-          {
-            "step": 4,
-            "title": "eKYC & approval",
-            "description": "Fast identity verification via eKYC. Applications are approved automatically or within a short time."
-          },
-          {
-            "step": 5,
-            "title": "Disbursement / card issuance",
-            "description": "Loans are disbursed immediately after approval, or credit cards are issued and delivered."
-          }
-        ]
+        "step_1": {
+          "title": "Discover financial products",
+          "description": "Click on banners or links to explore available loan or credit card offers along with eligibility criteria."
+        },
+        "step_2": {
+          "title": "Submit your needs",
+          "description": "Provide your financial needs so the system can intelligently assess your eligibility."
+        },
+        "step_3": {
+          "title": "Create an online application",
+          "description": "Fill out the digital form, upload required documents, and submit your application online."
+        },
+        "step_4": {
+          "title": "eKYC & approval",
+          "description": "Verify your identity via fast eKYC. Applications are approved automatically or within a short time."
+        },
+        "step_5": {
+          "title": "Disbursement or card issuance",
+          "description": "Funds are disbursed immediately after approval, or your credit card is issued and delivered."
+        }
       }
     },
     "xomi": {
