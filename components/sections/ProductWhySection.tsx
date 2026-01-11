@@ -6,27 +6,14 @@ export interface WhyItem {
   icon?: string
 }
 
-export const ProductWhySection = () => {
+interface ProductWhySectionProps {
+  items: WhyItem[]
+}
+
+export const ProductWhySection: React.FC<ProductWhySectionProps> = ({
+  items,
+}) => {
   const t = useTranslations()
-  const prefixLocale = 'products.xpromo.why'
-  const datas: WhyItem[] = [
-    {
-      title: t(`${prefixLocale}.title_1`),
-      icon: '/images/contents/xpromos/why_1.svg',
-    },
-    {
-      title: t(`${prefixLocale}.title_2`),
-      icon: '/images/contents/xpromos/why_2.svg',
-    },
-    {
-      title: t(`${prefixLocale}.title_3`),
-      icon: '/images/contents/xpromos/why_3.svg',
-    },
-    {
-      title: t(`${prefixLocale}.title_4`),
-      icon: '/images/contents/xpromos/why_4.svg',
-    },
-  ]
 
   return (
     <section className={`py-16 lg:py-24 bg-white`}>
@@ -34,13 +21,13 @@ export const ProductWhySection = () => {
         {/* Header */}
         <div className="text-center mb-12 lg:mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-            {t(`${prefixLocale}.title`)}
+            {t(`products.xpromo.why.title`)}
           </h2>
         </div>
 
         {/* Benefits Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-          {datas.map((item, index) => (
+          {items.map((item, index) => (
             <BenefitCard key={index} title={item.title} icon={item.icon} />
           ))}
         </div>

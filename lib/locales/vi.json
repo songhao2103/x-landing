@@ -196,11 +196,53 @@
           "features_4": "XAI Supervisor QC hỗ trợ phân tích, chấm điểm cuộc gọi/chat,\nđo lường chất lượng và hỗ trợ đánh giá hành vi",
           "features_5": "XAI Automation số hoá hành trình tương tác khách hàng"
         }
+      },
+      "howItWorks": {
+        "step_1": {
+          "title": "Tải dữ liệu khách hàng",
+          "desc_1": "Thông tin chi tiết hợp đồng",
+          "desc_2": "Thông tin thanh toán",
+          "desc_3": "Hồ sơ, hình ảnh chứng từ",
+          "desc_4": "Lịch sử tương tác"
+        },
+        "step_2": {
+          "title": "Số hoá chiến lược tác động",
+          "desc_1": "Phân loại nhóm khách hàng",
+          "desc_2": "Phân bổ KH cho nhân viên",
+          "desc_3": "Thiết lập hành trình tác động khách hàng đa kênh"
+        },
+        "step_3": {
+          "title": "Triển khai tác động",
+          "desc_1": "Click to Call/Manual Call",
+          "desc_2": "Quay số tự động Autodialer",
+          "desc_3": "Gọi tự động AutoCall",
+          "desc_4": "SMS/Email/Zalo/Facebook..",
+          "desc_5": "Field Mobile App",
+          "desc_6": "AI CallBot 2-way",
+          "desc_7": "AI Assistant hỗ trợ nhân viên"
+        },
+        "step_4": {
+          "title": "Giám sát & quản lý",
+          "desc_1": "Báo cáo kết quả tác động",
+          "desc_2": "Giám sát hoạt động vận hành",
+          "desc_3": "AI Supervisor QC tự động",
+          "desc_4": "Ghi âm cuộc gọi, tương tác",
+          "desc_5": "Lưu vết toàn bộ hoạt động"
+        }
+      },
+      "why": {
+        "title": "Tại sao chọn XAI Call Agent?",
+        "title_1": "Tập trung vào kết quả kinh doanh, không chỉ cung cấp công nghệ thuần tuý",
+        "title_2": "Phân tích nghiệp vụ & kịch bản chuyên sâu theo từng lĩnh vực",
+        "title_3": "Tích hợp dữ liệu, thiết kế hành trình khách hàng toàn diện",
+        "title_4": "Đồng hành cùng doanh nghiêp & tối ưu liên tục"
       }
     },
     "xai": {
-      "title": "XBIZ",
-      "description": "Dịch vụ tư vấn và triển khai chuyển đổi số thực chước, đồng hành cùng doanh nghiệp từ hộ hoạ mở định hành số tăng được hiệu quả và năng cao lược cạnh tranh mành.",
+      "hero": {
+        "title": "Tổng đài viên trí tuệ nhân tạo",
+        "description": "XAI Call Agent tự động hóa mọi cuộc gọi – từ Telesales, CSKH đến nhắc nợ– với giọng nói tự nhiên như con người. AI có thể lắng nghe, hiểu và phản hồi theo ngữ cảnh. Hệ thống có thể xử lý hàng nghìn cuộc gọi đồng thời, ghi nhận dữ liệu tức thời và tối ưu hiệu suất giao tiếp trên quy mô lớn."
+      },
       "overview": {
         "title": "Tổng quan XAI Call Agent",
         "description": "Giao tiếp thông minh - hiệu quả vượt trội",
@@ -224,6 +266,58 @@
           "title": "Tích hợp",
           "description": "Dễ dàng tích hợp vào các hệ thống sẵn có"
         }
+      },
+      "benerfits": {
+        "title": "Lợi ích mang lại",
+        "subtitle": "Giảm chi phí, tăng hiệu suất, nâng tầm trải nghiệm khách hàng với tổng đài viên ảo AI",
+        "productivity": {
+          "title": "Tăng năng suất & khả năng mở rộng",
+          "features_1": "Xử lý hàng ngàn cuộc gọi đồng thời, hoạt động 24/7 không giới hạn",
+          "features_2": "Điều chỉ mở rộng và thu hẹp ngay lập tức theo nhu cầu kinh doanh của doanh nghiệp"
+        },
+        "expense": {
+          "title": "Giảm chi phí vận hành",
+          "features_1": "Huấn luyện cho AI tự động hoá các nghiệp vụ cuộc gọi đã chuẩn hoá & lặp đi lặp lại",
+          "features_2": "Các tình huống phức tạp chưa được đào tạo mới chuyển về cho nhân viên xử lý, giúp giảm chi phí tổng thể cuộc gọi"
+        },
+        "experience": {
+          "title": "Nâng tầm trải nghiệm khách hàng",
+          "features_1": "Không bỏ lỡ khách hàng gọi đến hoặc chiến dịch gọi ra",
+          "features_2": "Hỗ trợ ngay lập tức, mọi lúc mọi nơi 24/7/365",
+          "features_3": "Kịch bản nhất quán, hạn chế sai sót thủ công",
+          "features_4": "Chất lượng cuộc gọi luôn đảm bảo đồng đều"
+        },
+        "standardization": {
+          "title": "Chuẩn hoá & số hoá tương tác",
+          "features_1": "Mọi cuộc gọi đều được ghi nhận & phân tích thời gian thực",
+          "features_2": "Các cuộc gọi được báo cáo chi tiết nội dung trao đổi và kết quả cuộc gọi",
+          "features_3": "Tự động liên kết với các tác vụ khác như nhắn tin, email..."
+        }
+      },
+      "howItWorks": {
+        "step_1": {
+          "title": "Lăng nghe khách hàng",
+          "desc": "Công nghệ Speech To Text chuyển giọng nói khách hàng thành văn bản để AI có thể hiểu"
+        },
+        "step_2": {
+          "title": "Thấu hiểu yêu cầu",
+          "desc": "AI Conversation nhận biết yêu cầu của khách hàng và xử lý các tình huống nghiệp vụ đã được đào tạo"
+        },
+        "step_3": {
+          "title": "Phản hồi thông minh",
+          "desc": "Công nghệ giọng nói nhân tạo Text To Speech trả lời khách hàng tự nhiên như con người đa dạng vùng miền Bắc -  Trung - Nam"
+        },
+        "step_4": {
+          "title": "Phối hợp liền mạch",
+          "desc": "Các nghiệp vụ phức tạp được ghi nhận và chuyển tiếp về cho nhân viên, giúp phối hợp nhuần nhuyễn. Tối ưu hiệu suất xử lý tổng thể"
+        }
+      },
+      "why": {
+        "title": "Tại sao chọn XAI Call Agent?",
+        "title_1": "Tập trung vào kết quả kinh doanh, không chỉ cung cấp công nghệ thuần tuý",
+        "title_2": "Phân tích nghiệp vụ & kịch bản chuyên sâu theo từng lĩnh vực",
+        "title_3": "Tích hợp dữ liệu, thiết kế hành trình khách hàng toàn diện",
+        "title_4": "Đồng hành cùng doanh nghiêp & tối ưu liên tục"
       }
     },
     "xtech": {

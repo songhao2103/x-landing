@@ -4,7 +4,8 @@ import React from 'react'
 export interface StepCardProps {
   step: number
   title: string
-  description: string
+  description: string[]
+  isLi?: boolean
   icon?: string
   className?: string
 }
@@ -14,6 +15,7 @@ export const StepCard: React.FC<StepCardProps> = ({
   title,
   description,
   icon,
+  isLi,
   className = '',
 }) => {
   return (
@@ -25,6 +27,7 @@ export const StepCard: React.FC<StepCardProps> = ({
         <br />
         {title}
       </h3>
+
       {icon ? (
         <div className="mb-6 relative">
           <div className="w-[120px] h-[120px]">
@@ -53,9 +56,26 @@ export const StepCard: React.FC<StepCardProps> = ({
         </div>
       )}
 
+      <Description descs={description} isLi={isLi} />
+    </div>
+  )
+}
+
+const Description = ({ descs, isLi }: { descs: string[]; isLi?: boolean }) => {
+  if (!isLi)
+    return (
       <p className="text-base lg:text-lg text-gray-600 leading-relaxed h-full">
-        {description}
+        {descs[0]}
       </p>
+    )
+
+  return (
+    <div className="flex flex-col gap-y-1 justify-start items-start">
+      {descs.map((desc) => (
+        <p className="text-base lg:text-lg text-gray-600 leading-relaxed h-full">
+          • {desc}
+        </p>
+      ))}
     </div>
   )
 }

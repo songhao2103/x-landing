@@ -1,6 +1,14 @@
 import { HeroProductSection } from '@/components/sections/HeroProductSection'
 import OverviewSection from '@/components/sections/OverviewSection'
 import { ProductBenefitsSection } from '@/components/sections/ProductBenefitsSection'
+import {
+  ProductHowItWorksSection,
+  Step,
+} from '@/components/sections/ProductHowItWorksSection'
+import {
+  ProductWhySection,
+  WhyItem,
+} from '@/components/sections/ProductWhySection'
 import { useTranslations } from 'next-intl'
 
 const XOmiPage = () => {
@@ -116,6 +124,75 @@ const XOmiPage = () => {
     ],
   }
 
+  const howItWorkSteps: Step[] = [
+    {
+      description: [
+        t(`howItWorks.step_1.desc_1`),
+        t(`howItWorks.step_1.desc_2`),
+        t(`howItWorks.step_1.desc_3`),
+        t(`howItWorks.step_1.desc_4`),
+      ],
+      step: 1,
+      title: t(`howItWorks.step_1.title`),
+      icon: '/images/contents/xpromos/step_1.svg',
+    },
+    {
+      description: [
+        t(`howItWorks.step_2.desc_1`),
+        t(`howItWorks.step_2.desc_2`),
+        t(`howItWorks.step_2.desc_3`),
+      ],
+      step: 2,
+      title: t(`howItWorks.step_2.title`),
+      icon: '/images/contents/xpromos/step_2.svg',
+    },
+    {
+      description: [
+        t(`howItWorks.step_3.desc_1`),
+        t(`howItWorks.step_3.desc_2`),
+        t(`howItWorks.step_3.desc_3`),
+        t(`howItWorks.step_3.desc_4`),
+        t(`howItWorks.step_3.desc_5`),
+        t(`howItWorks.step_3.desc_6`),
+        t(`howItWorks.step_3.desc_7`),
+      ],
+      step: 3,
+      title: t(`howItWorks.step_3.title`),
+      icon: '/images/contents/xpromos/step_3.svg',
+    },
+    {
+      description: [
+        t(`howItWorks.step_4.desc_1`),
+        t(`howItWorks.step_4.desc_2`),
+        t(`howItWorks.step_4.desc_3`),
+        t(`howItWorks.step_4.desc_4`),
+        t(`howItWorks.step_4.desc_5`),
+      ],
+      step: 4,
+      title: t(`howItWorks.step_4.title`),
+      icon: '/images/contents/xpromos/step_4.svg',
+    },
+  ]
+
+  const whyDatas: WhyItem[] = [
+    {
+      title: t(`why.title_1`),
+      icon: '/images/contents/xomis/why_1.svg',
+    },
+    {
+      title: t(`why.title_2`),
+      icon: '/images/contents/xomis/why_2.svg',
+    },
+    {
+      title: t(`why.title_3`),
+      icon: '/images/contents/xomis/why_3.svg',
+    },
+    {
+      title: t(`why.title_4`),
+      icon: '/images/contents/xomis/why_4.svg',
+    },
+  ]
+
   return (
     <main className="min-h-screen space-y-2 md:space-y-4 lg:space-y-10">
       {/* Hero Section */}
@@ -126,6 +203,12 @@ const XOmiPage = () => {
 
       {/* Benefits Section */}
       <ProductBenefitsSection {...benefitsData} />
+
+      {/* How it works */}
+      <ProductHowItWorksSection steps={howItWorkSteps} />
+
+      {/* Why Choose XPromo */}
+      <ProductWhySection items={whyDatas} />
     </main>
   )
 }

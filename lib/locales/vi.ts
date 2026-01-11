@@ -129,12 +129,12 @@ export const vi = {
       },
       why: {
         title: 'Tại sao chọn XPromo?',
-        items: [
-          { title: 'Tệp khách hàng chất lượng' },
-          { title: 'Sản phẩm tín dụng đa dạng' },
-          { title: 'Tích hợp nhanh chóng 1-2 tuần' },
-          { title: 'Theo dõi kết quả dễ dàng' },
-        ],
+        items: {
+          title_1: 'Tệp khách hàng chất lượng',
+          title_2: 'Sản phẩm tín dụng đa dạng',
+          title_3: 'Tích hợp nhanh chóng 1-2 tuần',
+          title_4: 'Theo dõi kết quả dễ dàng',
+        },
       },
       howItWorks: {
         title: 'Phương thức hoạt động',

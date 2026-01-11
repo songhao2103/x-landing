@@ -152,11 +152,101 @@
           "title": "AI Algorithms",
           "description": "Continuously optimized AI algorithms to maximize operational efficiency"
         }
+      },
+      "benerfits": {
+        "title": "Key Features",
+        "subtitle": "Modular functional blocks designed for flexible integration and scaling",
+        "dynamic_crm": {
+          "title": "Dynamic CRM",
+          "features_1": "Customizable 360° customer profiles",
+          "features_2": "Organization-based access control",
+          "features_3": "Flexible assignment of contracts, customers, and opportunities",
+          "features_4": "Impact activity reporting",
+          "features_5": "Automated customer journey design",
+          "features_6": "Operational activity monitoring & reporting"
+        },
+        "switchboard": {
+          "title": "Smart Call Center",
+          "features_1": "Built-in softphone inside CRM",
+          "features_2": "Manual call & click-to-call",
+          "features_3": "Auto dialer calling",
+          "features_4": "Inbound call script configuration",
+          "features_5": "Hotline block detection & auto number rotation",
+          "features_6": "Voicemail call detection",
+          "features_7": "Intelligent call routing",
+          "features_8": "Call monitoring: listen, barge-in, three-way call",
+          "features_9": "Call quality scoring"
+        },
+        "channel": {
+          "title": "Omnichannel Engagement",
+          "features_1": "Multi-channel chat integration: Facebook, Zalo OA, Telegram",
+          "features_2": "Controlled personal Zalo chat integration",
+          "features_3": "CRM-synced interaction history",
+          "features_4": "Multi-channel messaging: SMS, ZNS, Email, Messenger"
+        },
+        "mobile-app": {
+          "title": "Field Mobile App",
+          "features_1": "360° customer information",
+          "features_2": "Easy task and visit planning",
+          "features_3": "Detailed work result reporting",
+          "features_4": "Multi-channel customer messaging",
+          "features_5": "In-app calling with softphone"
+        },
+        "ai": {
+          "title": "AI-Powered Solutions",
+          "features_1": "XAI Call Agent for two-way voice interaction",
+          "features_2": "XAI Chat Agent for automated omnichannel conversations",
+          "features_3": "XAI Assistant for interaction summarization",
+          "features_4": "XAI Supervisor QC for call/chat analysis, scoring, and behavior insights",
+          "features_5": "XAI Automation for digitalized customer journeys"
+        }
+      },
+      "howItWorks": {
+        "step_1": {
+          "title": "Import Customer Data",
+          "desc_1": "Contract details",
+          "desc_2": "Payment information",
+          "desc_3": "Documents and proof images",
+          "desc_4": "Interaction history"
+        },
+        "step_2": {
+          "title": "Digitalize Engagement Strategy",
+          "desc_1": "Customer segmentation",
+          "desc_2": "Assign customers to agents",
+          "desc_3": "Set up omnichannel customer journeys"
+        },
+        "step_3": {
+          "title": "Execute Engagement",
+          "desc_1": "Click-to-call / Manual call",
+          "desc_2": "Auto dialer",
+          "desc_3": "Auto call",
+          "desc_4": "SMS / Email / Zalo / Facebook",
+          "desc_5": "Field Mobile App",
+          "desc_6": "Two-way AI CallBot",
+          "desc_7": "AI Assistant for agents"
+        },
+        "step_4": {
+          "title": "Monitor & Manage",
+          "desc_1": "Engagement performance reports",
+          "desc_2": "Operational activity monitoring",
+          "desc_3": "Automated AI Supervisor QC",
+          "desc_4": "Call and interaction recording",
+          "desc_5": "Full activity tracking"
+        }
+      },
+      "why": {
+        "title": "Why Choose XAI Call Agent?",
+        "title_1": "Focused on business outcomes, not just technology",
+        "title_2": "Deep domain analysis and scenario-based design for each industry",
+        "title_3": "Unified data integration and end-to-end customer journey design",
+        "title_4": "Long-term partnership with continuous optimization"
       }
     },
     "xai": {
-      "title": "XBIZ",
-      "description": "Practical digital transformation consulting services that accompany enterprises from strategy to execution, driving efficiency and competitive advantage.",
+      "hero": {
+        "title": "AI-Powered Call Agent",
+        "description": "XAI Call Agent automates every call — from telesales and customer support to payment reminders — with a natural, human-like voice. The AI can listen, understand context, and respond intelligently. It handles thousands of concurrent calls, captures data in real time, and optimizes communication performance at scale."
+      },
       "overview": {
         "title": "XAI Call Agent Overview",
         "description": "Intelligent Communication – Superior Efficiency",
@@ -179,6 +269,51 @@
         "features_5": {
           "title": "Integration",
           "description": "Easy integration with existing systems"
+        }
+      },
+      "benerfits": {
+        "title": "Business Benefits",
+        "subtitle": "Reduce costs, boost efficiency, and elevate customer experience with AI virtual agents",
+        "productivity": {
+          "title": "Higher Productivity & Scalability",
+          "features_1": "Handle thousands of concurrent calls, operating 24/7 without limits",
+          "features_2": "Scale up or down instantly based on business demand"
+        },
+        "expense": {
+          "title": "Lower Operational Costs",
+          "features_1": "Train AI to automate standardized and repetitive call workflows",
+          "features_2": "Only complex, untrained cases are routed to human agents, reducing overall call costs"
+        },
+        "experience": {
+          "title": "Enhanced Customer Experience",
+          "features_1": "Never miss inbound calls or outbound campaigns",
+          "features_2": "Instant support anytime, anywhere — 24/7/365",
+          "features_3": "Consistent scripts with minimal human error",
+          "features_4": "Stable and consistent call quality"
+        },
+        "standardization": {
+          "title": "Standardized & Digitalized Interactions",
+          "features_1": "Every call is recorded and analyzed in real time",
+          "features_2": "Detailed reports on conversation content and call outcomes",
+          "features_3": "Automatically linked with follow-up actions such as messaging and email"
+        }
+      },
+      "howItWorks": {
+        "step_1": {
+          "title": "Listen to Customers",
+          "desc": "Speech-to-Text technology converts customer voice into text for AI understanding"
+        },
+        "step_2": {
+          "title": "Understand Intent",
+          "desc": "AI Conversation detects customer intent and handles trained business scenarios"
+        },
+        "step_3": {
+          "title": "Respond Intelligently",
+          "desc": "Text-to-Speech technology delivers natural, human-like voices across North, Central, and South regions"
+        },
+        "step_4": {
+          "title": "Seamless Collaboration",
+          "desc": "Complex cases are recorded and handed over to human agents for smooth coordination and optimized overall performance"
         }
       }
     },
