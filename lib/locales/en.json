@@ -374,11 +374,16 @@
     "address": "Sunshine Sky City, No. 4 Phu Thuan, Tan My Ward (former District 7), Ho Chi Minh City",
     "form": {
       "fullName": "Full Name",
+      "placeholder_fullName": "Enter your full name",
       "email": "Email",
+      "placeholder_email": "Enter your email address",
       "phone": "Phone Number",
+      "placeholder_phone": "Enter your phone number",
       "company": "Company",
+      "placeholder_company": "Enter your company name",
       "message": "Your Message",
-      "submit": "Submit"
+      "placeholder_message": "Enter your message",
+      "submit": "Submit Request"
     }
   },
   "footer": {
