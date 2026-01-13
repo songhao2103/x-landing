@@ -242,7 +242,7 @@
         "title_4": "Long-term partnership with continuous optimization"
       }
     },
-    "xai": {
+    "xai-call-agent": {
       "hero": {
         "title": "AI-Powered Call Agent",
         "description": "XAI Call Agent automates every call — from telesales and customer support to payment reminders — with a natural, human-like voice. The AI can listen, understand context, and respond intelligently. It handles thousands of concurrent calls, captures data in real time, and optimizes communication performance at scale."
@@ -315,6 +315,117 @@
           "title": "Seamless Collaboration",
           "desc": "Complex cases are recorded and handed over to human agents for smooth coordination and optimized overall performance"
         }
+      },
+      "why": {
+        "title": "Why Choose XAI Call Agent?",
+        "title_1": "Focused on business outcomes, not just technology",
+        "title_2": "Deep business analysis and scenario design tailored to each industry",
+        "title_3": "Unified data integration and end-to-end customer journey design",
+        "title_4": "Long-term partnership with continuous optimization"
+      }
+    },
+    "xai-suppervisor": {
+      "hero": {
+        "title": "AI Call Quality Assistant",
+        "description": "100% of calls are automatically analyzed and evaluated. Gain deep insights through emotion analysis, topic trends, and agent understanding metrics. Identify improvement gaps and better understand both your customers and your agents."
+      },
+      "overview": {
+        "title": "XAI Supervisor Overview",
+        "description": "An AI assistant designed to elevate call center quality end to end.",
+        "features_1": {
+          "title": "100% Call Evaluation",
+          "description": "Every call is automatically evaluated for quality."
+        },
+        "features_2": {
+          "title": "Clear Classification",
+          "description": "Automatically classify call content and outcomes."
+        },
+        "features_3": {
+          "title": "Real-Time Alerts",
+          "description": "Instant alerts for abnormal or non-compliant calls that require review."
+        },
+        "features_4": {
+          "title": "Timely Resolution",
+          "description": "Quickly capture customer feedback and complaints for prompt handling."
+        },
+        "features_5": {
+          "title": "Quality Improvement",
+          "description": "Identify agent skill gaps to support targeted training and performance improvement."
+        }
+      },
+      "benerfits": {
+        "title": "Key Capabilities",
+        "subtitle": "Modular feature blocks designed for flexible integration and customization",
+        "qa": {
+          "title": "Configurable Call QA",
+          "features_1": "Create call classification labels",
+          "features_2": "Define call analysis parameters",
+          "features_3": "Build emotion evaluation criteria",
+          "features_4": "Build business process evaluation criteria"
+        },
+        "conversation": {
+          "title": "AI Conversation Transcription",
+          "features_1": "Direct integration with call center or via API / SFTP / Batch files",
+          "features_2": "Speech-to-Text accuracy up to ~90%",
+          "features_3": "Separate agent and customer speech content",
+          "features_4": "Multi-accent and regional voice processing"
+        },
+        "analysis": {
+          "title": "AI Analysis & Scoring",
+          "features_1": "Sentiment tone and emotion trends of customers and agents",
+          "features_2": "Detailed scoring with evidence",
+          "features_3": "Emotion trend scoring",
+          "features_4": "Agent validation of scoring results"
+        },
+        "report": {
+          "title": "Visual Reports",
+          "features_1": "Score range reports",
+          "features_2": "Call-level reports",
+          "features_3": "Criteria-based reports",
+          "features_4": "Keyword-based reports"
+        }
+      },
+      "howItWorks": {
+        "step_1": {
+          "title": "Configure QA Evaluation",
+          "desc_1": "Create call classification labels",
+          "desc_2": "Define call analysis parameters",
+          "desc_3": "Build emotion evaluation criteria",
+          "desc_4": "Build business evaluation criteria"
+        },
+        "step_2": {
+          "title": "Call Transcription",
+          "desc_1": "Noise cleaning and audio enhancement",
+          "desc_2": "Agent and customer voice separation (voice diarization)",
+          "desc_3": "High-accuracy Speech-to-Text conversion"
+        },
+        "step_3": {
+          "title": "Analysis & Scoring",
+          "desc_1": "Call sentiment analysis",
+          "desc_2": "Conversation content analysis",
+          "desc_3": "Sensitive keyword detection",
+          "desc_4": "Business process evaluation",
+          "desc_5": "Criteria-based scoring",
+          "desc_6": "Abnormal call alerts for QA"
+        },
+        "step_4": {
+          "title": "Visual Reporting",
+          "desc_1": "Charts by labels, scores, and criteria",
+          "desc_2": "Popular keyword analysis charts",
+          "desc_3": "Agent performance scoring charts",
+          "desc_4": "Call quality reports"
+        }
+      },
+      "why": {
+        "title": "Why Choose XAI Supervisor?",
+        "title_1": "Full Automation",
+        "desc_1": "100% of calls are automatically evaluated for quality",
+        "title_2": "Quality Improvement",
+        "desc_2": "100% of agents are consistently assessed on performance",
+        "title_3": "Crisis Control",
+        "desc_3": "Problematic calls are flagged and reported for immediate action",
+        "title_4": "Customer Understanding",
+        "desc_4": "Capture customer insights to continuously improve service quality"
       }
     },
     "xtech": {

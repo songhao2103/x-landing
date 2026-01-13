@@ -1,8 +1,10 @@
 import { BenefitCard } from '@/components/ui/BenefitCard'
+import { Button } from '@/components/ui/Button'
 import { useTranslations } from 'next-intl'
 
 export interface WhyItem {
   title: string
+  desc?: string
   icon?: string
 }
 
@@ -28,15 +30,18 @@ export const ProductWhySection: React.FC<ProductWhySectionProps> = ({
         {/* Benefits Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {items.map((item, index) => (
-            <BenefitCard key={index} title={item.title} icon={item.icon} />
+            <BenefitCard
+              key={index}
+              title={item.title}
+              icon={item.icon}
+              desc={item.desc}
+            />
           ))}
         </div>
 
         {/* CTA Button */}
         <div className="flex justify-center mt-12">
-          <button className="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-full hover:shadow-lg hover:scale-105 transition-all duration-200">
-            Liên hệ tư vấn
-          </button>
+          <Button>{t('contact.title')}</Button>
         </div>
       </div>
     </section>

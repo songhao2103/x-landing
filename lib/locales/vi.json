@@ -238,7 +238,7 @@
         "title_4": "Đồng hành cùng doanh nghiêp & tối ưu liên tục"
       }
     },
-    "xai": {
+    "xai-call-agent": {
       "hero": {
         "title": "Tổng đài viên trí tuệ nhân tạo",
         "description": "XAI Call Agent tự động hóa mọi cuộc gọi – từ Telesales, CSKH đến nhắc nợ– với giọng nói tự nhiên như con người. AI có thể lắng nghe, hiểu và phản hồi theo ngữ cảnh. Hệ thống có thể xử lý hàng nghìn cuộc gọi đồng thời, ghi nhận dữ liệu tức thời và tối ưu hiệu suất giao tiếp trên quy mô lớn."
@@ -318,6 +318,110 @@
         "title_2": "Phân tích nghiệp vụ & kịch bản chuyên sâu theo từng lĩnh vực",
         "title_3": "Tích hợp dữ liệu, thiết kế hành trình khách hàng toàn diện",
         "title_4": "Đồng hành cùng doanh nghiêp & tối ưu liên tục"
+      }
+    },
+    "xai-suppervisor": {
+      "hero": {
+        "title": "Trợ lý ảo đánh giá chất lượng cuộc gọi",
+        "description": "100% cuộc gọi được tự động phân tích và đánh giá. Thu thập thông tin chi tiết thông qua phân tích cảm xúc, xu hướng chủ đề và các chỉ số về sự thấu hiểu của nhân viên. Xác định được các lỗ hổng cần cải thiện và hiểu rõ hơn về khách hàng và nhân viên của bạn"
+      },
+      "overview": {
+        "title": "Tổng qua XAI Supervisor",
+        "description": "Trợ lý AI giúp nâng cao chất lượng tổng đài toàn diện.",
+        "features_1": {
+          "title": "Đánh giá 100% cuộc gọi",
+          "description": "100% cuộc gọi được đánh giá chất lượng"
+        },
+        "features_2": {
+          "title": "Phân loại rõ ràng",
+          "description": "Phân loại các nhóm nội dung, kết quả cuộc gọi"
+        },
+        "features_3": {
+          "title": "Cảnh báo tức thời",
+          "description": "Cảnh báo các cuộc gọi bất thường, không đạt yêu cầu cần lưu ý kiểm tra lại"
+        },
+        "features_4": {
+          "title": "Xử lý kịp thời",
+          "description": "Nhanh chóng nắm bắt các phản hồi, khiếu nại của khách hàng để xử lý kịp thời"
+        },
+        "features_5": {
+          "title": "Nâng cao chất lượng",
+          "description": "Nhận diện các điểm thiếu sót của nhân viên để tiến hành đào tạo cải thiện chất lượng"
+        }
+      },
+      "benerfits": {
+        "title": "Tính năng nổi bật",
+        "subtitle": "Các cụm chức năng được thiết kế tháo lắp, tích hợp linh hoạt theo nhu cầu",
+        "qa": {
+          "title": "QA cấu hình đánh giá cuộc gọi",
+          "features_1": "Tạo nhãn phân loại cuộc gọi",
+          "features_2": "Xây dựng thông số phân tích cuộc gọi",
+          "features_3": "Xây dựng bộ tiêu chí cảm xúc",
+          "features_4": "Xây dựng bộ tiêu chí nghiệp vụ"
+        },
+        "conversation": {
+          "title": "AI bóc băng hội thoại",
+          "features_1": "Liên kết trực tiếp với tổng đài hoặc qua API/SFTP/Batch File",
+          "features_2": "Speech to Text xử lý chính xác ~90%",
+          "features_3": "Tác nội dung lời thoại Agent & khách hàng",
+          "features_4": "Xử lý giọng nói đa vùng miền"
+        },
+        "analysis": {
+          "title": "AI Phân tích & chấm điểm",
+          "features_1": "Sắc thái, xu hướng cảm xúc của khách hàng & nhân viên",
+          "features_2": "Chấm điểm chi tiết và dẫn chứng",
+          "features_3": "Chấm điểm xu hướng cảm xúc",
+          "features_4": "Nhân viên kiệ định kết quả chấm điểm "
+        },
+        "report": {
+          "title": "Báo cáo trực quan",
+          "features_1": "Báo cáo khoảng điểm",
+          "features_2": "Báo cáo theo cuộc gọi",
+          "features_3": "Báo cáo theo tiêu chí",
+          "features_4": "Báo cáo theo từ khoá"
+        }
+      },
+      "howItWorks": {
+        "step_1": {
+          "title": "QA cấu hình đánh giá",
+          "desc_1": "Tạo nhãn phân loại cuộc gọi",
+          "desc_2": "Xây dựng thông số phân tích cuộc gọi",
+          "desc_3": "Xây dựng bộ tiêu chí cảm xúc",
+          "desc_4": "Xây dựng bộ tiêu chí nghiệp vụ"
+        },
+        "step_2": {
+          "title": "Bóc băng cuộc gọi",
+          "desc_1": "Xử lý lọc nhiễu (Noise Cleaning)",
+          "desc_2": "Phân tách lời thoại nhân viên & khách hàng (Voice Diarization)",
+          "desc_3": "Chuyển giọng nói thành văn bản (Speech to Text) độ chính xác cao"
+        },
+        "step_3": {
+          "title": "Phân tích & chấm điểm",
+          "desc_1": "Phân tích cảm xúc cuộc gọi",
+          "desc_2": "Phân tích nội dung đàm thoại",
+          "desc_3": "Nhận diện các từ nhạy cảm",
+          "desc_4": "Đánh giá nghiệp vụ",
+          "desc_5": "Chấm điểm theo tiêu chí",
+          "desc_6": "Cảnh báo cuộc gọi bất thường cho QC"
+        },
+        "step_4": {
+          "title": "Báo cáo trực quan",
+          "desc_1": "Biểu đồ báo cáo nhãn, điểm, tiêu chí",
+          "desc_2": "Biểu đồ phân tích từ khóa phổ biến",
+          "desc_3": "Biểu đồ điểm tác vụ nhân viên",
+          "desc_4": "Báo cáo chất lượng cuộc gọi"
+        }
+      },
+      "why": {
+        "title": "Tại sao chọn XAI Supervisor?",
+        "title_1": "Tự động hóa",
+        "desc_1": "100% cuộc gọi được đánh giá chất lượng",
+        "title_2": "Nâng cao chất lượng",
+        "desc_2": "1100% nhân viên được đánh giá chất lượng công việc ",
+        "title_3": "Kiểm soát khủng hoảng",
+        "desc_3": "Các cuộc gọi có vấn đề được báo cáo xử lý ngay lập tức",
+        "title_4": "Thấu hiểu khách hàng",
+        "desc_4": "Nắm bắt insight khách hàng để cải thiện dịch vụ"
       }
     },
     "xtech": {

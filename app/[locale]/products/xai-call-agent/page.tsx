@@ -5,14 +5,18 @@ import {
   ProductHowItWorksSection,
   Step,
 } from '@/components/sections/ProductHowItWorksSection'
+import {
+  ProductWhySection,
+  WhyItem,
+} from '@/components/sections/ProductWhySection'
 import { useTranslations } from 'next-intl'
 
 const page = () => {
-  const t = useTranslations('products.xai')
+  const t = useTranslations('products.xai-call-agent')
 
   const dataHero = {
-    logo: '/images/contents/xais/icon_hero.svg',
-    image: '/images/contents/xais/image_hero.png',
+    logo: '/images/contents/xai-call-agents/icon_hero.svg',
+    image: '/images/contents/xai-call-agents/image_hero.png',
     title: t('hero.title'),
     description: t('hero.description'),
   }
@@ -23,27 +27,27 @@ const page = () => {
     items: [
       {
         title: t('overview.features_1.title'),
-        image: '/images/contents/xais/overview_1.svg',
+        image: '/images/contents/xai-call-agents/overview_1.svg',
         description: t('overview.features_1.description'),
       },
       {
         title: t('overview.features_2.title'),
-        image: '/images/contents/xais/overview_2.svg',
+        image: '/images/contents/xai-call-agents/overview_2.svg',
         description: t('overview.features_2.description'),
       },
       {
         title: t('overview.features_3.title'),
-        image: '/images/contents/xais/overview_3.svg',
+        image: '/images/contents/xai-call-agents/overview_3.svg',
         description: t('overview.features_3.description'),
       },
       {
         title: t('overview.features_4.title'),
-        image: '/images/contents/xais/overview_4.svg',
+        image: '/images/contents/xai-call-agents/overview_4.svg',
         description: t('overview.features_4.description'),
       },
       {
         title: t('overview.features_5.title'),
-        image: '/images/contents/xais/overview_5.svg',
+        image: '/images/contents/xai-call-agents/overview_5.svg',
         description: t('overview.features_5.description'),
       },
     ],
@@ -61,7 +65,7 @@ const page = () => {
           t(`benerfits.productivity.features_2`),
           t(`benerfits.productivity.features_3`),
         ],
-        image: '/images/contents/xais/benerfits_1.svg',
+        image: '/images/contents/xai-call-agents/benerfits_1.svg',
       },
       {
         key: 'expense',
@@ -70,7 +74,7 @@ const page = () => {
           t(`benerfits.expense.features_1`),
           t(`benerfits.expense.features_2`),
         ],
-        image: '/images/contents/xais/benerfits_1.svg',
+        image: '/images/contents/xai-call-agents/benerfits_1.svg',
       },
       {
         key: 'experience',
@@ -81,7 +85,7 @@ const page = () => {
           t(`benerfits.experience.features_3`),
           t(`benerfits.experience.features_4`),
         ],
-        image: '/images/contents/xais/benerfits_1.svg',
+        image: '/images/contents/xai-call-agents/benerfits_1.svg',
       },
       {
         key: 'standardization',
@@ -91,7 +95,7 @@ const page = () => {
           t(`benerfits.standardization.features_2`),
           t(`benerfits.standardization.features_3`),
         ],
-        image: '/images/contents/xais/benerfits_1.svg',
+        image: '/images/contents/xai-call-agents/benerfits_1.svg',
       },
     ],
   }
@@ -101,25 +105,44 @@ const page = () => {
       description: [t(`howItWorks.step_1.desc`)],
       step: 1,
       title: t(`howItWorks.step_1.title`),
-      icon: '/images/contents/xais/step_1.svg',
+      icon: '/images/contents/xai-call-agents/step_1.svg',
     },
     {
       description: [t(`howItWorks.step_2.desc`)],
       step: 2,
       title: t(`howItWorks.step_2.title`),
-      icon: '/images/contents/xais/step_2.svg',
+      icon: '/images/contents/xai-call-agents/step_2.svg',
     },
     {
       description: [t(`howItWorks.step_3.desc`)],
       step: 3,
       title: t(`howItWorks.step_3.title`),
-      icon: '/images/contents/xais/step_3.svg',
+      icon: '/images/contents/xai-call-agents/step_3.svg',
     },
     {
       description: [t(`howItWorks.step_4.desc`)],
       step: 4,
       title: t(`howItWorks.step_4.title`),
-      icon: '/images/contents/xais/step_4.svg',
+      icon: '/images/contents/xai-call-agents/step_4.svg',
+    },
+  ]
+
+  const whyDatas: WhyItem[] = [
+    {
+      title: t(`why.title_1`),
+      icon: '/images/contents/xomis/why_1.svg',
+    },
+    {
+      title: t(`why.title_2`),
+      icon: '/images/contents/xomis/why_2.svg',
+    },
+    {
+      title: t(`why.title_3`),
+      icon: '/images/contents/xomis/why_3.svg',
+    },
+    {
+      title: t(`why.title_4`),
+      icon: '/images/contents/xomis/why_4.svg',
     },
   ]
 
@@ -136,6 +159,9 @@ const page = () => {
 
       {/* How it works */}
       <ProductHowItWorksSection steps={howItWorkSteps} />
+
+      {/* Why Choose XPromo */}
+      <ProductWhySection items={whyDatas} />
     </main>
   )
 }

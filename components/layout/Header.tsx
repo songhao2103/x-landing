@@ -30,8 +30,8 @@ export const Header: React.FC = () => {
   const products = [
     { label: 'XPromo', href: ROUTES.PRODUCT_XPROMO },
     { label: 'XOMI', href: ROUTES.PRODUCT_XOMI },
-    { label: 'XAI', href: ROUTES.PRODUC_XAI },
-    { label: 'XTECH', href: '/products/xtech' },
+    { label: 'AI CALL AGENT', href: ROUTES.PRODUC_XAI_CALL_AGENT },
+    { label: 'AI SUPPERVISOR', href: ROUTES.PRODUCT_AI_SUPPERVISOR },
   ]
 
   const navItems = [
