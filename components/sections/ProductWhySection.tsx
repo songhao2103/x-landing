@@ -1,6 +1,7 @@
 import { BenefitCard } from '@/components/ui/BenefitCard'
 import { Button } from '@/components/ui/Button'
 import { useTranslations } from 'next-intl'
+import { CSSProperties } from 'react'
 
 export interface WhyItem {
   title: string
@@ -28,7 +29,20 @@ export const ProductWhySection: React.FC<ProductWhySectionProps> = ({
         </div>
 
         {/* Benefits Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+        <div
+          className="
+            grid 
+            grid-cols-1 
+            md:grid-cols-2 
+            xl:grid-cols-[repeat(var(--cols),minmax(0,1fr))]
+            gap-8 lg:gap-6
+          "
+          style={
+            {
+              '--cols': items.length,
+            } as CSSProperties
+          }
+        >
           {items.map((item, index) => (
             <BenefitCard
               key={index}

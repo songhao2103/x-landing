@@ -1,5 +1,6 @@
 import { StepCard } from '@/components/ui/StepCard'
 import { useTranslations } from 'next-intl'
+import { CSSProperties } from 'react'
 
 export interface Step {
   step: number
@@ -30,10 +31,18 @@ export const ProductHowItWorksSection: React.FC<
 
         {/* Steps Grid */}
         <div
-          className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-6"
-          style={{
-            gridTemplateColumns: `repeat(${steps.length}, minmax(0, 1fr))`,
-          }}
+          className="
+    grid 
+    grid-cols-1 
+    md:grid-cols-2 
+    xl:grid-cols-[repeat(var(--cols),minmax(0,1fr))]
+    gap-8 lg:gap-6
+  "
+          style={
+            {
+              '--cols': steps.length,
+            } as CSSProperties
+          }
         >
           {steps.map((step, index) => (
             <StepCard

@@ -43,13 +43,13 @@ export const HeroProductSection: React.FC<HeroProductSectionProps> = ({
       <div className="container flex flex-col lg:flex-row mt-32 lg:mt-0  items-start lg:items-center justify-between gap-10 mx-auto px-8 lg:px-12 relative z-10">
         <div className="max-w-4xl">
           {logo && (
-            <div className="flex items-center gap-4 mb-4">
+            <div className="relative h-16 w-auto">
               <Image
                 src={logo}
                 alt={title}
-                width={120}
-                height={60}
-                className="max-h-20 object-contain"
+                fill
+                className="object-contain object-left"
+                // sizes="(max-width: 768px) 150px, 200px"
               />
             </div>
           )}

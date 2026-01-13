@@ -1,5 +1,6 @@
 import OverviewSectionItem from '@/components/sections/OverviewSectionItem'
 import { TittleSection } from '@/components/ui/TittleSection'
+import { CSSProperties } from 'react'
 
 export interface OverviewSectionProps {
   title: string
@@ -23,10 +24,18 @@ const OverviewSection: React.FC<OverviewSectionProps> = ({
       <TittleSection title={title} noMargin />
       <h6>{description}</h6>
       <div
-        className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-6"
-        style={{
-          gridTemplateColumns: `repeat(${items.length}, minmax(0, 1fr))`,
-        }}
+        className="
+               grid 
+               grid-cols-1 
+               md:grid-cols-2 
+               xl:grid-cols-[repeat(var(--cols),minmax(0,1fr))]
+               gap-8 lg:gap-6
+             "
+        style={
+          {
+            '--cols': items.length,
+          } as CSSProperties
+        }
       >
         {items.map((item, index) => (
           <OverviewSectionItem {...item} key={index} />

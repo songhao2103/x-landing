@@ -13,8 +13,8 @@ export const ApproachSection = () => {
       <div className="container mx-auto flex flex-col items-center justify-center px-4 lg:px-8">
         <TittleSection title={t('xpromo.approach.title')} />
         <ImageLang
-          enSrc="/images/contents/homes/xpromo_flow_vi.svg"
-          viSrc="/images/contents/homes/xpromo_flow_en.svg"
+          enSrc="/images/contents/homes/xpromo_flow_en.svg"
+          viSrc="/images/contents/homes/xpromo_flow_vi.svg"
           width={900}
           height={800}
           className="object-contain w-[90%] h-full"

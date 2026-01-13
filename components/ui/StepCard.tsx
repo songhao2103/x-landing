@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import React from 'react'
 
@@ -18,12 +19,13 @@ export const StepCard: React.FC<StepCardProps> = ({
   isLi,
   className = '',
 }) => {
+  const t = useTranslations()
   return (
     <div
       className={`flex flex-col items-center text-center justify-between gap-4 ${className}`}
     >
       <h3 className="text-xl lg:text-2xl font-bold text-gray-900">
-        Bước {step}
+        {t('common.step')} {step}
         <br />
         {title}
       </h3>

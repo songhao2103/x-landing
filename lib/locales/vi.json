@@ -8,6 +8,10 @@
     "language": "VI",
     "contact": "Liên hệ"
   },
+  "common": {
+    "step": "Bước"
+  },
+
   "language": {
     "vietnamese": "Tiếng Việt",
     "english": "Tiếng Anh"
@@ -62,7 +66,7 @@
       "approach": {
         "title": "Tiếp cận hiệu quả đúng người - đúng thời điểm"
       },
-      "description": "Nền tảng kết nối giữa doanh nghiệp và các bệ sản thái: SaaS, giúp thương hiệu, quảng hồ sản phẩm trực tiếp đến đúng người dùng bạc ngày họng các kênh tương thông dạng số hộ được.",
+      "description": "Nền tảng kết nối giữa doanh nghiệp và các hệ sinh thái SaaS, giúp thương hiệu quảng bá sản phẩm trực tiếp đến đúng người đúng lúc, ngay trong các phần mềm mà khách hàng đang sử dụng.",
       "cta": "Liên hệ tư vấn",
       "hero": {
         "tag": "PROMO",
@@ -239,6 +243,9 @@
       }
     },
     "xai-call-agent": {
+      "home": {
+        "services": "Dịch vụ tư vấn và triển khai chuyển đổi số thực chiến, đồng hành cùng doanh nghiệp tối ưu hoá mô hình vận hành đo lường được hiệu quả rõ ràng bằng dữ liệu tường minh."
+      },
       "hero": {
         "title": "Tổng đài viên trí tuệ nhân tạo",
         "description": "XAI Call Agent tự động hóa mọi cuộc gọi – từ Telesales, CSKH đến nhắc nợ– với giọng nói tự nhiên như con người. AI có thể lắng nghe, hiểu và phản hồi theo ngữ cảnh. Hệ thống có thể xử lý hàng nghìn cuộc gọi đồng thời, ghi nhận dữ liệu tức thời và tối ưu hiệu suất giao tiếp trên quy mô lớn."
