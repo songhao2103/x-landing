@@ -482,10 +482,15 @@
     "address": "Sunshine Sky City, Số 4 Phú Thuận, P. Tân Mỹ (Q. 7 cũ), TP. Hồ Chí Minh",
     "form": {
       "fullName": "Họ và Tên",
+      "placeholder_fullName": "Nhập họ và tên của bạn",
       "email": "Email",
+      "placeholder_email": "Nhập email của bạn",
       "phone": "Số điện thoại",
+      "placeholder_phone": "Nhập số điện thoại của bạn",
       "company": "Công ty",
+      "placeholder_company": "Nhập công ty của bạn",
       "message": "Lời nhắn của bạn",
+      "placeholder_message": "Nhập lời nhắn của bạn",
       "submit": "Gửi yêu cầu"
     }
   },
