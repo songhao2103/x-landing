@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/Button'
 import { Card } from '@/components/ui/Card'
+import { Reveal, RevealItem } from '@/components/ui/Reveal'
 import { useTranslations } from 'next-intl'
 import React from 'react'
 
@@ -43,26 +44,50 @@ export const HeroSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Content */}
           <div className="text-white space-y-6 lg:space-y-8">
-            <h1 className="text-hero-mobile lg:text-hero font-bold leading-tight">
-              {t('title')
-                .split('\n')
-                .map((line, index) => (
-                  <React.Fragment key={index}>
-                    {line}
-                    {index === 0 && <br />}
-                  </React.Fragment>
-                ))}
-            </h1>
+            <Reveal
+              motionConfig={{
+                from: 'left',
+                distance: 32,
+                duration: 0.6,
+                ease: 'easeInOut',
+              }}
+              viewport={{
+                amount: 0.2,
+                margin: '-10% 0px 0px  0px',
+                once: true,
+              }}
+            >
+              <h1 className="text-hero-mobile lg:text-hero font-bold leading-tight">
+                {t('title')
+                  .split('\n')
+                  .map((line, index) => (
+                    <React.Fragment key={index}>
+                      {line}
+                      {index === 0 && <br />}
+                    </React.Fragment>
+                  ))}
+              </h1>
 
-            <p className="text-base lg:text-lg text-gray-300 leading-relaxed max-w-2xl">
-              {t('description')}
-            </p>
+              <p className="text-base lg:text-lg text-gray-300 leading-relaxed max-w-2xl">
+                {t('description')}
+              </p>
+            </Reveal>
 
-            <div className="pt-4">
-              <Button variant="primary" size="lg">
-                {t('cta')}
-              </Button>
-            </div>
+            <Reveal
+              motionConfig={{
+                from: 'bottom',
+                distance: 32,
+                duration: 0.6,
+                ease: 'easeInOut',
+              }}
+              viewport={{ amount: 0.2, margin: '0px 0px -15% 0px', once: true }}
+            >
+              <div className="pt-4">
+                <Button variant="primary" size="lg">
+                  {t('cta')}
+                </Button>
+              </div>
+            </Reveal>
           </div>
         </div>
       </div>
@@ -70,18 +95,30 @@ export const HeroSection: React.FC = () => {
       {/* Feature Cards - Relative on mobile, absolute on desktop */}
       <div className="relative lg:absolute bottom-0 left-0 right-0 z-30 mt-8 lg:mt-0">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 lg:transform lg:translate-y-1/2">
-            {features.map((feature) => (
-              <Card key={feature.title} variant="feature" hover>
-                <h3 className="text-sm lg:text-base font-bold text-gray-900 mb-3 uppercase tracking-wide">
-                  {feature.title}
-                </h3>
-                <p className="text-xs lg:text-sm text-gray-700 leading-relaxed">
-                  {feature.description}
-                </p>
-              </Card>
-            ))}
-          </div>
+          <Reveal
+            stagger={{ staggerChildren: 0.07, delayChildren: 0.07 }}
+            motionConfig={{
+              from: 'bottom',
+              duration: 0.6,
+              ease: 'easeInOut',
+              distance: 32,
+            }}
+          >
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 lg:transform lg:translate-y-1/2">
+              {features.map((feature) => (
+                <RevealItem className="h-full">
+                  <Card key={feature.title} variant="feature" hover>
+                    <h3 className="text-sm lg:text-base font-bold text-gray-900 mb-3 uppercase tracking-wide">
+                      {feature.title}
+                    </h3>
+                    <p className="text-xs lg:text-sm text-gray-700 leading-relaxed">
+                      {feature.description}
+                    </p>
+                  </Card>
+                </RevealItem>
+              ))}
+            </div>
+          </Reveal>
         </div>
       </div>
     </section>

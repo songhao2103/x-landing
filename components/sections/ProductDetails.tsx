@@ -53,7 +53,7 @@ export const ProductDetails: React.FC = () => {
     <section className="py-8">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="space-y-20 lg:space-y-32">
-          {products.map((product) => (
+          {products.map((product, index) => (
             <ProductCard key={product.tag} {...product} />
           ))}
         </div>

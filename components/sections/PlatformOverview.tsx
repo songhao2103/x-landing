@@ -1,4 +1,5 @@
 import ImageLang from '@/components/ui/ImageLang'
+import { Reveal } from '@/components/ui/Reveal'
 import { TittleSection } from '@/components/ui/TittleSection'
 import { vi } from '@/lib/locales/vi'
 import { useTranslations } from 'next-intl'
@@ -47,19 +48,31 @@ export const PlatformOverview: React.FC = () => {
 
   return (
     <section className="relative bg-white py-6 lg:pt-40">
-      <div className="container mx-auto px-4 lg:px-8 flex flex-col items-center justify-center">
-        <TittleSection title={t('title')} />
-
-        <ImageLang
-          enSrc="/images/contents/homes/service_banner_en.svg"
-          viSrc="/images/contents/homes/service_banner_vi.svg"
-          enAlt="Service Banner"
-          width={260}
-          height={260}
-          className="w-[90%] h-full object-contain"
-          priority
-        />
-      </div>
+      <Reveal
+        motionConfig={{
+          from: 'none', // không dịch chuyển
+          opacity: 0, // opacity ban đầu
+          duration: 0.5,
+          ease: 'easeInOut',
+        }}
+        viewport={{
+          amount: 0.3, // 30% element xuất hiện thì chạy
+          once: true,
+        }}
+      >
+        <div className="container mx-auto px-4 lg:px-8 flex flex-col items-center justify-center">
+          <TittleSection title={t('title')} />
+          <ImageLang
+            enSrc="/images/contents/homes/service_banner_en.svg"
+            viSrc="/images/contents/homes/service_banner_vi.svg"
+            enAlt="Service Banner"
+            width={260}
+            height={260}
+            className="w-[90%] h-full object-contain"
+            priority
+          />
+        </div>
+      </Reveal>
     </section>
   )
 
