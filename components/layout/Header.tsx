@@ -7,25 +7,13 @@ import { useClickOutside } from '@/lib/utils/hooks'
 import { useLocale, useTranslations } from 'next-intl'
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 
 export const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [languageMenuOpen, setLanguageMenuOpen] = useState(false)
   const [productsMenuOpen, setProductsMenuOpen] = useState(false)
-  const languageDropdownRef = useRef<HTMLDivElement>(null)
-  const [mounted, setMounted] = useState(false)
-  const pathname = usePathname()
-  const locale = useLocale()
-  const router = useRouter()
-  const t = useTranslations()
-  useClickOutside(languageDropdownRef, () => {
-    setLanguageMenuOpen(false)
-  })
 
-  useEffect(() => {
-    setMounted(true)
-  }, [])
+  const t = useTranslations()
 
   const products = [
     { label: 'XPromo', href: ROUTES.PRODUCT_XPROMO },
@@ -53,78 +41,6 @@ export const Header: React.FC = () => {
       value: LANGUAGE.VI,
     },
   ]
-
-  const renderLanguageCode = () => {
-    if (!mounted) return 'VI'
-    if (locale === LANGUAGE.EN) return 'EN'
-    if (locale === LANGUAGE.VI) return 'VI'
-    return ''
-  }
-
-  const renderButtonToggleLang = () => {
-    let currentLang = 'VI'
-    if (locale === LANGUAGE.EN) currentLang = 'EN'
-    if (locale === LANGUAGE.VI) currentLang = 'VI'
-
-    return (
-      <button
-        onClick={() => setLanguageMenuOpen(!languageMenuOpen)}
-        className="relative flex items-center gap-1.5 text-[15px] font-medium text-white hover:text-cyan-400 transition-colors"
-      >
-        <svg
-          className="w-5 h-5"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <circle cx="12" cy="12" r="10" strokeWidth="2" />
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
-          />
-        </svg>
-        {currentLang}
-        <svg
-          className="w-3.5 h-3.5"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2.5}
-            d="M19 9l-7 7-7-7"
-          />
-        </svg>
-        {languageMenuOpen && (
-          <div
-            className="absolute flex flex-col items-start gap-y-1 px-3 py-2 rounded-md shadow-md w-[100px] top-6 bg-white"
-            ref={languageDropdownRef}
-          >
-            {languageItems.map((item) => (
-              <p
-                key={item.value}
-                className="text-dark-hover"
-                onClick={() => {
-                  handleToogleLocale(item.value)
-                }}
-              >
-                {item.label}
-              </p>
-            ))}
-          </div>
-        )}
-      </button>
-    )
-  }
-
-  const handleToogleLocale = (locale: LANGUAGE) => {
-    const nextPath = `/${locale}${pathname.replace(/^\/(vi|en)/, '')}`
-    router.replace(nextPath, { scroll: false })
-  }
 
   return (
     <header
@@ -201,7 +117,7 @@ export const Header: React.FC = () => {
             )}
 
             {/* Language Selector */}
-            {renderButtonToggleLang()}
+            <LanguageSwitcher />
 
             {/* CTA Button */}
             <Link
@@ -213,9 +129,8 @@ export const Header: React.FC = () => {
           </div>
 
           {/* Mobile Menu Button */}
-
           <div className="lg:hidden flex gap-x-2 items-center">
-            {renderButtonToggleLang()}
+            <LanguageSwitcher />
             <button
               className="lg:hidden p-2 text-white"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -303,5 +218,86 @@ export const Header: React.FC = () => {
         )}
       </nav>
     </header>
+  )
+}
+
+export function LanguageSwitcher() {
+  const [open, setOpen] = useState(false)
+  const wrapperRef = useRef<HTMLDivElement>(null)
+
+  const locale = useLocale()
+  const pathname = usePathname()
+  const router = useRouter()
+  const t = useTranslations()
+
+  useClickOutside(wrapperRef, () => setOpen(false))
+
+  const handleChange = (nextLocale: LANGUAGE) => {
+    const nextPath = `/${nextLocale}${pathname.replace(/^\/(vi|en)/, '')}`
+    setOpen(false)
+    router.replace(nextPath, { scroll: false })
+  }
+
+  const currentLang = locale === LANGUAGE.EN ? 'EN' : 'VI'
+
+  return (
+    <div ref={wrapperRef} className="relative">
+      {/* Toggle button */}
+      <button
+        onClick={() => setOpen((v) => !v)}
+        className="relative flex items-center gap-1.5 text-[15px] font-medium text-white hover:text-cyan-400 transition-colors"
+      >
+        {/* Globe icon */}
+        <svg
+          className="w-5 h-5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <circle cx="12" cy="12" r="10" strokeWidth="2" />
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+          />
+        </svg>
+
+        {currentLang}
+
+        {/* Chevron icon */}
+        <svg
+          className="w-3.5 h-3.5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2.5}
+            d="M19 9l-7 7-7-7"
+          />
+        </svg>
+      </button>
+
+      {/* Dropdown */}
+      {open && (
+        <div className="absolute top-7 right-0 flex flex-col gap-y-1 px-3 py-2 rounded-md shadow-md w-[120px] bg-white z-50">
+          <button
+            className="text-left text-dark-hover hover:text-cyan-600 transition-colors"
+            onClick={() => handleChange(LANGUAGE.EN)}
+          >
+            {t('language.english')}
+          </button>
+          <button
+            className="text-left text-dark-hover hover:text-cyan-600 transition-colors"
+            onClick={() => handleChange(LANGUAGE.VI)}
+          >
+            {t('language.vietnamese')}
+          </button>
+        </div>
+      )}
+    </div>
   )
 }
