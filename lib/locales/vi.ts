@@ -15,7 +15,7 @@ export const vi = {
   hero: {
     title: 'Nâng tầm trí tuệ\nKiến tạo tương lai',
     description:
-      'XFuture là đơn vị ai-ven & tiên phong chuyển đổi dữ liệu trên nền tảng AI, với 80i thực chuyên gia nhặc chính động hành động doanh nghiệp bứt ra thành công số qua toàn diện thánh quả kiệt sủa và năng lực bền vững.',
+      'XFuture là đơn vị tư vấn & triển khai chuyển đổi số dựa trên nền tảng AI, với đội ngũ chuyên gia thực chiến đồng hành cùng doanh nghiệp tối ưu vận hành, nâng cao hiệu suất và tạo lợi thế cạnh tranh vượt trội',
     cta: 'Liên hệ tư vấn',
     features: {
       growth: {

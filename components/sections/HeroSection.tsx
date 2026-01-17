@@ -57,7 +57,7 @@ export const HeroSection: React.FC = () => {
                 once: true,
               }}
             >
-              <h1 className="text-hero-mobile lg:text-hero font-bold leading-tight">
+              <h1 className="text-hero-mobile lg:text-hero font-bold leading-tight mb-3 lg:mb-6">
                 {t('title')
                   .split('\n')
                   .map((line, index) => (
@@ -68,7 +68,7 @@ export const HeroSection: React.FC = () => {
                   ))}
               </h1>
 
-              <p className="text-base lg:text-lg text-gray-300 leading-relaxed max-w-2xl">
+              <p className="text-base lg:text-2xl text-gray-300 leading-relaxed max-w-2xl">
                 {t('description')}
               </p>
             </Reveal>

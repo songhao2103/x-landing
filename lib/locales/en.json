@@ -17,24 +17,24 @@
   },
   "hero": {
     "title": "Empowering Intelligence\nShaping the Future",
-    "description": "XFuture is an AI-driven and data transformation pioneer, powered by a team of 80+ experienced experts, accompanying enterprises on their journey to comprehensive digital success with breakthrough performance and sustainable capabilities.",
+    "description": "XFuture is an AI-driven digital transformation consulting and implementation firm, with a team of hands-on experts partnering with enterprises to optimize operations, boost performance, and build sustainable competitive advantages.",
     "cta": "Get Consultation",
     "features": {
       "growth": {
         "title": "GROWTH MARKETING",
-        "description": "Generate 100M+ new users monthly for leading brands through optimized digital automation channels"
+        "description": "Reach over 500K high-quality users with XPromo and scale unlimited leads through multi-platform AI marketing automation."
       },
       "boost": {
         "title": "BOOST SALES",
-        "description": "AI-powered team optimization to accelerate performance by 20%, supporting deal closing, insight analysis, and customer expansion"
+        "description": "Accelerate revenue growth with AI that automatically engages thousands of prospects, qualifies demand, and empowers sales teams to close deals faster."
       },
       "enhance": {
-        "title": "ENHANCE OPERATION",
-        "description": "Proactive AI-driven services that digitize and optimize enterprise operations across complex business scenarios"
+        "title": "ENHANCE OPERATIONS",
+        "description": "Elevate customer service and operations with omnichannel personalized experiences and 24/7/365 AI-powered automation."
       },
       "improve": {
         "title": "IMPROVE COLLECTION",
-        "description": "AI-assisted collection workflows that boost debt recovery efficiency with smart customer care and collection tools"
+        "description": "Consulting and implementation of AI-driven debt collection solutions, seamlessly combining human expertise and automation to execute effective engagement strategies and reduce credit risk."
       }
     }
   },

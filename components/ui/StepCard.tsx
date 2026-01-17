@@ -1,6 +1,6 @@
-import { useTranslations } from 'next-intl'
+'use client'
+
 import Image from 'next/image'
-import React from 'react'
 
 export interface StepCardProps {
   step: number
@@ -8,76 +8,68 @@ export interface StepCardProps {
   description: string[]
   isLi?: boolean
   icon?: string
-  className?: string
+  isLast?: boolean
 }
-
-export const StepCard: React.FC<StepCardProps> = ({
+export const StepCard = ({
   step,
   title,
   description,
   icon,
   isLi,
-  className = '',
-}) => {
-  const t = useTranslations()
+  isLast,
+}: StepCardProps) => {
   return (
     <div
-      className={`flex flex-col items-center text-center justify-between gap-4 ${className}`}
+      className="
+        h-full
+        grid
+        grid-rows-[auto_160px_1fr]
+        text-center
+        gap-4
+        px-4
+      "
     >
-      <h3 className="text-xl lg:text-2xl font-bold text-gray-900">
-        {t('common.step')} {step}
+      {/* Title */}
+      <h3 className="text-lg md:text-xl font-bold leading-snug">
+        Step {step}
         <br />
         {title}
       </h3>
 
-      {icon ? (
-        <div className="mb-6 relative">
-          <div className="w-[120px] h-[120px]">
+      {/* ICON ZONE */}
+      <div className="relative flex items-center justify-center">
+        <div className="relative w-24 h-24 lg:w-[120px] lg:h-[120px]">
+          <Image fill src={icon!} alt="" className="object-contain" />
+        </div>
+
+        {!isLast && (
+          <div className="hidden xl:block absolute right-[-140px] top-1/2 -translate-y-1/2">
             <Image
-              src={icon}
-              alt={`Bước ${step}`}
+              src="/images/contents/xpromos/icon_next.svg"
               width={120}
               height={120}
-              className="object-contain"
-            />
-          </div>
-          <div className="absolute top-1/2 -translate-y-2  -right-[140px] 2xl:block hidden">
-            <Image
-              src={'/images/contents/xpromos/icon_next.svg'}
               alt=""
-              width={120}
-              height={120}
             />
           </div>
-        </div>
-      ) : (
-        <div className="mb-6 relative">
-          <div className="w-32 h-32 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg">
-            <span className="text-4xl font-bold text-white">{step}</span>
-          </div>
-        </div>
-      )}
+        )}
+      </div>
 
-      <Description descs={description} isLi={isLi} />
-    </div>
-  )
-}
-
-const Description = ({ descs, isLi }: { descs: string[]; isLi?: boolean }) => {
-  if (!isLi)
-    return (
-      <p className="text-base lg:text-lg text-gray-600 leading-relaxed h-full">
-        {descs[0]}
-      </p>
-    )
-
-  return (
-    <div className="flex flex-col gap-y-1 justify-start items-start">
-      {descs.map((desc) => (
-        <p className="text-base lg:text-lg text-gray-600 leading-relaxed h-full">
-          • {desc}
-        </p>
-      ))}
+      {/* DESCRIPTION */}
+      <div className="flex items-start justify-center">
+        {!isLi ? (
+          <p className="text-sm md:text-base text-gray-600 leading-relaxed">
+            {description[0]}
+          </p>
+        ) : (
+          <ul className="text-left space-y-1">
+            {description.map((d, i) => (
+              <li key={i} className="text-sm md:text-base text-gray-600">
+                • {d}
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
     </div>
   )
 }
