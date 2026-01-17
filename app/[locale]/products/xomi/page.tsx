@@ -135,6 +135,7 @@ const XOmiPage = () => {
       step: 1,
       title: t(`howItWorks.step_1.title`),
       icon: '/images/contents/xpromos/step_1.svg',
+      isLi: true,
     },
     {
       description: [
@@ -145,6 +146,7 @@ const XOmiPage = () => {
       step: 2,
       title: t(`howItWorks.step_2.title`),
       icon: '/images/contents/xpromos/step_2.svg',
+      isLi: true,
     },
     {
       description: [
@@ -159,6 +161,7 @@ const XOmiPage = () => {
       step: 3,
       title: t(`howItWorks.step_3.title`),
       icon: '/images/contents/xpromos/step_3.svg',
+      isLi: true,
     },
     {
       description: [
@@ -171,6 +174,7 @@ const XOmiPage = () => {
       step: 4,
       title: t(`howItWorks.step_4.title`),
       icon: '/images/contents/xpromos/step_4.svg',
+      isLi: true,
     },
   ]
 

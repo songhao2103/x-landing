@@ -1,4 +1,6 @@
+import { Button } from '@/components/ui/Button'
 import { ProductCard } from '@/components/ui/ProductCard'
+import { Reveal } from '@/components/ui/Reveal'
 import { useTranslations } from 'next-intl'
 import React from 'react'
 
@@ -56,6 +58,22 @@ export const ProductDetails: React.FC = () => {
           {products.map((product, index) => (
             <ProductCard key={product.tag} {...product} />
           ))}
+        </div>
+        <div className="flex justify-center mt-2 md:mt-4">
+          <Reveal
+            motionConfig={{
+              from: 'none', // không dịch chuyển
+              opacity: 0, // opacity ban đầu
+              duration: 0.5,
+              ease: 'easeInOut',
+            }}
+            viewport={{
+              amount: 0.3, // 30% element xuất hiện thì chạy
+              once: true,
+            }}
+          >
+            <Button>{t('xpromo.cta')}</Button>
+          </Reveal>
         </div>
       </div>
     </section>

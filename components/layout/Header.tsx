@@ -37,7 +37,7 @@ export const Header: React.FC = () => {
   const navItems = [
     {
       label: t('nav.products'),
-      href: ROUTES.PRODUCT_XPROMO,
+      // href: ROUTES.PRODUCT_XPROMO,
       hasDropdown: true,
     },
     { label: t('nav.solutions'), href: '#solutions' },
@@ -55,10 +55,70 @@ export const Header: React.FC = () => {
   ]
 
   const renderLanguageCode = () => {
-    if (!mounted) return ''
+    if (!mounted) return 'VI'
     if (locale === LANGUAGE.EN) return 'EN'
     if (locale === LANGUAGE.VI) return 'VI'
     return ''
+  }
+
+  const renderButtonToggleLang = () => {
+    let currentLang = 'VI'
+    if (locale === LANGUAGE.EN) currentLang = 'EN'
+    if (locale === LANGUAGE.VI) currentLang = 'VI'
+
+    return (
+      <button
+        onClick={() => setLanguageMenuOpen(!languageMenuOpen)}
+        className="relative flex items-center gap-1.5 text-[15px] font-medium text-white hover:text-cyan-400 transition-colors"
+      >
+        <svg
+          className="w-5 h-5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <circle cx="12" cy="12" r="10" strokeWidth="2" />
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+          />
+        </svg>
+        {currentLang}
+        <svg
+          className="w-3.5 h-3.5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2.5}
+            d="M19 9l-7 7-7-7"
+          />
+        </svg>
+        {languageMenuOpen && (
+          <div
+            className="absolute flex flex-col items-start gap-y-1 px-3 py-2 rounded-md shadow-md w-[100px] top-6 bg-white"
+            ref={languageDropdownRef}
+          >
+            {languageItems.map((item) => (
+              <p
+                key={item.value}
+                className="text-dark-hover"
+                onClick={() => {
+                  handleToogleLocale(item.value)
+                }}
+              >
+                {item.label}
+              </p>
+            ))}
+          </div>
+        )}
+      </button>
+    )
   }
 
   const handleToogleLocale = (locale: LANGUAGE) => {
@@ -87,10 +147,7 @@ export const Header: React.FC = () => {
                   onMouseEnter={() => setProductsMenuOpen(true)}
                   onMouseLeave={() => setProductsMenuOpen(false)}
                 >
-                  <Link
-                    href={item.href}
-                    className="text-[15px] font-medium text-white hover:text-cyan-400 transition-colors flex items-center gap-1 cursor-pointer"
-                  >
+                  <div className="text-[15px] font-medium text-white hover:text-cyan-400 transition-colors flex items-center gap-1 cursor-pointer">
                     {item.label}
                     <svg
                       className="w-4 h-4"
@@ -105,7 +162,7 @@ export const Header: React.FC = () => {
                         d="M19 9l-7 7-7-7"
                       />
                     </svg>
-                  </Link>
+                  </div>
 
                   {/* Dropdown Menu */}
                   {productsMenuOpen && (
@@ -144,57 +201,7 @@ export const Header: React.FC = () => {
             )}
 
             {/* Language Selector */}
-            <button
-              onClick={() => setLanguageMenuOpen(!languageMenuOpen)}
-              className="relative flex items-center gap-1.5 text-[15px] font-medium text-white hover:text-cyan-400 transition-colors"
-            >
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <circle cx="12" cy="12" r="10" strokeWidth="2" />
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
-                />
-              </svg>
-              {renderLanguageCode()}
-              <svg
-                className="w-3.5 h-3.5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2.5}
-                  d="M19 9l-7 7-7-7"
-                />
-              </svg>
-              {languageMenuOpen && (
-                <div
-                  className="absolute flex flex-col items-start gap-y-1 px-3 py-2 rounded-md shadow-md w-[100px] top-6 bg-white"
-                  ref={languageDropdownRef}
-                >
-                  {languageItems.map((item) => (
-                    <p
-                      key={item.value}
-                      className="text-dark-hover"
-                      onClick={() => {
-                        handleToogleLocale(item.value)
-                      }}
-                    >
-                      {item.label}
-                    </p>
-                  ))}
-                </div>
-              )}
-            </button>
+            {renderButtonToggleLang()}
 
             {/* CTA Button */}
             <Link
@@ -206,41 +213,45 @@ export const Header: React.FC = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            className="lg:hidden p-2 text-white"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {mobileMenuOpen ? (
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            ) : (
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-            )}
-          </button>
+
+          <div className="lg:hidden flex gap-x-2 items-center">
+            {renderButtonToggleLang()}
+            <button
+              className="lg:hidden p-2 text-white"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {mobileMenuOpen ? (
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              ) : (
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
+              )}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
@@ -250,13 +261,12 @@ export const Header: React.FC = () => {
               {navItems.map((item) =>
                 item.hasDropdown ? (
                   <div key={item.label} className="flex flex-col gap-2">
-                    <Link
-                      href={item.href}
+                    <div
                       className="text-sm font-medium text-white hover:text-cyan-400 transition-colors py-2"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       {item.label}
-                    </Link>
+                    </div>
                     <div className="pl-4 flex flex-col gap-2">
                       {products.map((product) => (
                         <Link

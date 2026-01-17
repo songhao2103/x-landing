@@ -1,6 +1,7 @@
 'use client'
 
 import { useCallback, useEffect, useState } from 'react'
+import tailwindConfig from 'tailwindcss/defaultConfig'
 
 export const useClickOutside = (
   ref: React.RefObject<HTMLElement>,
@@ -58,4 +59,70 @@ export const useGetElementSize = <T extends HTMLElement>() => {
   }, [node])
 
   return { ref, size }
+}
+
+export type TResponsiveBreakpoint = 'sm' | 'md' | 'lg' | 'xl' | '2xl' | number
+export type TResponsiveQuery = 'up' | 'down' | 'between'
+const breakpoints: TResponsiveBreakpoint[] = ['sm', 'md', 'lg', 'xl', '2xl']
+
+export const getMatches = (query: string): boolean => {
+  // Prevents SSR issues
+  if (typeof window !== 'undefined') {
+    return window.matchMedia(query).matches
+  }
+  return false
+}
+
+export const useMediaQuery = (query: string): boolean => {
+  const [matches, setMatches] = useState<boolean>(getMatches(query))
+
+  useEffect(() => {
+    function handleChange() {
+      setMatches(getMatches(query))
+    }
+
+    const matchMedia = window.matchMedia(query)
+
+    // Triggered at the first client-side load and if query changes
+    handleChange()
+
+    matchMedia.addEventListener('change', handleChange)
+
+    return () => {
+      matchMedia.removeEventListener('change', handleChange)
+    }
+  }, [query])
+
+  return matches
+}
+
+export const useResponsive = (
+  query: TResponsiveQuery,
+  key?: TResponsiveBreakpoint,
+  start?: TResponsiveBreakpoint,
+  end?: TResponsiveBreakpoint
+) => {
+  const screens = tailwindConfig?.theme?.screens as Record<
+    string,
+    TResponsiveBreakpoint
+  >
+
+  if (query === 'up' && key) {
+    key = breakpoints.includes(key) && screens ? screens[key] : key
+
+    return useMediaQuery(`(min-width: ${key})`)
+  }
+
+  if (query === 'down' && key) {
+    key = breakpoints.includes(key) && screens ? screens[key] : key
+
+    return useMediaQuery(`(max-width: ${key})`)
+  }
+
+  if (query === 'between' && start && end) {
+    start = breakpoints.includes(start) && screens ? screens[start] : start
+    end = breakpoints.includes(end) && screens ? screens[end] : end
+
+    return useMediaQuery(`(min-width: ${start}) and (max-width: ${end})`)
+  }
 }

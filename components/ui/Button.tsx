@@ -8,33 +8,47 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 }
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ variant = 'primary', size = 'md', children, fullWidth = false, className = '', ...props }, ref) => {
-    const baseStyles = 'inline-flex items-center justify-center font-semibold rounded-full transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed'
-    
+  (
+    {
+      variant = 'primary',
+      size = 'md',
+      children,
+      fullWidth = false,
+      className = '',
+      ...props
+    },
+    ref
+  ) => {
+    const baseStyles =
+      'inline-flex items-center justify-center font-semibold rounded-full transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed'
+
     const variantStyles = {
       primary: 'text-white hover:shadow-lg hover:scale-105 active:scale-95',
-      outline: 'border-2 border-white text-white hover:bg-white hover:text-navy active:scale-95',
+      outline:
+        'border-2 border-white text-white hover:bg-white hover:text-navy active:scale-95',
       ghost: 'text-white hover:bg-white/10 active:scale-95',
     }
-    
-    const primaryGradientStyle = variant === 'primary' 
-      ? { background: 'linear-gradient(90deg, #02ABFF 0%, #BB45FF 100%)' }
-      : {}
-    
+
+    const primaryGradientStyle =
+      variant === 'primary'
+        ? { background: 'linear-gradient(90deg, #02ABFF 0%, #BB45FF 100%)' }
+        : {}
+
     const sizeStyles = {
-      sm: 'px-4 py-2 text-sm',
-      md: 'px-6 py-3 text-base',
-      lg: 'px-8 py-3 text-lg',
+      sm: 'px-6 py-2 text-sm',
+      md: 'px-12 py-3 text-base',
+      lg: 'px-16 py-3 text-lg',
     }
-    
+
     const widthStyle = fullWidth ? 'w-full' : ''
-    
-    const combinedClassName = `${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${widthStyle} ${className}`.trim()
-    
+
+    const combinedClassName =
+      `${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${widthStyle} ${className}`.trim()
+
     return (
-      <button 
-        ref={ref} 
-        className={combinedClassName} 
+      <button
+        ref={ref}
+        className={combinedClassName}
         style={primaryGradientStyle}
         {...props}
       >
@@ -45,4 +59,3 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 )
 
 Button.displayName = 'Button'
-

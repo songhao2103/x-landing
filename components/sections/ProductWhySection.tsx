@@ -1,5 +1,6 @@
 import { BenefitCard } from '@/components/ui/BenefitCard'
 import { Button } from '@/components/ui/Button'
+import { Reveal, RevealItem } from '@/components/ui/Reveal'
 import { useTranslations } from 'next-intl'
 import { CSSProperties } from 'react'
 
@@ -19,7 +20,7 @@ export const ProductWhySection: React.FC<ProductWhySectionProps> = ({
   const t = useTranslations()
 
   return (
-    <section className={`py-16 lg:py-24 bg-white`}>
+    <section className={`py-10 lg:py-16 bg-white`}>
       <div className="container mx-auto px-4 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12 lg:mb-16">
@@ -29,34 +30,56 @@ export const ProductWhySection: React.FC<ProductWhySectionProps> = ({
         </div>
 
         {/* Benefits Grid */}
-        <div
-          className="
+        <Reveal
+          stagger={{ staggerChildren: 0.07 }}
+          motionConfig={{
+            from: 'bottom',
+            duration: 0.6,
+            ease: 'easeInOut',
+            distance: 32,
+          }}
+        >
+          <div
+            className="
             grid 
             grid-cols-1 
             md:grid-cols-2 
             xl:grid-cols-[repeat(var(--cols),minmax(0,1fr))]
             gap-8 lg:gap-6
           "
-          style={
-            {
-              '--cols': items.length,
-            } as CSSProperties
-          }
-        >
-          {items.map((item, index) => (
-            <BenefitCard
-              key={index}
-              title={item.title}
-              icon={item.icon}
-              desc={item.desc}
-            />
-          ))}
-        </div>
+            style={
+              {
+                '--cols': items.length,
+              } as CSSProperties
+            }
+          >
+            {items.map((item, index) => (
+              <RevealItem>
+                <BenefitCard
+                  key={index}
+                  title={item.title}
+                  icon={item.icon}
+                  desc={item.desc}
+                />
+              </RevealItem>
+            ))}
+          </div>
+        </Reveal>
 
         {/* CTA Button */}
-        <div className="flex justify-center mt-12">
-          <Button>{t('contact.title')}</Button>
-        </div>
+        <Reveal
+          stagger={{ staggerChildren: 0.07 }}
+          motionConfig={{
+            from: 'bottom',
+            duration: 0.6,
+            ease: 'easeInOut',
+            distance: 32,
+          }}
+        >
+          <div className="flex justify-center mt-12">
+            <Button>{t('contact.title')}</Button>
+          </div>
+        </Reveal>
       </div>
     </section>
   )

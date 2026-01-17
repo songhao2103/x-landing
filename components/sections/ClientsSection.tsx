@@ -1,3 +1,4 @@
+import { Reveal, RevealItem } from '@/components/ui/Reveal'
 import { TittleSection } from '@/components/ui/TittleSection'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
@@ -20,25 +21,39 @@ export const ClientsSection: React.FC = () => {
         <TittleSection title={t('title')} />
 
         {/* Client Logos Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12 items-center justify-between  ">
-          {clients.map((client) => (
-            <div
-              key={client.name}
-              className="w-full flex items-center justify-center transition-all duration-300"
-            >
-              {/* Replace with actual logo images */}
-              <div className="text-center">
-                <Image
-                  src={client.logo}
-                  alt={client.name}
-                  width={200}
-                  height={100}
-                  className="object-contain max-w-full"
-                />
-              </div>
-            </div>
-          ))}
-        </div>
+
+        <Reveal
+          stagger={{ staggerChildren: 0.07 }}
+          motionConfig={{
+            from: 'bottom',
+            duration: 0.6,
+            ease: 'easeInOut',
+            distance: 32,
+          }}
+        >
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12 items-center justify-between  ">
+            {clients.map((client) => (
+              <RevealItem className="h-full">
+                <div
+                  key={client.name}
+                  className="w-full flex items-center justify-center transition-all duration-300"
+                >
+                  {/* Replace with actual logo images */}
+
+                  <div className="text-center">
+                    <Image
+                      src={client.logo}
+                      alt={client.name}
+                      width={200}
+                      height={100}
+                      className="object-contain max-w-full"
+                    />
+                  </div>
+                </div>
+              </RevealItem>
+            ))}
+          </div>
+        </Reveal>
       </div>
     </section>
   )

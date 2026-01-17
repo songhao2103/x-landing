@@ -1,3 +1,4 @@
+import { Reveal, RevealItem } from '@/components/ui/Reveal'
 import { TittleSection } from '@/components/ui/TittleSection'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
@@ -68,11 +69,23 @@ export const IndustriesSection: React.FC = () => {
         <TittleSection title={t('title')} />
 
         {/* Industries Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-4 lg:gap-6">
-          {industries.map((industry) => (
-            <IndustryCard key={industry.label} {...industry} />
-          ))}
-        </div>
+        <Reveal
+          stagger={{ staggerChildren: 0.07 }}
+          motionConfig={{
+            from: 'bottom',
+            duration: 0.6,
+            ease: 'easeInOut',
+            distance: 32,
+          }}
+        >
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-4 lg:gap-6">
+            {industries.map((industry) => (
+              <RevealItem className="h-full">
+                <IndustryCard key={industry.label} {...industry} />
+              </RevealItem>
+            ))}
+          </div>
+        </Reveal>
       </div>
     </section>
   )
