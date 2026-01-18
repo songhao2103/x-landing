@@ -1,21 +1,24 @@
 'use client'
 
-import FloatingActions from '@/components/layout/FloatingActions'
 import { Logo } from '@/components/ui/Logo'
 import { LANGUAGE } from '@/lib/constants/global'
 import { ROUTES } from '@/lib/constants/routes'
 import { useClickOutside } from '@/lib/utils/hooks'
+import { AnimatePresence, motion } from 'framer-motion'
 import { useLocale, useTranslations } from 'next-intl'
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import React, { useRef, useState } from 'react'
 
 export const Header: React.FC = () => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [productsMenuOpen, setProductsMenuOpen] = useState(false)
-
   const t = useTranslations()
 
+  // ===== STATE =====
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [desktopProductsOpen, setDesktopProductsOpen] = useState(false)
+  const [mobileProductsOpen, setMobileProductsOpen] = useState(false)
+
+  // ===== DATA =====
   const products = [
     { label: 'XPromo', href: ROUTES.PRODUCT_XPROMO },
     { label: 'XOMI', href: ROUTES.PRODUCT_XOMI },
@@ -24,47 +27,44 @@ export const Header: React.FC = () => {
   ]
 
   const navItems = [
-    {
-      label: t('nav.products'),
-      // href: ROUTES.PRODUCT_XPROMO,
-      hasDropdown: true,
-    },
+    { label: t('nav.products'), hasDropdown: true },
     { label: t('nav.solutions'), href: '#solutions' },
     { label: t('nav.industries'), href: '#industries' },
     { label: t('nav.resources'), href: '#resources' },
     { label: t('nav.company'), href: '#company' },
   ]
 
-  const languageItems = [
-    { label: t('language.english'), value: LANGUAGE.EN },
-    {
-      label: t('language.vietnamese'),
-      value: LANGUAGE.VI,
-    },
-  ]
+  // ===== HANDLERS =====
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen((v) => !v)
+    setMobileProductsOpen(false)
+  }
+
+  const closeAllMobile = () => {
+    setMobileMenuOpen(false)
+    setMobileProductsOpen(false)
+  }
 
   return (
-    <header
-      className="fixed top-0 left-0 right-0 z-50 bg-[#0a1628]/80 backdrop-blur-sm"
-      style={{ zIndex: 1000 }}
-    >
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[#0a1628]/80 backdrop-blur-sm">
       <div className="absolute inset-0 bg-gradient-to-br from-[#0a1628]/50 via-[#0d1d3a]/50 to-[#162548]/50 pointer-events-none" />
+
       <nav className="container mx-auto px-4 sm:px-8 relative">
+        {/* ===== TOP BAR ===== */}
         <div className="flex items-center justify-between h-20">
-          {/* Logo */}
           <Logo />
 
-          {/* Desktop Navigation */}
+          {/* ===== DESKTOP NAV ===== */}
           <div className="hidden lg:flex items-center gap-10">
             {navItems.map((item) =>
               item.hasDropdown ? (
                 <div
                   key={item.label}
                   className="relative"
-                  onMouseEnter={() => setProductsMenuOpen(true)}
-                  onMouseLeave={() => setProductsMenuOpen(false)}
+                  onMouseEnter={() => setDesktopProductsOpen(true)}
+                  onMouseLeave={() => setDesktopProductsOpen(false)}
                 >
-                  <div className="text-[15px] font-medium text-white hover:text-cyan-400 transition-colors flex items-center gap-1 cursor-pointer">
+                  <div className="flex items-center gap-1 text-[15px] font-medium text-white hover:text-cyan-400 cursor-pointer">
                     {item.label}
                     <svg
                       className="w-4 h-4"
@@ -81,175 +81,179 @@ export const Header: React.FC = () => {
                     </svg>
                   </div>
 
-                  {/* Dropdown Menu */}
-                  {productsMenuOpen && (
-                    <>
-                      {/* Bridge để giữ menu mở khi di chuyển chuột */}
-                      <div className="absolute top-full left-0 w-full h-2" />
-                      <div
-                        className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-2xl py-2 border border-gray-100"
-                        style={{ zIndex: 9999 }}
-                        onMouseEnter={() => setProductsMenuOpen(true)}
-                        onMouseLeave={() => setProductsMenuOpen(false)}
+                  <AnimatePresence>
+                    {desktopProductsOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 6 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 6 }}
+                        transition={{ duration: 0.2 }}
+                        className="absolute top-full left-0 pt-4 z-[9999]"
                       >
-                        {products.map((product) => (
-                          <Link
-                            key={product.label}
-                            href={product.href}
-                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-cyan-600 transition-colors cursor-pointer"
-                            onClick={() => setProductsMenuOpen(false)}
-                          >
-                            {product.label}
-                          </Link>
-                        ))}
-                      </div>
-                    </>
-                  )}
+                        <div className="w-48 bg-white rounded-lg shadow-2xl py-2 border border-gray-100">
+                          {products.map((product) => (
+                            <Link
+                              key={product.label}
+                              href={product.href}
+                              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-cyan-600"
+                              onClick={() => setDesktopProductsOpen(false)}
+                            >
+                              {product.label}
+                            </Link>
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
               ) : (
                 <a
                   key={item.label}
                   href={item.href}
-                  className="text-[15px] font-medium text-white hover:text-cyan-400 transition-colors"
+                  className="text-[15px] font-medium text-white hover:text-cyan-400"
                 >
                   {item.label}
                 </a>
               )
             )}
 
-            {/* Language Selector */}
             <LanguageSwitcher />
 
-            {/* CTA Button */}
             <Link
               href={ROUTES.CONTACT}
-              className="px-6 py-2.5 text-[15px] font-semibold text-white bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full hover:from-cyan-400 hover:to-purple-500 transition-all shadow-lg shadow-cyan-500/30"
+              className="px-6 py-2.5 text-[15px] font-semibold text-white bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full shadow-lg"
             >
               {t('nav.contact')}
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="lg:hidden flex gap-x-2 items-center">
+          {/* ===== MOBILE TOGGLE ===== */}
+          <div className="lg:hidden flex items-center gap-2">
             <LanguageSwitcher />
-            <button
-              className="lg:hidden p-2 text-white"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label="Toggle menu"
-            >
-              {mobileMenuOpen ? (
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              ) : (
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                </svg>
-              )}
+            <button onClick={toggleMobileMenu} className="p-2 text-white">
+              {mobileMenuOpen ? '✕' : '☰'}
             </button>
           </div>
         </div>
 
-        {/* Mobile Menu */}
-        {mobileMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-white/10">
-            <div className="flex flex-col gap-4">
-              {navItems.map((item) =>
-                item.hasDropdown ? (
-                  <div key={item.label} className="flex flex-col gap-2">
-                    <div
-                      className="text-sm font-medium text-white hover:text-cyan-400 transition-colors py-2"
-                      onClick={() => setMobileMenuOpen(false)}
+        {/* ===== MOBILE MENU ===== */}
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: 'auto', opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.25 }}
+              className="lg:hidden overflow-hidden border-t border-white/10 py-4"
+            >
+              <div className="flex flex-col gap-4">
+                {navItems.map((item) =>
+                  item.hasDropdown ? (
+                    <div key={item.label}>
+                      <button
+                        className="w-full flex justify-between items-center text-sm font-medium text-white py-2"
+                        onClick={() => setMobileProductsOpen((v) => !v)}
+                      >
+                        {item.label}
+                        <motion.span
+                          animate={{ rotate: mobileProductsOpen ? 180 : 0 }}
+                        >
+                          <svg
+                            className="w-4 h-4"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M19 9l-7 7-7-7"
+                            />
+                          </svg>
+                        </motion.span>
+                      </button>
+
+                      <AnimatePresence>
+                        {mobileProductsOpen && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: 'auto', opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.2 }}
+                            className="pl-4 flex flex-col gap-2"
+                          >
+                            {products.map((product) => (
+                              <Link
+                                key={product.label}
+                                href={product.href}
+                                className="text-sm text-white/80 hover:text-cyan-400"
+                                onClick={closeAllMobile}
+                              >
+                                {product.label}
+                              </Link>
+                            ))}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  ) : (
+                    <a
+                      key={item.label}
+                      href={item.href}
+                      className="text-sm font-medium text-white py-2"
+                      onClick={closeAllMobile}
                     >
                       {item.label}
-                    </div>
-                    <div className="pl-4 flex flex-col gap-2">
-                      {products.map((product) => (
-                        <Link
-                          key={product.label}
-                          href={product.href}
-                          className="text-sm text-white/80 hover:text-cyan-400 transition-colors py-1"
-                          onClick={() => setMobileMenuOpen(false)}
-                        >
-                          {product.label}
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                ) : (
-                  <a
-                    key={item.label}
-                    href={item.href}
-                    className="text-sm font-medium text-white hover:text-cyan-400 transition-colors py-2"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    {item.label}
-                  </a>
-                )
-              )}
-              <Link
-                href={ROUTES.CONTACT}
-                className="px-6 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full hover:from-cyan-400 hover:to-purple-500 transition-all shadow-lg shadow-cyan-500/30 mt-2 inline-block text-center"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {t('nav.contact')}
-              </Link>
-            </div>
-          </div>
-        )}
+                    </a>
+                  )
+                )}
+
+                <Link
+                  href={ROUTES.CONTACT}
+                  onClick={closeAllMobile}
+                  className="mt-2 px-6 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full text-center"
+                >
+                  {t('nav.contact')}
+                </Link>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </nav>
-      <FloatingActions />
+
+      {/* <FloatingActions /> */}
     </header>
   )
 }
 
+// =======================================================
+// ================= LANGUAGE SWITCHER ===================
+// =======================================================
+
 export function LanguageSwitcher() {
   const [open, setOpen] = useState(false)
-  const wrapperRef = useRef<HTMLDivElement>(null)
+  const ref = useRef<HTMLDivElement>(null)
 
   const locale = useLocale()
   const pathname = usePathname()
   const router = useRouter()
   const t = useTranslations()
 
-  useClickOutside(wrapperRef, () => setOpen(false))
+  useClickOutside(ref, () => setOpen(false))
 
-  const handleChange = (nextLocale: LANGUAGE) => {
-    const nextPath = `/${nextLocale}${pathname.replace(/^\/(vi|en)/, '')}`
+  const changeLang = (lang: LANGUAGE) => {
+    const nextPath = `/${lang}${pathname.replace(/^\/(vi|en)/, '')}`
     setOpen(false)
     router.replace(nextPath, { scroll: false })
   }
 
-  const currentLang = locale === LANGUAGE.EN ? 'EN' : 'VI'
-
   return (
-    <div ref={wrapperRef} className="relative">
-      {/* Toggle button */}
+    <div ref={ref} className="relative">
       <button
         onClick={() => setOpen((v) => !v)}
-        className="relative flex items-center gap-1.5 text-[15px] font-medium text-white hover:text-cyan-400 transition-colors"
+        className="flex items-center gap-1 text-white"
       >
-        {/* Globe icon */}
         <svg
           className="w-5 h-5"
           fill="none"
@@ -264,42 +268,32 @@ export function LanguageSwitcher() {
             d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
           />
         </svg>
-
-        {currentLang}
-
-        {/* Chevron icon */}
-        <svg
-          className="w-3.5 h-3.5"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2.5}
-            d="M19 9l-7 7-7-7"
-          />
-        </svg>
+        {locale.toUpperCase()}
       </button>
 
-      {/* Dropdown */}
-      {open && (
-        <div className="absolute top-7 right-0 flex flex-col gap-y-1 px-3 py-2 rounded-md shadow-md w-[120px] bg-white z-50">
-          <button
-            className="text-left text-dark-hover hover:text-cyan-600 transition-colors"
-            onClick={() => handleChange(LANGUAGE.EN)}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0, y: 6 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 6 }}
+            className="absolute right-0 mt-2 bg-white rounded-md shadow-md p-2 w-[120px]"
           >
-            {t('language.english')}
-          </button>
-          <button
-            className="text-left text-dark-hover hover:text-cyan-600 transition-colors"
-            onClick={() => handleChange(LANGUAGE.VI)}
-          >
-            {t('language.vietnamese')}
-          </button>
-        </div>
-      )}
+            <button
+              onClick={() => changeLang(LANGUAGE.EN)}
+              className="block w-full text-left hover:text-cyan-600"
+            >
+              {t('language.english')}
+            </button>
+            <button
+              onClick={() => changeLang(LANGUAGE.VI)}
+              className="block w-full text-left hover:text-cyan-600"
+            >
+              {t('language.vietnamese')}
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   )
 }
