@@ -6,8 +6,9 @@ import { IoIosArrowUp } from 'react-icons/io'
 
 const FloatingActions = () => {
   const [percent, setPercent] = useState(0)
+  const [mounted, setMounted] = useState(false)
 
-  if (typeof window === 'undefined') return null
+  useEffect(() => setMounted(true), [])
 
   // scroll %
   useEffect(() => {
@@ -22,6 +23,10 @@ const FloatingActions = () => {
     handleScroll()
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  if (!mounted) return null
+
+  if (typeof window === 'undefined') return null
 
   const bgStyle = {
     background: `conic-gradient(#3B82F6 ${percent}%, #0f313a ${percent}% 100%)`,

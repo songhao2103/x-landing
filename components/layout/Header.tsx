@@ -1,5 +1,6 @@
 'use client'
 
+import FloatingActions from '@/components/layout/FloatingActions'
 import { Logo } from '@/components/ui/Logo'
 import { LANGUAGE } from '@/lib/constants/global'
 import { ROUTES } from '@/lib/constants/routes'
@@ -222,7 +223,7 @@ export const Header: React.FC = () => {
         </AnimatePresence>
       </nav>
 
-      {/* <FloatingActions /> */}
+      <FloatingActions />
     </header>
   )
 }
