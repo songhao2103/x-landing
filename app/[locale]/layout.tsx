@@ -1,3 +1,4 @@
+import FloatingActions from '@/components/layout/FloatingActions'
 import { Footer } from '@/components/layout/Footer'
 import { Header } from '@/components/layout/Header'
 import type { Metadata } from 'next'
@@ -50,6 +51,7 @@ export default async function RootLayout({
           <Header />
           {children}
           <Footer />
+          
         </NextIntlClientProvider>
       </body>
     </html>
