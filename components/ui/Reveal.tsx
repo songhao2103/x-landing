@@ -9,50 +9,29 @@ import {
 } from 'framer-motion'
 import React, { forwardRef, useMemo } from 'react'
 
-/**
- * Hướng "chạy vào" khi element vào viewport.
- * - none: không dịch chuyển, chỉ opacity
- * - left/right/top/bottom: slide
- * - scale: zoom nhẹ
- */
 export type RevealFrom = 'none' | 'left' | 'right' | 'top' | 'bottom' | 'scale'
 
-/**
- * "Position" config: điều khiển khi nào tính là "đã vào viewport"
- * - amount: tỷ lệ phần tử visible để trigger (0..1) hoặc "some"/"all"
- * - margin: rootMargin của IntersectionObserver (trigger sớm/muộn)
- *   Ví dụ: "0px 0px -20% 0px" -> trigger sớm hơn khi còn cách đáy viewport 20%
- * - once: chạy 1 lần hay chạy lại khi scroll ra/vào
- */
 export type ViewportConfig = {
   once?: boolean
   amount?: number | 'some' | 'all'
   margin?: string
 }
 
-/**
- * Motion config: điều khiển hiệu ứng
- */
 export type RevealMotionConfig = {
   from?: RevealFrom
-  distance?: number // px
-  opacity?: number // opacity lúc hidden
-  blur?: number // px blur lúc hidden (optional)
-  scale?: number // scale lúc hidden (cho "scale")
-  duration?: number // s
-  delay?: number // s
+  distance?: number
+  opacity?: number
+  blur?: number
+  scale?: number
+  duration?: number
+  delay?: number
   ease?: Transition['ease']
-  spring?: boolean // nếu true: dùng spring thay vì tween
+  spring?: boolean
   stiffness?: number
   damping?: number
   mass?: number
 }
 
-/**
- * Children stagger config (khi bạn muốn reveal từng item con)
- * - staggerChildren: khoảng cách giữa các item con
- * - delayChildren: delay trước khi bắt đầu stagger
- */
 export type StaggerConfig = {
   staggerChildren?: number
   delayChildren?: number
@@ -62,49 +41,19 @@ export type RevealProps<T extends React.ElementType = 'div'> = {
   as?: T
   className?: string
   style?: React.CSSProperties
-
-  /**
-   * Viewport trigger config (scroll tới đâu thì chạy)
-   */
   viewport?: ViewportConfig
-
-  /**
-   * Motion config (hướng + timing)
-   */
   motionConfig?: RevealMotionConfig
-
-  /**
-   * Nếu muốn reveal children theo stagger
-   * -> dùng <Reveal stagger> và wrap từng child bằng <RevealItem />
-   */
   stagger?: StaggerConfig
-
-  /**
-   * Callback khi enter/leave viewport
-   */
   onEnter?: () => void
   onLeave?: () => void
-
-  /**
-   * Tắt animation hoàn toàn (ví dụ SSR skeleton, test, hoặc user setting)
-   */
   disabled?: boolean
-
-  /**
-   * Nếu true: element đã inView thì giữ nguyên trạng thái "shown"
-   * (Thường dùng với once=false nhưng muốn “đã vào rồi thì ở lại”)
-   */
   freezeOnceVisible?: boolean
-
   children?: React.ReactNode
 } & Omit<
   MotionProps,
   'initial' | 'animate' | 'whileInView' | 'viewport' | 'variants' | 'transition'
 >
 
-/**
- * Item component để dùng chung với stagger (tùy chọn)
- */
 export type RevealItemProps<T extends React.ElementType = 'div'> = {
   as?: T
   className?: string
@@ -112,9 +61,6 @@ export type RevealItemProps<T extends React.ElementType = 'div'> = {
   children?: React.ReactNode
 } & Omit<MotionProps, 'variants'>
 
-/**
- * Helper: tạo hidden state theo hướng
- */
 function computeHidden(
   from: RevealFrom,
   distance: number,
@@ -143,18 +89,12 @@ function computeHidden(
   }
 }
 
-/**
- * Helper: tạo shown state
- */
 function computeShown(blur: number) {
   const shown: any = { opacity: 1, x: 0, y: 0, scale: 1 }
   if (blur > 0) shown.filter = 'blur(0px)'
   return shown
 }
 
-/**
- * Reveal base component
- */
 export const Reveal = forwardRef(function Reveal<
   T extends React.ElementType = 'div',
 >(props: RevealProps<T>, ref: React.ForwardedRef<Element>) {
@@ -219,7 +159,6 @@ export const Reveal = forwardRef(function Reveal<
     const hidden = computeHidden(m.from, m.distance, m.opacity, m.blur, m.scale)
     const shown = computeShown(m.blur)
 
-    // Nếu có stagger: parent variants sẽ điều khiển children
     if (stagger) {
       return {
         hidden,
@@ -244,7 +183,6 @@ export const Reveal = forwardRef(function Reveal<
     }
   }, [m.from, m.distance, m.opacity, m.blur, m.scale, transition, stagger])
 
-  // Nếu user prefers reduced motion hoặc disabled: render "tĩnh" luôn
   if (disabled || reducedMotion) {
     const StaticTag: any = as ?? 'div'
     return (
@@ -254,34 +192,35 @@ export const Reveal = forwardRef(function Reveal<
     )
   }
 
+  // Tạo wrapper div để chặn overflow
+  const WrapperTag: any = as ?? 'div'
+
   return (
-    <Component
+    <WrapperTag
       ref={ref as any}
       className={className}
-      style={style}
-      variants={variants}
-      initial="hidden"
-      whileInView="shown"
-      viewport={v}
-      onViewportEnter={onEnter}
-      onViewportLeave={onLeave}
-      // freezeOnceVisible: giữ trạng thái shown sau lần đầu thấy
-      // (Framer Motion không có prop "freeze", nhưng pattern phổ biến là: once=true.
-      // Nếu bạn muốn once=false nhưng "đã thấy thì ở lại", dùng once=true là hợp lý nhất.
-      // Mình vẫn để flag này để bạn dễ đọc API, nhưng hành vi đúng nhất là dùng viewport.once=true.
-      {...rest}
+      style={{
+        ...style,
+        overflow: 'hidden',
+      }}
     >
-      {children}
-    </Component>
+      <Component
+        variants={variants}
+        initial="hidden"
+        whileInView="shown"
+        viewport={v}
+        onViewportEnter={onEnter}
+        onViewportLeave={onLeave}
+        {...rest}
+      >
+        {children}
+      </Component>
+    </WrapperTag>
   )
 }) as <T extends React.ElementType = 'div'>(
   p: RevealProps<T> & { ref?: React.Ref<Element> }
 ) => JSX.Element
 
-/**
- * RevealItem: dùng kèm với <Reveal stagger>
- * Bạn bọc từng child bằng RevealItem để nhận variants children tự động.
- */
 export function RevealItem<T extends React.ElementType = 'div'>(
   props: RevealItemProps<T>
 ) {
