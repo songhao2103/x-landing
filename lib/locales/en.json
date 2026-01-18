@@ -205,10 +205,11 @@
       "howItWorks": {
         "step_1": {
           "title": "Import Customer Data",
-          "desc_1": "Contract details",
-          "desc_2": "Payment information",
-          "desc_3": "Documents and proof images",
-          "desc_4": "Interaction history"
+          "desc_1": "Client information",
+          "desc_2": "Contract details",
+          "desc_3": "Payment information",
+          "desc_4": "Documents and proof images",
+          "desc_5": "Interaction history"
         },
         "step_2": {
           "title": "Digitalize Engagement Strategy",

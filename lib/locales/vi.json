@@ -204,10 +204,11 @@
       "howItWorks": {
         "step_1": {
           "title": "Tải dữ liệu khách hàng",
-          "desc_1": "Thông tin chi tiết hợp đồng",
-          "desc_2": "Thông tin thanh toán",
-          "desc_3": "Hồ sơ, hình ảnh chứng từ",
-          "desc_4": "Lịch sử tương tác"
+          "desc_1": "Thông tin khách hàng",
+          "desc_2": "Thông tin chi tiết hợp đồng",
+          "desc_3": "Thông tin thanh toán",
+          "desc_4": "Hồ sơ, hình ảnh chứng từ",
+          "desc_5": "Lịch sử tương tác"
         },
         "step_2": {
           "title": "Số hoá chiến lược tác động",

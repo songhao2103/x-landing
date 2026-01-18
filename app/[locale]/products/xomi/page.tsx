@@ -131,6 +131,7 @@ const XOmiPage = () => {
         t(`howItWorks.step_1.desc_2`),
         t(`howItWorks.step_1.desc_3`),
         t(`howItWorks.step_1.desc_4`),
+        t(`howItWorks.step_1.desc_5`),
       ],
       step: 1,
       title: t(`howItWorks.step_1.title`),
